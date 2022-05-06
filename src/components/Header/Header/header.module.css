@@ -1,0 +1,32 @@
+header {
+  width: 100%;
+}
+
+.contentHead {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navigate {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.listHead {
+  font-size: 20px;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  padding: 5px;
+  text-align: center;
+}
