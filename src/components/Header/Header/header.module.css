@@ -1,6 +1,7 @@
 header {
   width: 100%;
 }
+
 .contentHead {
   width: 90%;
   margin: auto;
@@ -8,15 +9,18 @@ header {
   padding: 15px;
   justify-content: space-between;
 }
+
 .logo {
   font-size: 24px;
   font-weight: bold;
 }
+
 .navigate {
   display: flex;
   justify-content: space-between;
   width: 70%;
 }
+
 .listHead {
   font-size: 20px;
   list-style: none;
