@@ -1,9 +1,9 @@
 .donatBlock {
   background-color: #fff;
   font-family: cursive;
-  height: 1000px;
   padding: 10px;
 }
+
 .donatContent {
   width: 1100px;
   margin: auto;
@@ -15,11 +15,13 @@
 .titleAndSubtitle {
   text-align: center;
 }
+
 .titleAndSubtitle .mainTitle {
   font-size: 35px;
   color: rgb(91, 184, 238);
   font-weight: 600;
 }
+
 .titleAndSubtitle .mainSubtitle {
   margin: auto;
   font-size: 16px;
@@ -32,38 +34,46 @@
   padding: 50px;
   position: relative;
 }
+
 .imageCircle img {
   width: 400px;
   height: 400px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 .leftCheckPoint {
   margin-top: 100px;
   padding-right: 15px;
 }
+
 .titleLeft {
   font-size: 20px;
   font-weight: 600;
   text-align: right;
 }
+
 .subtitleLeft {
   text-align: right;
   font-size: 13px;
 }
+
 .rightCheckPoint {
   margin-top: 100px;
   padding-left: 15px;
 }
+
 .titleRight {
   font-size: 20px;
   font-weight: 600;
   text-align: left;
 }
+
 .subtitleRight {
   text-align: left;
   font-size: 13px;
 }
+
 .btn {
   background-color: rgb(26, 125, 182);
   border-radius: 0.5em;
@@ -79,13 +89,16 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+
 .centerDonatContent {
   width: 500px;
 }
+
 .leftDonatContent,
 .rightDonatContent {
   width: 300px;
 }
+
 /* CHECKPOINTS */
 .checkpointOne {
   color: rgb(26, 125, 182);
@@ -95,6 +108,7 @@
   left: 25px;
   top: 100px;
 }
+
 .checkpointTwo {
   color: rgb(26, 125, 182);
   font-size: 25px;
@@ -103,6 +117,7 @@
   left: -10px;
   top: 270px;
 }
+
 .checkpointThree {
   color: rgb(26, 125, 182);
   font-size: 25px;
@@ -111,6 +126,7 @@
   right: -10px;
   top: 270px;
 }
+
 .checkpointFour {
   color: rgb(26, 125, 182);
   font-size: 25px;
