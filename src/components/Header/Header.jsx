@@ -1,9 +1,10 @@
 import React from "react";
 import style from "./header.module.css";
 import { Link } from "react-router-dom";
+import ServicesDropdown from "./DropdownButton/ServicesDropdown";
 
 const Header = () => {
- 
+
   return (
     <header>
       <div className={style.contentHead}>
@@ -13,7 +14,7 @@ const Header = () => {
             <Link to={"/animal-shelters"} className={style.listHead}>Помощь приютам</Link>
             <Link to={"/"} className={style.listHead}>Советы</Link>
             <Link to={"/"} className={style.listHead}>Сборы</Link>
-            <Link to={"/"} className={style.listHead}>Услуги</Link>
+            <ServicesDropdown/>
             <Link to={"/"} className={style.listHead}>Войти</Link>
         </div>
       </div>
