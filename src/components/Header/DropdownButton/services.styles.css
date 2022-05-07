@@ -1,0 +1,38 @@
+.dropdown {
+  background-color: transparent !important;
+  border: none;
+  font-size: 20px;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  text-align: center;
+}
+
+.dropdown-toggle::after {
+  vertical-align: 0.1em;
+}
+
+.btn-primary.dropdown-toggle {
+  color: black!important;
+}
+
+.btn-primary:hover {
+  color: black !important;
+}
+
+.dropdown-toggle:focus {
+  box-shadow: none !important;
+}
+
+.dropItem {
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-item:active {
+  background-color: transparent;
+}
+
+.dropdown-toggle:hover .dropdown-menu {display: block;}
+
