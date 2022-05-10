@@ -1,67 +1,89 @@
 .cardPetsRender {
   flex-wrap: wrap;
-  display: flex;
-  justify-content: space-around;
   width: 90%;
   margin: auto;
+  display: flex;
   padding: 20px;
-}
-.card {
-  margin: 10px;
-  width: 300px;
-  height: 450px;
-  background: #f0f0f0;
-  border-radius: 10px;
-  text-align: center;
-  transition: all 0.5s;
-  
-}
-
-.card .avatar {
-  display: flex;
-  margin: 30px auto 50px auto;
-  object-fit: cover;
-  width: 250px;
-  height: 250px;
-  background-color: #4bb8ff;
-  border-radius: 50%;
-  font-size: 11px;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s;
-}
-
-.card:hover .avatar {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  margin: 0 auto 50px auto;
-
-  
-}
-
-.card h2 {
-  font-size: 35px;
-  transition: all 0.5s;
-  line-height: 17px;
-}
-
-
-
-.card:hover h2 {
-  opacity: 0;
-  transition: all 0.4s;
-}
-
-.inform {
-  display: flex;
   justify-content: space-around;
 }
-.gender,
-.age {
-    margin-top: 40px;
-  font-size: 25px;
-  text-align: center;
+.card {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  width: 30%;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: all 300ms;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.card:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.headPetsCard {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding: 15px 10px;
+  justify-content: space-between;
+}
+.agePets span {
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.agePets {
+  width: 10%;
+  height: 10%;
+}
+.iconPets {
+  font-size: 23px;
+  display: flex;
+}
+.iconOne {
+  color: rgb(18, 232, 18);
+}
+.imgPetsCard {
+  width: 240px;
+  height: 240px;
+  margin: auto;
+}
+.imgPetsCard img {
+  width: 100%;
+}
+.titlePetsCard {
+  font-size: 16px;
+  width: 80%;
+  margin: auto;
+  font-weight: 700;
+}
+.discriptionPetsCard {
+  font-size: 14px;
+  padding-top: 5px;
+  width: 80%;
+  margin: auto;
+}
+.footerPetsCard {
+  display: flex;
+  width: 80%;
+  padding: 10px 0;
+
+  margin: auto;
+  justify-content: space-between;
+}
+.namePetsCard {
+  font-size: 20px;
+  color: green;
+  font-weight: bolder;
+}
+.iconThree {
+  font-size: 30px;
+  color: red;
 }

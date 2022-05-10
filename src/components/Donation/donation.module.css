@@ -1,31 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&display=swap");
+
 .donatBlock {
-  background-color: #fff;
-  font-family: cursive;
-  padding: 10px;
+  color: #515151;
 }
 
 .donatContent {
-  width: 1100px;
+  width: 90%;
   margin: auto;
-  display: flex;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .titleAndSubtitle {
   text-align: center;
 }
 
-.titleAndSubtitle .mainTitle {
-  font-size: 35px;
-  color: rgb(91, 184, 238);
-  font-weight: 600;
+.mainTitle {
+  font-size: 55px;
+  font-family: "Neucha", cursive;
 }
 
-.titleAndSubtitle .mainSubtitle {
+.mainSubtitle {
   margin: auto;
-  font-size: 16px;
-  padding-top: 10px;
+  font-size: 15px;
+  font-family: cursive;
+}
+
+.donatContentPosition {
+  margin: 20px auto;
+  width: 90%;
+  display: flex;
 }
 
 .imageCircle {
@@ -42,96 +46,93 @@
   object-fit: cover;
 }
 
-.leftCheckPoint {
+.leftCheckPoint,
+.rightCheckPoint {
   margin-top: 100px;
+}
+
+.leftCheckPoint {
   padding-right: 15px;
 }
 
-.titleLeft {
+.rightCheckPoint {
+  padding-left: 15px;
+}
+
+.titleLeft,
+.titleRight {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+.titleLeft {
   text-align: right;
+}
+
+.titleRight {
+  text-align: left;
+}
+
+.subtitleLeft,
+.subtitleRight {
+  font-size: 13px;
+  font-family: "Marmelad", sans-serif;
 }
 
 .subtitleLeft {
   text-align: right;
-  font-size: 13px;
-}
-
-.rightCheckPoint {
-  margin-top: 100px;
-  padding-left: 15px;
-}
-
-.titleRight {
-  font-size: 20px;
-  font-weight: 600;
-  text-align: left;
 }
 
 .subtitleRight {
   text-align: left;
-  font-size: 13px;
 }
 
 .btn {
-  background-color: rgb(26, 125, 182);
+  background-color: #0081fc;
   border-radius: 0.5em;
   border-style: none;
-  padding: 10px;
-  width: 300px;
+  padding: 10px 15px;
   color: #fff;
   font-size: 20px;
   z-index: 2;
   position: absolute;
   top: 470px;
-  left: 100px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.centerDonatContent {
-  width: 500px;
+  left: 120px;
+  font-family: cursive;
 }
 
 .leftDonatContent,
 .rightDonatContent {
-  width: 300px;
+  width: 30%;
 }
 
-/* CHECKPOINTS */
-.checkpointOne {
-  color: rgb(26, 125, 182);
+.checkpointOne,
+.checkpointTwo,
+.checkpointThree,
+.checkpointFour {
+  color: #0081fc;
   font-size: 25px;
   position: absolute;
   z-index: 3;
+}
+
+.checkpointOne {
   left: 25px;
   top: 100px;
 }
 
 .checkpointTwo {
-  color: rgb(26, 125, 182);
-  font-size: 25px;
-  position: absolute;
-  z-index: 3;
   left: -10px;
   top: 270px;
 }
 
 .checkpointThree {
-  color: rgb(26, 125, 182);
-  font-size: 25px;
-  position: absolute;
-  z-index: 3;
   right: -10px;
   top: 270px;
 }
 
 .checkpointFour {
-  color: rgb(26, 125, 182);
-  font-size: 25px;
-  position: absolute;
-  z-index: 3;
   right: 25px;
   top: 100px;
 }

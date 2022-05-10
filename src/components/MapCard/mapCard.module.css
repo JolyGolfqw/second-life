@@ -1,0 +1,96 @@
+.mapCardPosition {
+  background-color: #9dd1e2;
+  margin: 40px 0;
+}
+
+.titleMapCard {
+  font-family: "Neucha", cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+.mapCardFlex {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.mapCardMap {
+  width: 55%;
+  border: 1px solid;
+  margin: auto;
+}
+
+.mapCardContent {
+  width: 27%;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.mapCardContainer {
+  border-radius: 0.8em;
+  background-color: #30343fe3;
+  padding: 30px;
+  color: white;
+  text-align: center;
+}
+
+.titleNameMapCard {
+  font-weight: 700;
+  font-size: 19px;
+  font-family: cursive;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.discriptionButtonMapCard {
+  font-size: 14px;
+  font-family: cursive;
+  margin-bottom: 40px;
+}
+
+.linkButtonMapCard button {
+  background-color: #0081fc;
+  border-radius: 0.5em;
+  border-style: none;
+  padding: 10px;
+  color: #fff;
+  font-size: 13px;
+  font-family: cursive;
+}
+
+.iconsMapCardOne,
+.iconsMapCardTwo,
+.iconsMapCardThree,
+.iconsMapCardFour {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.719);
+  transform: rotate(30deg);
+  z-index: 2;
+  font-size: 30px;
+}
+
+.iconsMapCardOne {
+  font-size: 40px;
+  right: 12%;
+  top: 12%;
+}
+.iconsMapCardTwo {
+  font-size: 39px;
+  left: 12%;
+  top: 10%;
+  transform: rotate(-30deg);
+}
+
+.iconsMapCardThree {
+  left: 13%;
+  top: 65%;
+  transform: rotate(-30deg);
+}
+
+.iconsMapCardFour {
+  right: 15%;
+  top: 60%;
+}

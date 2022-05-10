@@ -14,65 +14,66 @@ const Donation = () => {
         </div>
       </div>
       <div className={style.donatContent}>
+        <div className={style.donatContentPosition}>
+          {/* LEFT */}
+          <div className={style.leftDonatContent}>
+            <div className={style.leftCheckPoint}>
+              <div className={style.titleLeft}>Взять питомца</div>
+              <div className={style.subtitleLeft}>
+                Более 50 собак и котов <br /> ждут своего нового хозяина
+              </div>
+            </div>
+            <div className={style.leftCheckPoint}>
+              <div className={style.titleLeft}>Финансовая помочь</div>
+              <div className={style.subtitleLeft}>
+                Можно перевести небольшую
+                <br /> сумму для поддержки приюта
+              </div>
+            </div>
+          </div>
 
-        {/* LEFT */}
-        <div className={style.leftDonatContent}>
-          <div className={style.leftCheckPoint}>
-            <div className={style.titleLeft}>Взять питомца</div>
-            <div className={style.subtitleLeft}>
-              Более 50 собак и котов <br /> ждут своего нового хозяина
+          {/* CENTER */}
+          <div className={style.centerDonatContent}>
+            <div className={style.imageCircle}>
+              {/* CHECKPOINTS */}
+              <div className={style.checkpointOne}>
+                <ion-icon name="disc-outline"></ion-icon>
+              </div>
+              <div className={style.checkpointTwo}>
+                <ion-icon name="disc-outline"></ion-icon>
+              </div>
+              <div className={style.checkpointThree}>
+                <ion-icon name="disc-outline"></ion-icon>
+              </div>
+              <div className={style.checkpointFour}>
+                <ion-icon name="disc-outline"></ion-icon>
+              </div>
+              <img
+                src="https://c.pxhere.com/photos/22/e3/canon_l_f2_usm_ef_135mm-145752.jpg!d"
+                alt="donatImage"
+              />
+              {/* BUTTON */}
+              <Link to={"/"}>
+                <button className={style.btn}>Сделать пожертвование</button>
+              </Link>
             </div>
           </div>
-          <div className={style.leftCheckPoint}>
-            <div className={style.titleLeft}>Финансовая помочь</div>
-            <div className={style.subtitleLeft}>
-              Можно перевести небольшую
-              <br /> сумму для поддержки приюта
-            </div>
-          </div>
-        </div>
 
-        {/* CENTR */}
-        <div className={style.centerDonatContent}>
-          <div className={style.imageCircle}>
-            {/* CHECKPOINTS */}
-            <div className={style.checkpointOne}>
-              <ion-icon name="disc-outline"></ion-icon>
+          {/* RIGHT  */}
+          <div className={style.rightDonatContent}>
+            <div className={style.rightCheckPoint}>
+              <div className={style.titleRight}>Стать волонтером</div>
+              <div className={style.subtitleRight}>
+                Для тех, кто любит животных и готов
+                <br /> помочь своей энергией и временем
+              </div>
             </div>
-            <div className={style.checkpointTwo}>
-              <ion-icon name="disc-outline"></ion-icon>
-            </div>
-            <div className={style.checkpointThree}>
-              <ion-icon name="disc-outline"></ion-icon>
-            </div>
-            <div className={style.checkpointFour}>
-              <ion-icon name="disc-outline"></ion-icon>
-            </div>
-            <img
-              src="https://c.pxhere.com/photos/22/e3/canon_l_f2_usm_ef_135mm-145752.jpg!d"
-              alt="donatImage"
-            />
-            {/* BUTTON */}
-            <Link to={"/"}>
-              <button className={style.btn}>Сделать пожертвование</button>
-            </Link>
-          </div>
-        </div>
-        
-        {/* RIGHT  */}
-        <div className={style.rightDonatContent}>
-          <div className={style.rightCheckPoint}>
-            <div className={style.titleRight}>Стать волонтером</div>
-            <div className={style.subtitleRight}>
-              Для тех, кто любит животных и готов
-              <br /> помочь своей энергией и временем
-            </div>
-          </div>
-          <div className={style.rightCheckPoint}>
-            <div className={style.titleRight}>Вещи и амуниция</div>
-            <div className={style.subtitleRight}>
-              Принимаем в подарок
-              <br /> хозяйственные вещи и зоотовары
+            <div className={style.rightCheckPoint}>
+              <div className={style.titleRight}>Вещи и амуниция</div>
+              <div className={style.subtitleRight}>
+                Принимаем в подарок
+                <br /> хозяйственные вещи и зоотовары
+              </div>
             </div>
           </div>
         </div>
