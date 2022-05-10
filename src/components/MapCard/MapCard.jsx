@@ -6,8 +6,9 @@ import YandMap from "./Map";
 const MapCard = () => {
   return (
     <div className={style.mapCardPosition}>
-      <div className={style.titleMapCard}>Карта добрых мест</div>
       <div className={style.mapCardBackground}>
+      <div className={style.titleMapCard}>Карта добрых мест</div>
+
         <div className={style.mapCardFlex}>
           {/* MAP ↓ */}
           <div className={style.mapCardMap}>

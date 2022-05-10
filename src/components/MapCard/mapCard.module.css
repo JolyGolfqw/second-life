@@ -1,38 +1,44 @@
 .mapCardPosition {
   background-color: #9dd1e2;
-  margin: 40px 0;
+  color: #515151;
+
 }
 
 .titleMapCard {
   font-family: "Neucha", cursive;
   font-size: 50px;
   text-align: center;
+  padding: 15px;
+}
+
+.mapCardBackground {
+  background: url("../../assets/flat-lay-toys-with-food-bowl-fur-brush-doogs\ \(1\).png") 0 0/100% auto no-repeat;
+  width: 100%;
 }
 
 .mapCardFlex {
   display: flex;
   width: 90%;
+  justify-content: space-evenly;
   margin: auto;
-  padding: 20px;
 }
 
 .mapCardMap {
   width: 55%;
-  border: 1px solid;
-  margin: auto;
 }
 
 .mapCardContent {
   width: 27%;
-  padding: 20px;
+  padding: 34px;
   position: relative;
   z-index: 1;
+  margin-bottom: 40px;
 }
 
 .mapCardContainer {
   border-radius: 0.8em;
   background-color: #30343fe3;
-  padding: 30px;
+  padding: 25px;
   color: white;
   text-align: center;
 }
@@ -41,12 +47,12 @@
   font-weight: 700;
   font-size: 19px;
   font-family: cursive;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
 .discriptionButtonMapCard {
-  font-size: 14px;
+  font-size: 13px;
   font-family: cursive;
   margin-bottom: 40px;
 }
@@ -59,6 +65,7 @@
   color: #fff;
   font-size: 13px;
   font-family: cursive;
+  margin-bottom: 10px;
 }
 
 .iconsMapCardOne,
@@ -74,19 +81,19 @@
 
 .iconsMapCardOne {
   font-size: 40px;
-  right: 12%;
+  right: 14%;
   top: 12%;
 }
 .iconsMapCardTwo {
   font-size: 39px;
-  left: 12%;
+  left: 14%;
   top: 10%;
   transform: rotate(-30deg);
 }
 
 .iconsMapCardThree {
-  left: 13%;
-  top: 65%;
+  left: 15%;
+  top: 60%;
   transform: rotate(-30deg);
 }
 

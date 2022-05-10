@@ -1,0 +1,30 @@
+.faceCardPosition {
+  width: 100%;
+  background-color: #dceff5;
+  padding: 150px;
+}
+.faceCardContent {
+  width: 1000px;
+  margin: auto;
+  background-color: #dceff5;
+  font-family: cursive;
+
+}
+.faceCardTitle {
+  font-size: 55px;
+  font-family: "Neucha", cursive;
+  color: #515151;
+  text-align: left;
+  line-height: 1;
+}
+.faceCardSubtitle {
+  margin: 15px 0;
+}
+.btn {
+  font-size: 18px;
+  padding: 13px 35px;
+  background-color: #042dff;
+  color: white;
+  border-radius: 25px;
+  border: none;
+}

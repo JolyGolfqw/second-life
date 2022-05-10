@@ -1,22 +1,11 @@
 import React from "react";
-import { YMaps, Map, Placemark } from "react-yandex-maps";
+import style from "../MapCard/mapCard.module.css";
 
 const YandMap = () => {
+  
   return (
-    <div>
-      <YMaps>
-        <div className="map">
-          <Map
-            width={"100%"}
-            height={"450px"}
-            defaultState={{ center: [43.31, 45.68], zoom: 10 }}
-          >
-            <Placemark geometry={[43.31, 45.68]} />
-            <Placemark geometry={[43.32, 45.72]} />
-            <Placemark geometry={[43.34, 45.7]} />
-          </Map>
-        </div>
-      </YMaps>
+    <div className={style.configMap}>
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A36917e96354b2512f3535947ab80d382fe0c39ed098a8cd8de12d1d1cab784f4&amp;source=constructor" width="100%" height="400" frameBorder="0"></iframe>
     </div>
   );
 };

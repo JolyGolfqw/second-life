@@ -23,7 +23,7 @@ const PetsCard = () => {
     },
     {
       image:
-        "https://kotopeszoo.ru/upload/resize_cache/iblock/1da/440_440_1/2019_09_30_14_20_34.png",
+        "https://www.meme-arsenal.com/memes/e77529bc5454bebb776dbefd127f68f5.jpg",
       surname: "Чеченский хомяк",
       name: "Собака",
       age: 2,
