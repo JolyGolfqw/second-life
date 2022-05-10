@@ -1,13 +1,13 @@
-header {
+footer {
   width: 100%;
-  background-color: #dceff5;
+  background-color: #9dd1e2;
 }
 
-.contentHead {
+.contentFoot {
   width: 90%;
   margin: auto;
   display: flex;
-  padding: 15px;
+  padding: 10px;
   justify-content: space-between;
 }
 
@@ -22,8 +22,8 @@ header {
   width: 85%;
 }
 
-.listHead,
-.listHeadSingIn {
+.listFoot,
+.listFootSingIn {
   font-size: 18px;
   font-family: "Neucha", cursive;
   list-style: none;
@@ -33,13 +33,14 @@ header {
   padding: 10px;
   text-align: center;
 }
-.listHeadSingIn {
+
+.listFootSingIn {
   background-color: #ffd97e;
   border-radius: 25px;
   padding: 10px 30px;
-  vertical-align: middle;
-  text-align: center;
 }
-.listHead:hover {
+
+.listFoot:hover,
+.listFootSingIn:hover {
   color: black;
 }

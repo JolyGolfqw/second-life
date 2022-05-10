@@ -1,12 +1,14 @@
 .dropdown {
   background-color: transparent !important;
   border: none;
-  font-size: 20px;
   list-style: none;
   text-decoration: none;
   outline: none;
   color: black;
   text-align: center;
+  font-family: "Neucha", cursive;
+  font-size: 18px;
+  padding: 5px;
 }
 
 .dropdown-toggle::after {
@@ -14,7 +16,7 @@
 }
 
 .btn-primary.dropdown-toggle {
-  color: black!important;
+  color: black !important;
 }
 
 .btn-primary:hover {
@@ -34,5 +36,6 @@
   background-color: transparent;
 }
 
-.dropdown-toggle:hover .dropdown-menu {display: block;}
-
+.dropdown-toggle:hover .dropdown-menu {
+  display: block;
+}

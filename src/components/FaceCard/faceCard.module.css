@@ -1,15 +1,18 @@
 .faceCardPosition {
   width: 100%;
   background-color: #dceff5;
-  padding: 150px;
+  padding: 80px 0 250px 0; 
+  position: relative;
+  z-index: 2;
 }
+
 .faceCardContent {
   width: 1000px;
   margin: auto;
   background-color: #dceff5;
   font-family: cursive;
-
 }
+
 .faceCardTitle {
   font-size: 55px;
   font-family: "Neucha", cursive;
@@ -17,9 +20,11 @@
   text-align: left;
   line-height: 1;
 }
+
 .faceCardSubtitle {
   margin: 15px 0;
 }
+
 .btn {
   font-size: 18px;
   padding: 13px 35px;
@@ -27,4 +32,28 @@
   color: white;
   border-radius: 25px;
   border: none;
+}
+
+.btn:hover {
+  background-color: #0023cf;
+  transition: 0.4s;
+}
+
+.imageBackgroundOne,
+.imageBackgroundTwo {
+  position: absolute;
+  z-index: 3;
+  object-fit: cover;
+  bottom: 0%;
+}
+
+.imageBackgroundOne {
+  width: 35%;
+  right: 10%;
+}
+
+.imageBackgroundTwo {
+  width: 15%;
+  left: 15%;
+  transform: scale(-1, 1);
 }

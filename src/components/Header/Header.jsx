@@ -8,14 +8,14 @@ const Header = () => {
   return (
     <header>
       <div className={style.contentHead}>
-        <div className={style.logo}>hatiko</div>
+        <div className={style.logo}>Хатико</div>
         <div className={style.navigate}>
             <Link to={"/pets"} className={style.listHead}>Найти питомца</Link>
+            <ServicesDropdown/>
+            <Link to={"/"} className={style.listHead}>Сборы</Link>
             <Link to={"/animal-shelters"} className={style.listHead}>Помощь приютам</Link>
             <Link to={"/"} className={style.listHead}>Советы</Link>
-            <Link to={"/"} className={style.listHead}>Сборы</Link>
-            <ServicesDropdown/>
-            <Link to={"/"} className={style.listHead}>Войти</Link>
+            <Link to={"/"} className={style.listHeadSingIn}>Войти и Регистрация</Link>
         </div>
       </div>
     </header>

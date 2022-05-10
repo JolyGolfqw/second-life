@@ -5,6 +5,7 @@ import Donation from "../../components/Donation/Donation";
 import MapCard from "../../components/MapCard/MapCard";
 import Header from "../../components/Header/Header";
 import FaceCard from "../../components/FaceCard/FaceCard";
+import Footer from "../../components/Footer/Footer";
 export default function Pets() {
   return (
     <>
@@ -13,6 +14,7 @@ export default function Pets() {
       <CardPointer />
       <MapCard />
       <Donation />
+      <Footer/>
     </>
   );
 }

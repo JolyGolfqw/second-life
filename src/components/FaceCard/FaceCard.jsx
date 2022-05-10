@@ -1,6 +1,9 @@
 import React from "react";
 import style from "../FaceCard/faceCard.module.css";
 import { Link } from "react-router-dom";
+import imageOne from "../../assets/cat.png";
+import imageTwo from "../../assets/headDog.png";
+
 
 const FaceCard = () => {
   return (
@@ -8,12 +11,12 @@ const FaceCard = () => {
       <div className={style.faceCardContent}>
         <div className={style.imagesBackground}>
           <img
-            src="../../assets/cat.png"
+            src={imageOne}
             alt="bgImg1"
             className={style.imageBackgroundOne}
           />
           <img
-            src="../../assets/cat.png"
+            src={imageTwo}
             alt="bgImg2"
             className={style.imageBackgroundTwo}
           />
