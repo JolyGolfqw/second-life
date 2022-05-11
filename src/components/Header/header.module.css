@@ -11,9 +11,15 @@ header {
   justify-content: space-between;
 }
 
-.logo {
+.logo span{
   font-size: 24px;
   font-weight: bolder;
+  padding: 5px;
+}
+
+.logo img {
+  width: 36px;
+  margin-top: -10px;
 }
 
 .navigate {
@@ -33,6 +39,7 @@ header {
   padding: 10px;
   text-align: center;
 }
+
 .listHeadSingIn {
   background-color: #ffd97e;
   border-radius: 25px;
@@ -40,6 +47,7 @@ header {
   vertical-align: middle;
   text-align: center;
 }
+
 .listHead:hover {
   color: black;
 }
