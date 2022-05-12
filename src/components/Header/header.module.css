@@ -100,18 +100,55 @@ header {
   border: 1px solid #4f4f4f;
   border-radius: 8px;
 }
-.change {
+.changeOne,
+.changeTwo {
   padding: 15px;
-  font-size: 25px;
+  font-size: 23px;
   width: 250px;
   text-align: center;
 }
-.change:hover {
+.changeOne:hover {
   background-color: #ffd97e;
-  border-radius:  8px;
+  border-radius: 8px 0 0 8px;
+
+  transition: 0.5s;
+}
+.changeTwo:hover {
+  background-color: #ffd97e;
+  border-radius: 0 8px 8px 0;
 
   transition: 0.5s;
 }
 .change span {
   font-size: 28px;
-margin: 10px;}
+  margin: 10px;
+}
+.entryFieldInfo {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-around;
+}
+.entryFieldInfo input {
+  width: 45%;
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-style: none;
+  border: 1px solid #8a8a8a;
+  outline: none;
+}
+.registrationBtn {
+  background-color: rgb(32, 202, 166);
+  color: white;
+  text-align: center;
+  padding: 10px 50px; 
+  font-size: 15px;
+  border-style: none;
+  outline: none;
+  border-radius: 8px;
+}
+.registrationBtnPosition {
+text-align: center;
+margin: 20px 10px;}
