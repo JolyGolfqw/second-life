@@ -48,8 +48,6 @@ const HelpSheltersCard = () => {
           </div>
         </div>
         <div className={style.containerImages}>
-
-
           <img
             src={donateImage}
             alt="donateImg"

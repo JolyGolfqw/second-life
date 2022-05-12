@@ -3,6 +3,7 @@ import style from "./header.module.css";
 import { Link } from "react-router-dom";
 import ServicesDropdown from "./DropdownButton/ServicesDropdown";
 import logoImg from "../../assets/logo.png";
+import Authorization from "./Authorization";
 const Header = () => {
   return (
     <header>
@@ -27,9 +28,7 @@ const Header = () => {
           <Link to={"/"} className={style.listHead}>
             Советы
           </Link>
-          <Link to={"/"} className={style.listHeadSingIn}>
-            Войти и Регистрация
-          </Link>
+          <Authorization />
         </div>
       </div>
     </header>
