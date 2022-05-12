@@ -7,11 +7,10 @@
   justify-content: space-around;
 }
 .card {
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   width: 30%;
   background-color: #fff;
   border-radius: 10px;
@@ -88,4 +87,20 @@
 .iconThree {
   font-size: 30px;
   color: red;
+}
+
+/* .dowloadMoreBtn {
+  background-color: rgb(247, 247, 106);
+  padding: 10px 25px;
+  border: none;
+  outline: none;
+  border-style: none;
+  font-size: 22px;
+  border-radius: 8px;
+  margin: auto;
+  width: 20%;
+} */
+.sectorСlear {
+  text-align: center;
+  margin: 100px;
 }

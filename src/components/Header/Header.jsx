@@ -9,7 +9,9 @@ const Header = () => {
       <div className={style.contentHead}>
         <div className={style.logo}>
           <img src={logoImg} alt="logo"></img>
-          <span>Хатико</span>
+          <Link to={"/"} className={style.logoLink}>
+            <span>Хатико</span>
+          </Link>
         </div>
         <div className={style.navigate}>
           <Link to={"/pets"} className={style.listHead}>

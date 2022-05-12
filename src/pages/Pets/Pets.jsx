@@ -1,20 +1,16 @@
 import React from "react";
-import CardPointer from "../../components/CardPointer/CardPointer";
-// import PetsCard from "../../components/PetsCard/PetsCard";
-import Donation from "../../components/Donation/Donation";
-import MapCard from "../../components/MapCard/MapCard";
+import CatalogPets from "../../components/CatalogPets/CatalogPets";
 import Header from "../../components/Header/Header";
-import FaceCard from "../../components/FaceCard/FaceCard";
+import SearchPets from "../../components/SearchPets/SearchPets";
 import Footer from "../../components/Footer/Footer";
+
 export default function Pets() {
   return (
     <>
       <Header />
-      <FaceCard/>
-      <CardPointer />
-      <MapCard />
-      <Donation />
-      <Footer/>
+      <CatalogPets />
+      <SearchPets />
+      <Footer />
     </>
   );
 }

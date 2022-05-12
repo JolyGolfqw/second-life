@@ -4,7 +4,7 @@
 .contentMainCardPointer {
   width: 95%;
   margin: auto;
-  padding: 10px;
+  padding: 60px 0;
   color: #515151;
 }
 
@@ -17,7 +17,6 @@
   text-align: center;
   font-family: "Neucha", cursive;
   font-size: 45px;
-  padding: 15px;
 }
 
 .pointerCard {

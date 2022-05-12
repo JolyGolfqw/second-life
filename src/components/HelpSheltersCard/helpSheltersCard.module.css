@@ -1,0 +1,66 @@
+.helpShelterCardPosition {
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.titleContent {
+  font-size: 65px;
+  font-family: "Neucha", cursive;
+  padding: 5px;
+  color: #515151;
+}
+
+.subtitleContent {
+  font-size: 45px;
+  color: #515151;
+}
+
+.discriptionContent {
+  font-size: 17px;
+  margin: 5px;
+}
+.circleContent {
+  width: 850px;
+  height: 850px;
+  border-radius: 50%;
+  background-color: #fff;
+
+  position: absolute;
+  z-index: 2;
+  top: -400px;
+  left: 230px;
+}
+
+.textContent {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  z-index: 3;
+  position: relative;
+}
+
+.donateImageContent {
+  width: 30%;
+  z-index: 3;
+  position: relative;
+}
+
+.containerLottie {
+  width: 300px;
+  z-index: 3;
+  position: absolute;
+  left: 10%;
+  top: 52%;
+}
+
+.containerLottieTwo {
+  width: 500px;
+  z-index: 3;
+  position: absolute;
+  left: 58%;
+  top: 55%;
+}
+
+.containerImages,
+.infoContent {
+  position: relative;
+}

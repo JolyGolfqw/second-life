@@ -1,7 +1,7 @@
 .faceCardPosition {
   width: 100%;
   background-color: #dceff5;
-  padding: 80px 0 250px 0; 
+  padding: 150px 0 250px 0; 
   position: relative;
   z-index: 2;
 }
@@ -14,7 +14,7 @@
 }
 
 .faceCardTitle {
-  font-size: 55px;
+  font-size: 70px;
   font-family: "Neucha", cursive;
   color: #515151;
   text-align: left;
@@ -23,10 +23,13 @@
 
 .faceCardSubtitle {
   margin: 15px 0;
+  color: #515151;
+  font-size: 20px;
+
 }
 
 .btn {
-  font-size: 18px;
+  font-size: 20px;
   padding: 13px 35px;
   background-color: #042dff;
   color: white;

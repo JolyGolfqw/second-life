@@ -1,6 +1,7 @@
 header {
   width: 100%;
-  background-color: #dceff5;
+  position: absolute;
+  z-index: 50;
 }
 
 .contentHead {
@@ -15,7 +16,17 @@ header {
   font-size: 24px;
   font-weight: bolder;
   padding: 5px;
+  
 }
+.logoLink {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+.logoLink:hover {
+  color: black;
+}
+
 
 .logo img {
   width: 36px;

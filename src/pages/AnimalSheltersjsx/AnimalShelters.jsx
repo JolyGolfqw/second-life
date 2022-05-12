@@ -1,10 +1,16 @@
 import React from "react";
-import Donation from "../../components/Donation/Donation";
+import Header from "../../components/Header/Header";
+import HelpSheltersCard from "../../components/HelpSheltersCard/HelpSheltersCard";
+import OurShelters from "../../components/OurShelters/OurShelters";
+import Footer from "../../components/Footer/Footer";
 
 export default function AnimalShelters() {
   return (
     <>
-      <Donation />
+      <Header />
+      <HelpSheltersCard />
+      <OurShelters />
+      <Footer />
     </>
   );
 }
