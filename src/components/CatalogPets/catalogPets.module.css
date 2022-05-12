@@ -1,0 +1,27 @@
+.catalogPetsPosition {
+  width: 100%;
+  padding: 120px 70px 50px 70px;
+}
+.catalogPetsContent {
+  width: 90%;
+  margin: auto;
+}
+.catalogPetsTitle {
+  font-size: 40px;
+  font-family: "Neucha", cursive;
+  padding: 5px;
+  color: #515151;
+  line-height: 1.2;
+
+}
+.catalogPetsIcons {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.catalogPetsIcons img {
+    width: 8%;
+    margin-top: 40px;
+}
