@@ -6,6 +6,7 @@ import logoImg from "../../assets/logo.png";
 import Authorization from "./Authorization";
 const Header = () => {
   return (
+      
     <header>
       <div className={style.contentHead}>
         <div className={style.logo}>
