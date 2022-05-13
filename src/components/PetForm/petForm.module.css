@@ -1,0 +1,10 @@
+.petForm {
+    display: flex;
+    margin: auto;
+    width: 70%;
+    justify-content: space-evenly;
+}
+
+#standard-basic {
+    padding-bottom: 5px;
+}
