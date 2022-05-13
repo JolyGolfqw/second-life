@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.contentMainCardPointer {
+  width: 95%;
+  margin: auto;
+  padding: 60px 0;
+  color: #515151;
+}
+
+.cardPointerRender {
+  display: flex;
+  padding: 35px;
+}
+
+.titleMainCardPointer {
+  text-align: center;
+  font-family: "Neucha", cursive;
+  font-size: 45px;
+}
+
+.pointerCard {
+  width: 21%;
+  padding: 30px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #cae3ed;
+  transition: 0.2s;
+  border-radius: 8px;
+  z-index: 1;
+  position: relative;
+}
+
+.pointerCard:hover {
+  background-color: #0081fc;
+  color: white;
+}
+
+.circleCardPointer {
+  z-index: 2;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: -50px;
+  left: 36%;
+}
+
+.iconCardPointer {
+  font-size: 55px;
+  margin-top: 30px;
+}
+
+.titleCardPointer {
+  font-weight: bolder;
+  height: 40px;
+  font-family: "Roboto", sans-serif;
+}
+
+.discriptionCardPointer {
+  font-size: 14px;
+  height: 100px;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+}

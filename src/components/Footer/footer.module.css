@@ -1,0 +1,52 @@
+footer {
+  width: 100%;
+  background-color: #9dd1e2;
+}
+
+.contentFoot {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: bolder;
+  padding: 5px;
+}
+
+.logo img {
+  width: 36px;
+  margin-top: -10px;
+}
+
+.navigate {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+
+.listFoot,
+.listFootSingIn {
+  font-size: 18px;
+  font-family: "Neucha", cursive;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+
+.listFootSingIn {
+  background-color: #ffd97e;
+  border-radius: 25px;
+  padding: 10px 30px;
+}
+
+.listFoot:hover,
+.listFootSingIn:hover {
+  color: black;
+}

@@ -1,5 +1,7 @@
 header {
   width: 100%;
+  position: absolute;
+  z-index: 50;
 }
 
 .contentHead {
@@ -10,23 +12,106 @@ header {
   justify-content: space-between;
 }
 
-.logo {
+.logo span {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: bolder;
+  padding: 5px;
+}
+.logoLink {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+.logoLink:hover {
+  color: black;
+}
+
+.logo img {
+  width: 36px;
+  margin-top: -10px;
 }
 
 .navigate {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 85%;
 }
 
-.listHead {
-  font-size: 20px;
+.listHead,
+.listHeadSingIn {
+  font-size: 18px;
+  font-family: "Neucha", cursive;
   list-style: none;
   text-decoration: none;
   outline: none;
   color: black;
-  padding: 5px;
+  padding: 10px;
+  text-align: center;
+  border: none;
+}
+
+.listHeadSingIn {
+  background-color: #ffd97e;
+  border-radius: 25px;
+  padding: 10px 30px;
+  vertical-align: middle;
   text-align: center;
 }
+
+.listHead:hover {
+  color: black;
+}
+
+/* AUTHORIZATION */
+.modalHeader {
+  position: relative;
+}
+.authorization {
+  display: flex;
+  position: absolute;
+  bottom: -25px;
+  margin-left: 15px;
+}
+.sing {
+  font-size: 15px;
+  height: 50px;
+  padding: 20px 10px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: cursive;
+}
+.sing:hover {
+  border-bottom: 3px solid red;
+}
+.registration {
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
+  font-family: cursive;
+  color: rgb(81, 81, 81);
+  margin-bottom: 20px;
+}
+.changeClientAndShelter {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  margin: auto;
+
+  border: 1px solid #4f4f4f;
+  border-radius: 8px;
+}
+.change {
+  padding: 15px;
+  font-size: 25px;
+  width: 250px;
+  text-align: center;
+}
+.change:hover {
+  background-color: #ffd97e;
+  border-radius:  8px;
+
+  transition: 0.5s;
+}
+.change span {
+  font-size: 28px;
+margin: 10px;}

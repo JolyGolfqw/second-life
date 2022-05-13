@@ -1,0 +1,58 @@
+.ourSheltersPosition {
+  background-color: #f4f4f4;
+}
+.ourSheltersTitle {
+  font-size: 45px;
+  font-family: "Neucha", cursive;
+  color: #515151;
+  text-align: center;
+  padding: 10px;
+}
+
+.ourSheltersRender {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+.ourSheltersCard {
+  width: 30%;
+  margin: auto;
+  padding: 15px;
+  transition: all 300ms;
+  position: relative;
+}
+
+.ourSheltersCard:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.ourSheltersCard img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.ourSheltersName {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Neucha", cursive;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+.ourSheltersButton {
+  background: #004cff;
+  color: white;
+  border-style: none;
+  border-radius: 8px;
+  font-size: 25px;
+  text-align: center;
+  width: 15%;
+  position: absolute;
+  z-index: 3;
+  bottom: 20%;
+  left: 43%;
+}
