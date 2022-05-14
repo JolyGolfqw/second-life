@@ -7,7 +7,6 @@ import PetControll from "./pages/PetControll/PetControll";
 import PetGiveAway from "./pages/PetGiveAway.jsx/PetGiveAway";
 import ShelterPage from "./pages/ShelterPage/ShelterPage";
 
-
 function App() {
   return (
     <BrowserRouter>
