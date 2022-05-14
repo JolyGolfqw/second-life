@@ -1,6 +1,7 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
-import style from './petForm.module.css'
+import style from "./petForm.module.css";
+import PetsDropdown from "../../DropdownButton/PetsDropdown";
 
 export default function PetForm() {
   return (
@@ -11,13 +12,11 @@ export default function PetForm() {
       />
       <div>
         <div>
-          <TextField id="standard-basic" label="Имя питомца" variant="standard"/>
+          <TextField id="standard-basic" label="Имя питомца" variant="standard" />
         </div>
 
-        <div>
-          <TextField id="standard-basic" label="Пол" variant="standard" />
-        </div>
-
+        <PetsDropdown />
+            
         <div>
           <TextField id="standard-basic" label="Возраст" variant="standard" />
         </div>
