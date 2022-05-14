@@ -42,11 +42,6 @@
   position: absolute;
   object-fit: cover; 
 }
-.adderssShelter {
-  font-size: 22px;
-  font-family: "Times New Roman", Times, serif;
-  float: right;
-}
 
 .buttonShelter {
   background-color: rgb(27, 27, 219);
@@ -57,7 +52,7 @@
   border-style: none;
   border-radius: 10px;
 }
-.aaa {
+.helpSheltersBtn {
   text-align: center;
   padding: 10px 0;
 }

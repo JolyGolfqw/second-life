@@ -28,9 +28,9 @@ const ShelterFaceCard = () => {
           </div>
         </div>
       </div>
-      <div className={style.aaa}>      <button className={style.buttonShelter}>Помочь приюту</button>
-</div>
-
+      <div className={style.helpSheltersBtn}>
+        <button className={style.buttonShelter}>Помочь приюту</button>
+      </div>
     </div>
   );
 };
