@@ -39,6 +39,7 @@
   right: 55%;
   top: 22%;
   position: absolute;
+  object-fit: cover; 
 }
 .adderssShelter {
   font-size: 22px;

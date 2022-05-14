@@ -22,6 +22,9 @@
 .titleContent {
   font-size: 18px;
   padding: 10px 15px;
+  color: rgb(61, 61, 61);
+  font-family: cursive;
+  font-weight: 300;
 }
 .caruselSize {
   width: 80%;

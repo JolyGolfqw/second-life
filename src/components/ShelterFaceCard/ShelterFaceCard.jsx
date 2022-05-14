@@ -22,7 +22,7 @@ const ShelterFaceCard = () => {
         <div className={style.shelterRightContent}>
           <div className={style.shelterRightImage}>
             <img
-              src="https://n1s1.hsmedia.ru/a1/ec/ec/a1ececc48afd3c0c498fdbd47ba45dbe/728x542_1_f5b22481fc08917ff7584d523f52ed21@1000x745_0xac120003_3944844451633381523.jpeg"
+              src="https://cs13.pikabu.ru/post_img/2019/11/21/8/og_og_15743435882838802.jpg"
               alt="img"
             />
           </div>

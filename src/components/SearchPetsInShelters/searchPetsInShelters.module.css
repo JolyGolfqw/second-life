@@ -7,11 +7,12 @@
   padding-bottom: 30px;
 }
 .searchPetsInput {
-  font-size: 22px;
+  font-size: 20px;
   border-radius: 18px;
   border: 1px solid #383838;
   width: 35%;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: cursive;
+  margin: auto;
 }
 .searchPetsInput input {
   border-style: none;
