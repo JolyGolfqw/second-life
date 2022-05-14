@@ -16,6 +16,7 @@ const Authorization = () => {
         show={lgShow}
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
+        centered
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
@@ -29,20 +30,6 @@ const Authorization = () => {
         </Modal.Header>
         <Modal.Body>
           <div className={style.registration}>Регистрация</div>
-          <div className={style.changeClientAndShelter}>
-            <div className={style.changeOne}>
-              <span>
-                <ion-icon name="person-outline"></ion-icon>
-              </span>
-              Клиент
-            </div>
-            <div className={style.changeTwo}>
-              <span>
-                <ion-icon name="paw-outline"></ion-icon>
-              </span>
-              Приют
-            </div>
-          </div>
           <div className={style.entryFieldInfo}>
             <input
               type="text"
@@ -58,18 +45,22 @@ const Authorization = () => {
               placeholder="Телефон*"
               className={style.entryFieldInputPhone}
             />
+          </div>
+          <div className={style.entryFieldInfo}>
             <input
               id="userPassword"
               type="password"
               placeholder="Пароль*"
+              className={style.entryFieldInputPassword}
             ></input>
             <input
               id="userPassword"
               type="password"
               placeholder="Повторите пароль*"
+              className={style.entryFieldInputPassword}
             ></input>
           </div>
-        
+          <button className={style.entryButtonAuthoriz}>Регистрация</button>
         </Modal.Body>
       </Modal>
     </>
