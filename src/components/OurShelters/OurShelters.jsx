@@ -4,29 +4,32 @@ import style from "./ourShelters.module.css";
 const OurShelters = () => {
   const ourShelters = [
     {
-      image: "https://say-hi.me/wp-content/uploads/2018/04/battersea-2.gif",
+      image: "https://www.logozila.ru/images/logo_images/3338.jpg",
       name: "Название приюта",
     },
     {
-      image: "https://say-hi.me/wp-content/uploads/2018/04/battersea-2.gif",
+      image: "https://cdn1.dizkon.ru/images/contests/2014/05/13/5371f239b8276.80.jpg",
       name: "Название приюта",
     },
     {
-      image: "https://say-hi.me/wp-content/uploads/2018/04/battersea-2.gif",
+      image: "https://i.pinimg.com/originals/fe/e4/14/fee414c6318b42ca0deac4a005d8e870.jpg",
       name: "Название приюта",
     },
     {
-      image: "https://say-hi.me/wp-content/uploads/2018/04/battersea-2.gif",
+      image: "https://static.tildacdn.com/tild3466-3962-4536-a262-646430636463/23192-NUDNU6.png",
+      name: "Название приюта",
+    }, {
+      image: "https://i.pinimg.com/originals/5d/38/29/5d38299e8a2eea600462b154092e7891.png",
+      name: "Название приюта",
+    }, {
+      image: "https://bywi.ru/wp-content/gallery/logotipy/gav_logo.jpg",
       name: "Название приюта",
     },
-    {
-      image: "https://say-hi.me/wp-content/uploads/2018/04/battersea-2.gif",
-      name: "Название приюта",
-    },
-    {
-      image: "https://say-hi.me/wp-content/uploads/2018/04/battersea-2.gif",
-      name: "Название приюта",
-    },
+
+    // {
+    //   image: "https://say-hi.me/wp-content/uploads/2018/04/battersea-2.gif",
+    //   name: "Название приюта",
+    // },
   ];
   return (
     <div className={style.ourSheltersPosition}>

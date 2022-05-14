@@ -69,11 +69,7 @@ const Authorization = () => {
               placeholder="Повторите пароль*"
             ></input>
           </div>
-          <div className={style.registrationBtnPosition}>
-            <button className={style.registrationBtn}>
-              ЗАРЕГИСТРИРОВАТЬСЯ
-            </button>
-          </div>
+        
         </Modal.Body>
       </Modal>
     </>

@@ -1,0 +1,61 @@
+.shelterPosition {
+  padding: 0 100px;
+  background: url("../../assets/234.png") 0 0/100% auto no-repeat;
+}
+.shelterContent {
+  display: flex;
+  justify-content: space-between;
+}
+.shelterLeftContent {
+  width: 70%;
+  text-align: left;
+  color: rgb(63, 63, 63);
+  margin-top: 6%;
+}
+
+.shelterTitle {
+  font-size: 75px;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: 3%;
+  font-family: cursive;
+}
+.shelterDiscription {
+  font-size: 20px;
+  width: 75%;
+  line-height: 1.5;
+  margin-top: 3%;
+
+  font-family: cursive;
+}
+
+.shelterRightContent {
+  position: relative;
+}
+.shelterRightImage img {
+  border-radius: 50%;
+  width: 425px;
+  height: 425px;
+  right: 55%;
+  top: 22%;
+  position: absolute;
+}
+.adderssShelter {
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+  float: right;
+}
+
+.buttonShelter {
+  background-color: rgb(27, 27, 219);
+  color: white;
+  padding: 10px 35px;
+  text-align: center;
+  border: none;
+  border-style: none;
+  border-radius: 10px;
+}
+.aaa {
+  text-align: center;
+  padding: 10px 0;
+}

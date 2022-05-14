@@ -1,6 +1,7 @@
 .ourSheltersPosition {
   background-color: #f4f4f4;
 }
+
 .ourSheltersTitle {
   font-size: 45px;
   font-family: "Neucha", cursive;
@@ -33,6 +34,8 @@
 .ourSheltersCard img {
   width: 100%;
   border-radius: 8px;
+  height: 190px;
+  object-fit: cover;
 }
 
 .ourSheltersName {
