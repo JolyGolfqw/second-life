@@ -6,6 +6,7 @@ import logoImg from "../../assets/logo.png";
 import Authorization from "./Authorization";
 const Header = () => {
   return (
+      
     <header>
       <div className={style.contentHead}>
         <div className={style.logo}>
@@ -25,8 +26,8 @@ const Header = () => {
           <Link to={"/animal-shelters"} className={style.listHead}>
             Помощь приютам
           </Link>
-          <Link to={"/"} className={style.listHead}>
-            Советы
+          <Link to={"/shelter-page"} className={style.listHead}>
+            Приют
           </Link>
           <Authorization />
         </div>

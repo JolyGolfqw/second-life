@@ -100,16 +100,16 @@ header {
   border: 1px solid #4f4f4f;
   border-radius: 8px;
 }
-.change {
+.changeOne,
+.changeTwo {
   padding: 15px;
-  font-size: 25px;
+  font-size: 23px;
   width: 250px;
   text-align: center;
 }
-.change:hover {
+.changeOne:hover {
   background-color: #ffd97e;
   border-radius: 8px;
-
   transition: 0.5s;
 }
 .change span {

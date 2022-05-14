@@ -11,7 +11,6 @@ const Authorization = () => {
       <button className={style.listHeadSingIn} onClick={() => setLgShow(true)}>
         Войти и Регистрация
       </button>
-
       <Modal
         size="lg"
         show={lgShow}
@@ -31,7 +30,6 @@ const Authorization = () => {
         </Modal.Header>
         <Modal.Body>
           <div className={style.registration}>Регистрация</div>
-          
           <div className={style.entryFieldInfo}>
             <input
               type="text"
