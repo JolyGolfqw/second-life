@@ -12,16 +12,19 @@
   padding: 5px;
   color: #515151;
   line-height: 1.2;
-
 }
 .catalogPetsIcons {
-    width: 60%;
-    margin: auto;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.catalogPetsIcons button {
+  border-style: none;
+  background-color: #fff;
 }
 .catalogPetsIcons img {
-    width: 8%;
-    margin-top: 40px;
+  width: 55%;
+  margin-top: 40px;
 }

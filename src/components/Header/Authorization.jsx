@@ -11,7 +11,6 @@ const Authorization = () => {
       <button className={style.listHeadSingIn} onClick={() => setLgShow(true)}>
         Войти и Регистрация
       </button>
-
       <Modal
         size="lg"
         show={lgShow}
@@ -31,13 +30,13 @@ const Authorization = () => {
         <Modal.Body>
           <div className={style.registration}>Регистрация</div>
           <div className={style.changeClientAndShelter}>
-            <div className={style.change}>
+            <div className={style.changeOne}>
               <span>
                 <ion-icon name="person-outline"></ion-icon>
               </span>
               Клиент
             </div>
-            <div className={style.change}>
+            <div className={style.changeTwo}>
               <span>
                 <ion-icon name="paw-outline"></ion-icon>
               </span>
@@ -70,6 +69,7 @@ const Authorization = () => {
               placeholder="Повторите пароль*"
             ></input>
           </div>
+        
         </Modal.Body>
       </Modal>
     </>
