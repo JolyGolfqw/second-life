@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../../components/Footer/Footer";
+import Gallery from "../../components/Gallery/Gallery";
 import Header from "../../components/Header/Header";
 import OurPets from "../../components/OurPets/OurPets";
 import QuestionsAndAnswers from "../../components/QuestionsAndAnswers/QuestionsAndAnswers";
@@ -11,6 +12,7 @@ export default function ShelterPage() {
     <>
       <Header />
       <ShelterFaceCard />
+      <Gallery/>
       <OurPets />
       <SearchPetsInShelters />
       <QuestionsAndAnswers />

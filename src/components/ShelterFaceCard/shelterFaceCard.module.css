@@ -17,15 +17,16 @@
   font-size: 75px;
   font-weight: 900;
   line-height: 1;
-  margin-top: 3%;
+  margin-top: 2%;
   font-family: cursive;
 }
 .shelterDiscription {
-  font-size: 20px;
+  font-size: 18px;
   width: 75%;
   height: 140px;
   line-height: 1.5;
-  margin-top: 3%;
+  margin-top: 2%;
+  margin-bottom: 3%;
 
   font-family: cursive;
 }

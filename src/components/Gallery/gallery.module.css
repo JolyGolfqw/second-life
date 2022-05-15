@@ -1,0 +1,55 @@
+.galleryPosition {
+  width: 100%;
+  padding-bottom: 30px;
+}
+.galleryContent {
+  width: 60%;
+  margin: auto;
+}
+.galleryTitle {
+  text-align: center;
+  font-size: 45px;
+  font-family: "Neucha", cursive;
+  padding: 10px;
+}
+.galleryBoxImages {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.evenImages,
+.oddImages {
+  padding: 0;
+  transition: all 300ms;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.evenImages {
+  width: 30%;
+  height: 170px;
+}
+.oddImages {
+  width: 30%;
+  height: 300px;
+}
+.oddImages img,
+.evenImages img {
+  object-fit: cover;
+  border-radius: 12px;
+}
+.oddImages img {
+  height: 300px;
+  width: 100%;
+}
+.evenImages img {
+  width: 100%;
+  height: 100%;
+}
+
+.evenImages:hover,
+.oddImages:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
