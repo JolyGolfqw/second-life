@@ -1,7 +1,16 @@
 import React from "react";
 import style from "../PetsCard/petsCard.module.css";
+import { useParams } from "react-router-dom";
 
 const PetsCard = ({ searchFiltered }) => {
+  const { id } = useParams();
+  
+  //ФИЛЬТР ПО ТИПУ ЖИВОТНЫХ
+  const filtereByType = searchFiltered.filter((item) => {
+    if (!id) return true;
+    return item.type === id;
+  });
+
   return (
     <div>
       {!searchFiltered.length ? (
@@ -14,9 +23,9 @@ const PetsCard = ({ searchFiltered }) => {
         </div>
       ) : (
         <div className={style.cardPetsRender}>
-          {searchFiltered.map((item, index) => {
+          {filtereByType.map((item) => {
             return (
-              <div className={style.card} key={index}>
+              <div className={style.card} key={item._id}>
                 <div className={style.headPetsCard}>
                   <div className={style.agePets}>
                     <span>{item.age}</span>года
