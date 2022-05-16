@@ -7,12 +7,15 @@ const ShelterFaceCard = () => {
     <div className={style.shelterPosition}>
       <div className={style.shelterContent}>
         <div className={style.shelterLeftContent}>
-          <div className={style.shelterTitle}>Название</div>
+          <div className={style.shelterTitle}>Надежда на жизнь</div>
           <div className={style.shelterDiscription}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem animi
-            repellendus deserunt, non quaerat, enim quod labore quam porro fuga
-            dolorum placeat molestiae veniam praesentium, itaque ullam ratione
-            dolores odit!
+            <p>
+              Первый приют для бездомных животных "Надежда на жизнь" открылся на
+              окраине Грозного в 2016 году. Здание включает в себя 32 вольера на
+              зимний и летний сезон, три комнаты для здоровых кошек,
+              инфекционную палату, а также помещение для ухода за животными и
+              приготовления питания.
+            </p>
           </div>
 
           <div className={style.shelterCarousel}>
@@ -22,7 +25,7 @@ const ShelterFaceCard = () => {
         <div className={style.shelterRightContent}>
           <div className={style.shelterRightImage}>
             <img
-              src="https://cs13.pikabu.ru/post_img/2019/11/21/8/og_og_15743435882838802.jpg"
+              src="https://www.grozny-inform.ru/LoadedImages/2020/01/02/IMG_9737_w900_h600.jpg"
               alt="img"
             />
           </div>

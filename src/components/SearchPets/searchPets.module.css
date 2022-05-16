@@ -13,6 +13,7 @@
   border: 1px solid #383838;
   display: flex;
   width: 28%;
+  height: 8%;
 }
 .searchPetsInput input {
   border-style: none;

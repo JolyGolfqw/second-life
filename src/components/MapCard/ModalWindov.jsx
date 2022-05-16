@@ -15,7 +15,7 @@ const ModalWindov = () => {
         </button>
       </Link>
       <Modal
-        size="lg"
+        size="sg"
         show={lgShow}
         centered
         onHide={() => setLgShow(false)}
@@ -23,13 +23,21 @@ const ModalWindov = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-            Информация о приюте
+            <div className={style.modalTitleInformation}>
+              Как получить информацию о приюте?
+            </div>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>Телефон</div>
-          <div>Address</div>
-          <div>Название приюта</div>
+          <div className={style.modalInformation}>
+            Слева от кнопки находится карта, чтобы получить информацию о нужном
+            вам приюте, нужно:
+            <li>Зайти на карту;</li>
+            <li>Выбрать приют;</li>
+            <li>Кликнуть на него;</li>
+            <li>И получить всю информацию о конкретном приюте.</li>
+            Все легко и просто. Удачи!
+          </div>
         </Modal.Body>
       </Modal>
     </>

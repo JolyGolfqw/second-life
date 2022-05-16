@@ -1,6 +1,6 @@
 .catalogPetsPosition {
   width: 100%;
-  padding: 120px 70px 50px 70px;
+  padding: 70px 70px 30px 70px;
 }
 .catalogPetsContent {
   width: 90%;
@@ -25,6 +25,6 @@
   background-color: #fff;
 }
 .catalogPetsIcons img {
-  width: 55%;
+  width: 70%;
   margin-top: 40px;
 }
