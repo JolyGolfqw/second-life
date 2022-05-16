@@ -35,6 +35,7 @@ header {
   display: flex;
   justify-content: space-between;
   width: 85%;
+  align-items: center;
 }
 
 .listHead,
@@ -161,11 +162,88 @@ header {
 .entryButtonAuthoriz {
   background-color: #042dff;
   color: white;
-  margin: 40px 0 40px 265px;
   width: 238px;
+  text-align:  center;
   height: 50px;
   font-size: 20px;
 
   border: 1px solid #4f4f4f;
   border-radius: 8px;
+}
+/* xvvcvc */
+/* From uiverse.io by @alexmaracinaru */
+.card {
+  width: 90%;
+  margin: auto;
+  border: 1px solid white;
+ }
+ 
+ 
+ 
+ .card_header {
+  display: flex;
+  align-items: center;
+ }
+ 
+ .card svg {
+  color: #7878bd;
+  margin-bottom: 20px;
+  margin-right: 5px;
+ }
+ 
+ .form_heading {
+  padding-bottom: 13.5px;
+  font-size: 21px;
+  color: #7878bd;
+  font-family: cursive;
+ }
+ 
+ .field {
+  padding-bottom: 10px;
+ }
+ 
+ .input {
+  border-radius: 5px;
+  background-color: #e9e9f7;
+  padding: 5px;
+  width: 100%;
+  color: #7a7ab3;
+  border: 1px solid #dadaf7
+ }
+ 
+ .input:focus-visible {
+  outline: 1px solid #aeaed6;
+ }
+ 
+ .input::placeholder {
+  color: #bcbcdf;
+ }
+ 
+ label {
+  color: #B2BAC8;
+  font-size: 14px;
+  display: block;
+  padding-bottom: 4px;
+ }
+ 
+ .field button {
+  background-color: #7878bd;
+  margin-top: 15px;
+  outline: none;
+  text-align: center;
+  
+  border-style: none;
+  font-size: 15px;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+ }
+ 
+ .field button:hover {
+  background-color: #5f5f9c;
+ }
+
+.buttonPosition {
+  text-align: center;
 }
