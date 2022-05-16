@@ -6,11 +6,11 @@
   padding: 20px;
   justify-content: space-around;
 }
+
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   width: 30%;
   background-color: #fff;
   border-radius: 10px;
@@ -19,6 +19,7 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+
 .card:hover {
   opacity: 1;
   transform: scale(1.03);
@@ -31,6 +32,7 @@
   padding: 15px 10px;
   justify-content: space-between;
 }
+
 .agePets span {
   border: 1px solid rgb(201, 201, 201);
   border-radius: 50%;
@@ -38,52 +40,60 @@
   font-size: 12px;
   margin-right: 5px;
 }
+
 .agePets {
   width: 10%;
   height: 10%;
 }
+
 .iconPets {
   font-size: 23px;
   display: flex;
 }
+
 .iconOne {
   color: rgb(18, 232, 18);
 }
+
 .imgPetsCard {
   width: 100%;
   margin: auto;
 }
+
 .imgPetsCard img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 7px;
 }
+
 .titlePetsCard {
   font-size: 16px;
   width: 80%;
   margin: auto;
   font-weight: 700;
 }
+
 .discriptionPetsCard {
   font-size: 14px;
   padding-top: 5px;
   width: 80%;
   margin: auto;
 }
+
 .footerPetsCard {
   display: flex;
   width: 80%;
   padding: 10px 0;
-
   margin: auto;
   justify-content: space-between;
 }
+
 .namePetsCard {
   font-size: 20px;
   color: green;
   font-weight: bolder;
 }
+
 .iconThree {
   font-size: 30px;
   color: red;
@@ -100,7 +110,14 @@
   margin: auto;
   width: 20%;
 } */
+
 .sectorСlear {
   text-align: center;
-  margin: 100px;
+  font-family: cursive;
+  padding-bottom: 180px;
+  color: rgb(61, 61, 61);
+}
+.sectorСlear img {
+  object-fit: cover;
+  height: 300px;
 }

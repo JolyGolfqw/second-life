@@ -1,0 +1,47 @@
+.questionsAndAnswersBackground {
+  width: 100%;
+  background-color: #f4f4f4;
+}
+
+.questionsAndAnswersPosition {
+  width: 75%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.questionsAndAnswersTitle {
+  font-family: "Neucha", cursive;
+  font-size: 45px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.questionsAndAnswersContainer {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.questionText {
+  font-size: 16px;
+  color: rgb(62, 62, 62);
+  font-weight: 600;
+  padding: 5px;
+}
+
+.answerText {
+  font-size: 15px;
+  text-align: justify;
+  width: 99%;
+  margin: auto;
+}
+
+.questionsAndAnswersItem button {
+  background-color: #e7f1ff;
+  border-radius: 8px;
+  outline: none;
+  border-style: none;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,26 @@
+.ourPetsPosition {
+    width: 100%;
+}
+.ourPetsTitle {
+  font-family: "Neucha", cursive;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 20px;
+}
+.ourPetsIcons {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+.ourPetsIcons button {
+  border-style: none;
+  background-color: #fff;
+}
+.ourPetsIcons img {
+  width: 52%;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}

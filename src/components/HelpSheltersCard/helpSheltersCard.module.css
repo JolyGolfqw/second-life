@@ -1,6 +1,6 @@
 .helpShelterCardPosition {
   text-align: center;
-  background-color: #f4f4f4;
+  background: url("../../assets/123.png") 0 0/100% auto no-repeat;
 }
 
 .titleContent {
@@ -19,17 +19,6 @@
   font-size: 17px;
   margin: 5px;
 }
-.circleContent {
-  width: 850px;
-  height: 850px;
-  border-radius: 50%;
-  background-color: #fff;
-
-  position: absolute;
-  z-index: 2;
-  top: -400px;
-  left: 230px;
-}
 
 .textContent {
   padding-top: 70px;
@@ -40,8 +29,6 @@
 
 .donateImageContent {
   width: 30%;
-  z-index: 3;
-  position: relative;
 }
 
 .containerLottie {
@@ -56,7 +43,7 @@
   width: 500px;
   z-index: 3;
   position: absolute;
-  left: 58%;
+  left: 61%;
   top: 55%;
 }
 

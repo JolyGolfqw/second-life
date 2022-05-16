@@ -6,6 +6,10 @@ const PetsCard = ({ searchFiltered }) => {
     <div>
       {!searchFiltered.length ? (
         <div className={style.sectorСlear}>
+          <img
+            src="https://acegif.com/wp-content/gif/hamster-wheel-46.gif"
+            alt="gif"
+          />
           <h2>Ничего не найдено...</h2>
         </div>
       ) : (
