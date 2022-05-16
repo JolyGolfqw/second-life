@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./header.module.css";
 import { Link } from "react-router-dom";
-import ServicesDropdown from "./DropdownButton/ServicesDropdown";
+import ServicesDropdown from "../../DropdownButton/ServicesDropdown";
 import logoImg from "../../assets/logo.png";
 import Authorization from "./Authorization";
 const Header = () => {

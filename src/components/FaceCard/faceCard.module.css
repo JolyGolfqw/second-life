@@ -1,15 +1,15 @@
 .faceCardPosition {
   width: 100%;
-  background-color: #dceff5;
+  background-color: #9dd1e2;
   padding: 150px 0 250px 0; 
   position: relative;
   z-index: 2;
 }
 
 .faceCardContent {
-  width: 1000px;
+  width: 85%;
   margin: auto;
-  background-color: #dceff5;
+  background-color: #9dd1e2;
   font-family: cursive;
 }
 
@@ -45,18 +45,18 @@
 .imageBackgroundOne,
 .imageBackgroundTwo {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   object-fit: cover;
   bottom: 0%;
 }
 
 .imageBackgroundOne {
-  width: 35%;
-  right: 10%;
+  width: 45%;
+  right: 7%;
 }
 
 .imageBackgroundTwo {
-  width: 15%;
+  width: 18%;
   left: 15%;
   transform: scale(-1, 1);
 }

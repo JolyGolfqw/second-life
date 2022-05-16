@@ -1,21 +1,27 @@
-.createSheltersPosition {
+.createSheltersMainBox {
   width: 100%;
-  margin: auto;
-  padding: 100px;
-  display: flex;
   font-family: cursive;
+  background-color: #9dd1e2;
+  margin: auto;
+
+}
+.createSheltersPosition {
+  margin: auto;
+  padding: 85px;
+  width: 90%;
+  display: flex;
+
 }
 
 .createSheltersFlex {
   display: flex;
   margin: auto;
-  width: 60%;
-  justify-content: space-between;
+  width: 70%;
   margin: 0;
 }
 
 .createSheltersFileUpload {
-  height: 70%;
+  height: 60%;
   width: 60%;
   display: flex;
   background-color: #eee;
@@ -23,6 +29,8 @@
   align-content: space-around;
   justify-content: center;
   border: 1px solid rgb(199, 199, 199);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .createSheltersImage img {
@@ -35,12 +43,13 @@
 }
 
 .createSheltersDetails {
-  width: 75%;
+  width: 100%;
   box-shadow: 1;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 7px;
   padding: 10px 0;
+  background-color: #fff;
 }
 
 .createSheltersTitle {

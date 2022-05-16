@@ -1,7 +1,6 @@
 .mapCardPosition {
   background-color: #9dd1e2;
   color: #515151;
-
 }
 
 .titleMapCard {
@@ -12,7 +11,8 @@
 }
 
 .mapCardBackground {
-  background: url("../../assets/flat-lay-toys-with-food-bowl-fur-brush-doogs\ \(1\).png") 0 0/100% auto no-repeat;
+  background: url("../../assets/flat-lay-toys-with-food-bowl-fur-brush-doogs\ \(1\).png")
+    0 0/100% auto no-repeat;
   width: 100%;
 }
 
@@ -100,4 +100,17 @@
 .iconsMapCardFour {
   right: 15%;
   top: 60%;
+}
+
+.modalTitleInformation {
+  font-weight: 600;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.modalInformation {
+  text-align: justify;
+  padding: 0 20px;
+  font-size: 15px;
+  font-family: cursive;
 }
