@@ -6,7 +6,7 @@ const PetsCard = ({ searchFiltered }) => {
   const { id } = useParams();
   
   //ФИЛЬТР ПО ТИПУ ЖИВОТНЫХ
-  const filtereByType = searchFiltered.filter((item) => {
+  const filteredByType = searchFiltered.filter((item) => {
     if (!id) return true;
     return item.type === id;
   });
@@ -23,7 +23,7 @@ const PetsCard = ({ searchFiltered }) => {
         </div>
       ) : (
         <div className={style.cardPetsRender}>
-          {filtereByType.map((item) => {
+          {filteredByType.map((item) => {
             return (
               <div className={style.card} key={item._id}>
                 <div className={style.headPetsCard}>
