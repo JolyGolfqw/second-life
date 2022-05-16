@@ -4,8 +4,8 @@ import MainPage from "./pages/MainPage/MainPage";
 import Pets from "./pages/Pets/Pets";
 import AnimalShelters from "./pages/AnimalSheltersjsx/AnimalShelters";
 import PetControll from "./pages/PetControll/PetControll";
-import PetGiveAway from "./pages/PetGiveAway.jsx/PetGiveAway";
 import ShelterPage from "./pages/ShelterPage/ShelterPage";
+import PetGiveAway from "./pages/PetGiveAway/PetGiveAway";
 
 function App() {
   return (
