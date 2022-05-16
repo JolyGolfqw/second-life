@@ -10,8 +10,8 @@ export default function AnimalShelters() {
     <>
       <Header />
       <HelpSheltersCard />
+      <QuestionsAndAnswers />
       <OurShelters />
-      <QuestionsAndAnswers/>
       <Footer />
     </>
   );

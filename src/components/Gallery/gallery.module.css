@@ -1,6 +1,6 @@
 .galleryPosition {
-  width: 100%;
-  padding-bottom: 30px;
+  width: 90%;
+  margin: auto;
 }
 .galleryContent {
   width: 60%;
@@ -10,13 +10,14 @@
   text-align: center;
   font-size: 45px;
   font-family: "Neucha", cursive;
-  padding: 10px;
+  padding: 20px;
 }
 .galleryBoxImages {
   flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 10px;
 }
 .evenImages,
 .oddImages {
@@ -28,11 +29,11 @@
 }
 .evenImages {
   width: 30%;
-  height: 170px;
+  height: 160px;
 }
 .oddImages {
   width: 30%;
-  height: 300px;
+  height: 260px;
 }
 .oddImages img,
 .evenImages img {
@@ -40,7 +41,7 @@
   border-radius: 12px;
 }
 .oddImages img {
-  height: 300px;
+  height: 260px;
   width: 100%;
 }
 .evenImages img {

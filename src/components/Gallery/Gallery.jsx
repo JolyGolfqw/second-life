@@ -35,11 +35,11 @@ const Gallery = () => {
         <div className={style.galleryBoxImages}>
           {galleryImages.map((item, index) => {
             return index % 2 === 0 ? (
-              <div className={style.evenImages}>
+              <div className={style.evenImages} key={index}>
                 <img src={item.image} alt="img"></img>
               </div>
             ) : (
-              <div className={style.oddImages}>
+              <div className={style.oddImages}  key={index}>
                 <img src={item.image} alt="img"></img>
               </div>
             );

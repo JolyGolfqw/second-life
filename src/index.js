@@ -15,8 +15,7 @@ root.render(
         breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
       >
         <App />
-      </ThemeProvider>{" "}
-      ;
+      </ThemeProvider>
     </React.StrictMode>
   </Provider>
 );
