@@ -20,7 +20,7 @@ const Header = () => {
             Найти питомца
           </Link>
           <ServicesDropdown />
-          <Link to={"/"} className={style.listHead}>
+          <Link to={"/fundraising-page"} className={style.listHead}>
             Сборы
           </Link>
           <Link to={"/animal-shelters"} className={style.listHead}>
