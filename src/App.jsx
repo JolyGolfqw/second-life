@@ -16,10 +16,7 @@ function App() {
         <Route path="/pets" element={<Pets />} />
         <Route path="/animal-shelters" element={<AnimalShelters />} />
         <Route path="/pet-control-form" element={<PetControll />} />
-        {/* <Route path="/pet-give-away-form" element={<PetGiveAway />} /> */}
-        <Route path="/pets/type/:id" element={<Pets />} />
-        <Route path="/pets/type" element={<Pets />} />
-
+        <Route path="/pet-give-away-form" element={<PetGiveAway />} />
         <Route path="/animal-shelters" element={<AnimalShelters />} />
         <Route path="/shelter-page" element={<ShelterPage />} />
 				<Route path="/fundraising-page" element={<Fundraising />} />

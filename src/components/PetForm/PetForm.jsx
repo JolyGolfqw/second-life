@@ -2,11 +2,28 @@ import React, { useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import style from "./petForm.module.css";
 import PetsGenderCheckbox from "./PetsGenderCheckbox/PetsGenderCheckbox";
-import { FloatingLabel, Form } from "react-bootstrap";
+import { Button, FloatingLabel, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { addPet } from "../../redux/features/pets";
 
 export default function PetForm() {
   const [photo, setPhoto] = useState("");
   const [preview, setPreview] = useState("");
+  const [petName, setPetName] = useState("");
+  const [petAge, setPetAge] = useState("");
+  const [petDesc, setPetDesc] = useState("");
+  const [petCategory, setPetCategory] = useState("");
+  const [petGender, setPetGender] = useState("Мужской");
+  const [contact, setContact] = useState("");
+  const [address, setAddress] = useState("");
+  
+
+  const dispatch = useDispatch()
+
+  const radios = [
+    { name: "Мужской", value: "Мужской" },
+    { name: "Женский", value: "Женский" },
+  ];
 
   useEffect(() => {
     if (photo) {
@@ -19,6 +36,17 @@ export default function PetForm() {
       setPreview(null);
     }
   }, [photo]);
+
+  const handlePetName = (e) => setPetName(e.target.value);
+  const handlePetAge = (e) => setPetAge(e.target.value);
+  const handlePetDesc = (e) => setPetDesc(e.target.value);
+  const handlePetCategory = (e) => setPetCategory(e.target.value);
+  const handleContact = (e) => setContact(e.target.value);
+  const handleAddress = (e) => setAddress(e.target.value);
+
+  const saveForm = () => {
+    dispatch(addPet(photo, petName, petAge, petGender, petDesc, petCategory, contact, address))
+  };
 
   return (
     <div className={style.petForm}>
@@ -63,18 +91,35 @@ export default function PetForm() {
             id="standard-basic"
             label="Имя питомца"
             variant="standard"
+            value={petName}
+            onChange={(e) => handlePetName(e)}
           />
         </div>
 
-        <PetsGenderCheckbox />
+        {radios.map((radio, idx) => (
+          <PetsGenderCheckbox
+            radio={radio}
+            idx={idx}
+            petGender={petGender}
+            setPetGender={setPetGender}
+          />
+        ))}
 
         <div>
-          <TextField id="standard-basic" label="Возраст" variant="standard" />
+          <TextField
+            value={petAge}
+            onChange={(e) => handlePetAge(e)}
+            id="standard-basic"
+            label="Возраст"
+            variant="standard"
+          />
         </div>
 
         <div>
           <FloatingLabel controlId="floatingTextarea2" label="Описание">
             <Form.Control
+              value={petDesc}
+              onChange={(e) => handlePetDesc(e)}
               as="textarea"
               placeholder="Leave a comment here"
               style={{ height: "150px" }}
@@ -83,13 +128,42 @@ export default function PetForm() {
         </div>
 
         <div>
-          <Form.Select aria-label="Default select example">
+          <Form.Select
+            value={petCategory}
+            onChange={(e) => handlePetCategory(e)}
+            aria-label="Default select example"
+          >
             <option>Категория животного</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
           </Form.Select>
         </div>
+
+        <div className={style.createSheltersFuncionalInfo}>
+                <h6>Номер для связи </h6>
+                <input
+                  value={contact}
+                  onChange={(e) => handleContact(e)}
+                  type="number"
+                  placeholder="8 (929) 000-00-00"
+                />
+              </div>
+
+              {/* ADRESS */}
+              <div className={style.createSheltersFuncionalInfo}>
+                <h6>Адрес </h6>
+                <input
+                  value={address}
+                  onChange={(e) => handleAddress(e)}
+                  type="text"
+                  placeholder="Грозный, ул. Г. Трошева 7..."
+                />
+              </div>
+
+        <Button onClick={saveForm} variant="primary">
+          Сохранить
+        </Button>
       </div>
     </div>
   );

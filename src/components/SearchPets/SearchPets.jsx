@@ -15,7 +15,8 @@ const SearchPets = () => {
   }, [dispatch]);
 
   //ПОИСКОВИК
-  const searchFiltered = pets.filter((item) => {
+  console.log(pets)
+  const searchFiltered = pets && pets.filter((item) => {
     return item.name.toLowerCase().includes(value.toLowerCase());
   });
 

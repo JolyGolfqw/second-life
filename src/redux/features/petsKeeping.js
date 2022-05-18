@@ -4,7 +4,7 @@ const initialState = {
     loading: false,
   };
   
-  export default function pets(state = initialState, action) {
+  export default function petsKeeping(state = initialState, action) {
     switch (action.type) {
       case "pets/get/fulfilled":
         return { ...state, items: action.payload, loading: false };
@@ -26,11 +26,11 @@ const initialState = {
     }
   }
 
-  export const loadPets = () => {
+  export const loadpetsKeeping = () => {
     return async (dispatch) => {
       dispatch({ type: "pets/get/pending" });
       try {
-        const res = await fetch("http://localhost:4000/pets");
+        const res = await fetch("http://localhost:4000/pets-keeping");
         const json = await res.json();
         dispatch({ type: "pets/get/fulfilled", payload: json });
       } catch (err) {
@@ -39,7 +39,7 @@ const initialState = {
     };
   };
 
-  export const addPet = (file, petName, petAge, petGender, petDesc, petCategory) => {
+  export const addPetKeeping = (file, petName, petAge, petGender, petDesc, petCategory, petPrice, period, contact, address) => {
     return async (dispatch) => {
       dispatch({type: 'pet/add/pending'})
       try {
@@ -51,8 +51,12 @@ const initialState = {
         formData.append('gender', petGender)
         formData.append('description', petDesc)
         formData.append('type', petCategory)
+        formData.append('price', petPrice)
+        formData.append('period', period)
+        formData.append('contact', contact)
+        formData.append('address', address)
 
-        const res = await fetch("http://localhost:4000/pets", {
+        const res = await fetch("http://localhost:4000/pets-keeping", {
           method: 'POST',
           body: formData
         })
