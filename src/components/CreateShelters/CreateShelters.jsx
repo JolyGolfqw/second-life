@@ -1,7 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Button, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { addPetKeeping } from "../../redux/features/petsKeeping";
 import style from "../CreateShelters/createShelters.module.css";
+import PetsGenderCheckbox from "../PetForm/PetsGenderCheckbox/PetsGenderCheckbox";
 
 const CreateShelters = () => {
+  const [photo, setPhoto] = useState("");
+  const [preview, setPreview] = useState("");
+  const [petName, setPetName] = useState("");
+  const [petAge, setPetAge] = useState("");
+  const [petDesc, setPetDesc] = useState("");
+  const [petCategory, setPetCategory] = useState("");
+  const [petGender, setPetGender] = useState("Мужской");
+  const [petPrice, setPetPrice] = useState("");
+  const [period, setPeriod] = useState("");
+  const [contact, setContact] = useState("");
+  const [address, setAddress] = useState("");
+
+  const dispatch = useDispatch();
+
+  const radios = [
+    { name: "Мужской", value: "Мужской" },
+    { name: "Женский", value: "Женский" },
+  ];
+
+  useEffect(() => {
+    if (photo) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(photo);
+    } else {
+      setPreview(null);
+    }
+  }, [photo]);
+
+  const handlePetName = (e) => setPetName(e.target.value);
+  const handlePetAge = (e) => setPetAge(e.target.value);
+  const handlePetDesc = (e) => setPetDesc(e.target.value);
+  const handlePetCategory = (e) => setPetCategory(e.target.value);
+  const handlePetPrice = (e) => setPetPrice(e.target.value);
+  const handlePeriod = (e) => setPeriod(e.target.value);
+  const handleContact = (e) => setContact(e.target.value);
+  const handleAddress = (e) => setAddress(e.target.value);
+
+  const saveForm = () => {
+    dispatch(
+      addPetKeeping(
+        photo,
+        petName,
+        petAge,
+        petGender,
+        petDesc,
+        petCategory,
+        petPrice,
+        period,
+        contact,
+        address
+      )
+    );
+  };
+
   return (
     <>
       <div className={style.createSheltersMainBox}>
@@ -9,49 +70,148 @@ const CreateShelters = () => {
           <div className={style.createSheltersFlex}>
             <div className={style.createSheltersFileUpload}>
               <div className={style.createSheltersImage}>
-                <input type="file" id="upload" hidden accept="image/*" />
-                <label htmlFor="upload">
-                  <img
-                    className={style.imageIcon}
-                    src="https://www.babypillowth.com/images/templates/upload.png"
-                    alt="img"
-                  />
-                </label>
+                <input
+                  type="file"
+                  id="upload"
+                  hidden
+                  accept="image/*"
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    if (file && file.type.substring(0, 5) === "image") {
+                      setPhoto(file);
+                    } else {
+                      setPhoto(null);
+                    }
+                  }}
+                />
+                {preview ? (
+                  <>
+                    <img src={preview} alt="" />
+                    <label htmlFor="upload">
+                      <ion-icon name="create-outline"></ion-icon>
+                    </label>{" "}
+                  </>
+                ) : (
+                  <label htmlFor="upload">
+                    <img
+                      className={style.imageIcon}
+                      src="https://www.babypillowth.com/images/templates/upload.png"
+                      alt="img"
+                    />
+                  </label>
+                )}
               </div>
             </div>
           </div>
           <div className={style.createSheltersDetails}>
             <div className={style.createSheltersTitle}>
-              <span>Параметры</span>
+              <span>Отдать на присмотр</span>
             </div>
             <div className={style.createSheltersFuncional}>
               {/* TITLE */}
               <div className={style.createSheltersFuncionalInfo}>
-                <h6>Название приюта </h6>
-                <input type="text" placeholder="Имя приюта" />
+                <h6>Имя питомца </h6>
+                <input
+                  value={petName}
+                  onChange={(e) => handlePetName(e)}
+                  type="text"
+                  placeholder="Морти"
+                />
               </div>
+
+              {radios.map((radio, idx) => (
+                <PetsGenderCheckbox
+                  radio={radio}
+                  idx={idx}
+                  petGender={petGender}
+                  setPetGender={setPetGender}
+                />
+              ))}
+
+              <div className={style.createSheltersFuncionalInfo}>
+                <h6>Возраст питомца </h6>
+                <input
+                  value={petAge}
+                  onChange={(e) => handlePetAge(e)}
+                  type="text"
+                  placeholder="10 месяцев"
+                />
+              </div>
+
+              {/* DISCRIOTION */}
+              <div className={style.createSheltersFuncionalInfo}>
+                <h6>Описание</h6>
+                <textarea
+                  value={petDesc}
+                  onChange={(e) => handlePetDesc(e)}
+                  placeholder="Расскажите про питомца, какой уход необходим, кто вам нужен и т.д."
+                  name="text"
+                  id=""
+                  cols="30"
+                  rows="5"
+                ></textarea>
+              </div>
+
+              <div>
+                <Form.Select
+                  value={petCategory}
+                  onChange={(e) => handlePetCategory(e)}
+                  aria-label="Default select example"
+                >
+                  <option>Категория животного</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </Form.Select>
+              </div>
+
+              <div className={style.createSheltersFuncionalInfo}>
+                <h6>Период присмотра</h6>
+                <input
+                  value={period}
+                  onChange={(e) => handlePeriod(e)}
+                  type="text"
+                  placeholder="2 недели..."
+                />
+              </div>
+
+              <div className={style.createSheltersFuncionalInfo}>
+                <h6>Оплата</h6>
+                <input
+                  value={petPrice}
+                  onChange={(e) => handlePetPrice(e)}
+                  type="text"
+                  placeholder="10 тысяч / договорная"
+                />
+              </div>
+
               {/* PHONE NUMBER */}
               <div className={style.createSheltersFuncionalInfo}>
-                <h6>Номер телефона </h6>
-                <input type="tel" placeholder="8 (929) 000-00-00" />
+                <h6>Номер для связи </h6>
+                <input
+                  value={contact}
+                  onChange={(e) => handleContact(e)}
+                  type="number"
+                  placeholder="8 (929) 000-00-00"
+                />
               </div>
+
               {/* ADRESS */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Адрес </h6>
-                <input type="text" placeholder="Адрес приюта" />
-              </div>
-              {/* EMAIL */}
-              <div className={style.createSheltersFuncionalInfo}>
-                <h6>Email </h6>
-                <input type="email" placeholder="_________@mail.ru" />
-              </div>
-              {/* DISCRIOTION */}
-              <div className={style.createSheltersFuncionalInfo}>
-                <h6>История приюта</h6>
-                <textarea name="text" id="" cols="30" rows="5"></textarea>
+                <input
+                  value={address}
+                  onChange={(e) => handleAddress(e)}
+                  type="text"
+                  placeholder="Грозный, ул. Г. Трошева 7..."
+                />
               </div>
             </div>
+            <Button onClick={saveForm} variant="primary">
+          Сохранить
+        </Button>
           </div>
+          
         </div>
       </div>
     </>

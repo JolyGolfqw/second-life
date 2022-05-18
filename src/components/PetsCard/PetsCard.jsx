@@ -15,11 +15,14 @@ const PetsCard = ({ searchFiltered }) => {
       ) : (
         <div className={style.cardPetsRender}>
           {searchFiltered.map((item, index) => {
+            const age = item.age.split(' ')
             return (
               <div className={style.card} key={index}>
                 <div className={style.headPetsCard}>
                   <div className={style.agePets}>
-                    <span>{item.age}</span>года
+                   
+                      <span>{age[0]}</span>{age[1]}
+                    
                   </div>
                   <div className={style.iconPets}>
                     <div className={style.iconOne}>
@@ -32,7 +35,7 @@ const PetsCard = ({ searchFiltered }) => {
                 </div>
                 <div className={style.bodyPetsCard}>
                   <div className={style.imgPetsCard}>
-                    <img src={item.img} alt="pet"></img>
+                    <img src={`http://localhost:4000/${item.image}`} alt={item.name}></img>
                   </div>
                   <div className={style.titlePetsCard}>{item.name}</div>
                   <div className={style.descriptionPetsCard}>
