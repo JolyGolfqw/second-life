@@ -5,7 +5,8 @@ import Pets from "./pages/Pets/Pets";
 import AnimalShelters from "./pages/AnimalSheltersjsx/AnimalShelters";
 import PetControll from "./pages/PetControll/PetControll";
 import ShelterPage from "./pages/ShelterPage/ShelterPage";
-import PetGiveAway from "./pages/PetGiveAway/PetGiveAway";
+import Fundraising from './pages/Fundraising/Fundraising'
+// import PetGiveAway from "./pages/PetGiveAway/PetGiveAway";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/pet-give-away-form" element={<PetGiveAway />} />
         <Route path="/animal-shelters" element={<AnimalShelters />} />
         <Route path="/shelter-page" element={<ShelterPage />} />
+				<Route path="/fundraising-page" element={<Fundraising />} />
       </Routes>
     </BrowserRouter>
   );

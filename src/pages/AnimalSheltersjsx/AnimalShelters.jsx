@@ -3,15 +3,15 @@ import Header from "../../components/Header/Header";
 import HelpSheltersCard from "../../components/HelpSheltersCard/HelpSheltersCard";
 import OurShelters from "../../components/OurShelters/OurShelters";
 import Footer from "../../components/Footer/Footer";
-import QuestionsAndAnswers from "../../components/QuestionsAndAnswers/QuestionsAndAnswers";
+import News from "../../components/News/News";
 
 export default function AnimalShelters() {
   return (
     <>
       <Header />
       <HelpSheltersCard />
-      <QuestionsAndAnswers />
       <OurShelters />
+      <News/>
       <Footer />
     </>
   );

@@ -1,6 +1,7 @@
 .catalogPetsPosition {
   width: 100%;
   padding: 70px 70px 30px 70px;
+
 }
 .catalogPetsContent {
   width: 90%;
@@ -19,6 +20,7 @@
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .catalogPetsIcons button {
   border-style: none;
@@ -26,5 +28,19 @@
 }
 .catalogPetsIcons img {
   width: 70%;
-  margin-top: 40px;
+}
+.wrapper {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  transform: scale(.5);
+}
+.photoWrapper {
+  width: 50px;
+  height: 50px;
+}
+.photoWrapper img {
+  margin: 0;
+  width: 100%;
 }
