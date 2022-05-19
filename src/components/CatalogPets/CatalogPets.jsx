@@ -8,6 +8,7 @@ import imageIcon1 from "../../assets/bcat.png";
 import imageIcon2 from "../../assets/rabbit.png";
 import imageIcon3 from "../../assets/parrot.png";
 import imageIcon4 from "../../assets/tortoise.png";
+import ChangeSheltersAndPets from "../ChangeSheltersAndPets/ChangeSheltersAndPets";
 
 const CatalogPets = () => {
   const dispatch = useDispatch();
@@ -24,8 +25,9 @@ const CatalogPets = () => {
           Эти питомцы ждут, когда
           <br /> вы приедете в наши приюты
         </div>
+        <ChangeSheltersAndPets/>
         <div className={style.catalogPetsIcons}>
-          <Link to={"/pets/type"}>
+          <Link to={"/pets"}>
             <div className={style.wrapper}>
               <div className={style.photoWrapper}>
                 <img src={imageIcon1} alt="icon" />

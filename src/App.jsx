@@ -25,7 +25,9 @@ function App() {
         <Route path="/news-form" element={<NewsForm />} />
         <Route path="/shelter-page" element={<ShelterPage />} />
 				<Route path="/fundraising-page" element={<Fundraising />} />
+				<Route path="/pets/type/:id" element={<Pets/>} />
         <Route path="/fundraising-page-form" element={<FundraisingForm/>} />
+
       </Routes>
     </BrowserRouter>
   );

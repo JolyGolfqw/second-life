@@ -59,7 +59,6 @@ const initialState = {
 
         const data = await res.json()
         dispatch({type: 'pet/add/fulfilled', payload: data})
-        console.log(data)
       } catch (err) {
         dispatch({type: "pet/add/rejected", error: err.message})
       }

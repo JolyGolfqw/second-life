@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addPetKeeping } from "../../redux/features/petsKeeping";
 import style from "../CreateShelters/createShelters.module.css";
 import PetsGenderCheckbox from "../PetForm/PetsGenderCheckbox/PetsGenderCheckbox";
+import { useSelector } from "react-redux";
 
 const CreateShelters = () => {
   const [photo, setPhoto] = useState("");
@@ -17,6 +18,7 @@ const CreateShelters = () => {
   const [period, setPeriod] = useState("");
   const [contact, setContact] = useState("");
   const [address, setAddress] = useState("");
+  const category = useSelector((state) => state.category.items);
 
   const dispatch = useDispatch();
 
@@ -67,6 +69,7 @@ const CreateShelters = () => {
     <>
       <div className={style.createSheltersMainBox}>
         <div className={style.createSheltersPosition}>
+          {/* //! IMAGE UPLOAD */}
           <div className={style.createSheltersFlex}>
             <div className={style.createSheltersFileUpload}>
               <div className={style.createSheltersImage}>
@@ -86,15 +89,15 @@ const CreateShelters = () => {
                 />
                 {preview ? (
                   <>
-                    <img src={preview} alt="" />
+                    <img src={preview} alt="fileUpload" />
                     <label htmlFor="upload">
-                      <ion-icon name="create-outline"></ion-icon>
-                    </label>{" "}
+                      <ion-icon name="create-outline"></ion-icon>Изменить
+                    </label>
                   </>
                 ) : (
                   <label htmlFor="upload">
                     <img
-                      className={style.imageIcon}
+                      className={style.previewImg}
                       src="https://www.babypillowth.com/images/templates/upload.png"
                       alt="img"
                     />
@@ -103,12 +106,14 @@ const CreateShelters = () => {
               </div>
             </div>
           </div>
+
+          {/* //! INPUT FIELDS */}
           <div className={style.createSheltersDetails}>
             <div className={style.createSheltersTitle}>
               <span>Отдать на присмотр</span>
             </div>
             <div className={style.createSheltersFuncional}>
-              {/* TITLE */}
+              {/* NAME PETS */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Имя питомца </h6>
                 <input
@@ -118,16 +123,16 @@ const CreateShelters = () => {
                   placeholder="Морти"
                 />
               </div>
-
-              {radios.map((radio, idx) => (
+              {/* GENDER PETS */}
+              {radios.map((radio, index) => (
                 <PetsGenderCheckbox
                   radio={radio}
-                  idx={idx}
+                  index={index}
                   petGender={petGender}
                   setPetGender={setPetGender}
                 />
               ))}
-
+              {/* AGE PETS */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Возраст питомца </h6>
                 <input
@@ -151,20 +156,20 @@ const CreateShelters = () => {
                   rows="5"
                 ></textarea>
               </div>
-
-              <div>
+              {/* TYPE PETS */}
+              <div className={style.createSheltersFuncionalInfo}>
+                <h6>Тип животного</h6>
                 <Form.Select
                   value={petCategory}
                   onChange={(e) => handlePetCategory(e)}
                   aria-label="Default select example"
                 >
-                  <option>Категория животного</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  {category.map((item, index) => {
+                    return <option index={index}>{item.category}</option>;
+                  })}
                 </Form.Select>
               </div>
-
+              {/* VIEWING PERIOD */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Период присмотра</h6>
                 <input
@@ -174,14 +179,14 @@ const CreateShelters = () => {
                   placeholder="2 недели..."
                 />
               </div>
-
+              {/* PAYMENT */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Оплата</h6>
                 <input
                   value={petPrice}
                   onChange={(e) => handlePetPrice(e)}
                   type="text"
-                  placeholder="10 тысяч / договорная"
+                  placeholder="По стандарту / договорная"
                 />
               </div>
 
@@ -191,7 +196,7 @@ const CreateShelters = () => {
                 <input
                   value={contact}
                   onChange={(e) => handleContact(e)}
-                  type="number"
+                  type="tel"
                   placeholder="8 (929) 000-00-00"
                 />
               </div>
@@ -207,11 +212,17 @@ const CreateShelters = () => {
                 />
               </div>
             </div>
-            <Button onClick={saveForm} variant="primary">
-          Сохранить
-        </Button>
+            {/* BUTTON */}
+            <div className={style.buttonPositionCreateShelters}>
+              <Button
+                onClick={saveForm}
+                variant="primary"
+                className={style.btn}
+              >
+                Сохранить
+              </Button>
+            </div>
           </div>
-          
         </div>
       </div>
     </>
