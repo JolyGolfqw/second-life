@@ -1,8 +1,13 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import style from "./fundraising.module.css";
 
 const FundraisingCard = () => {
   return (
+    <>
+    <Link to="/fundraising-page-form"><Button>Добавить сбор</Button></Link>
+
     <div className={style.wrapper}>
       <div className={style.imageWrapper}>
         <img
@@ -45,6 +50,7 @@ const FundraisingCard = () => {
 				</div>
       </div>
     </div>
+    </>
   );
 };
 
