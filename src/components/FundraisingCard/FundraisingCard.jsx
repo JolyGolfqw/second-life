@@ -1,32 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { loadFundraisings } from "../../redux/features/fundraising";
 import style from "./fundraising.module.css";
 
 const FundraisingCard = () => {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(loadFundraisings())
+  }, [dispatch])
+
+  const fundraisings = useSelector(state => state.fundraising.items)
+  console.log(fundraisings)
   return (
     <>
     <Link to="/fundraising-page-form"><Button>Добавить сбор</Button></Link>
 
+    {fundraisings.map(item => {
+      return(
+
     <div className={style.wrapper}>
       <div className={style.imageWrapper}>
         <img
-          src="https://www.meme-arsenal.com/memes/4ab9b67a0fcbc211e26408af2d3fd811.jpg"
+          src={`http://localhost:4000/${item.image}`}
           alt="photo"
         />
       </div>
       <div className={style.infoWrapper}>
         <div className={style.title}>
-          <h4>Тут будет название типа</h4>
+          <h4>{item.title}</h4>
           <h6>
-            Сумма сбора: <span>500 ₽</span>
+            Сумма сбора: <span>{item.amount}</span>
           </h6>
         </div>
         <p>
-          Тут будет описание сбора Тут будет описание сбора Тут будет описание
-          сбора Тут будет описание сбора Тут будет описание сбора Тут будет
-          описание сбора Тут будет описание сбора Тут будет описание сбора Тут
-          будет описание сбора{" "}
+          {item.description}
         </p>
         <div className={style.shelter}>
           <div className={style.shelterAvatar}>
@@ -50,6 +61,8 @@ const FundraisingCard = () => {
 				</div>
       </div>
     </div>
+      )
+    })}
     </>
   );
 };
