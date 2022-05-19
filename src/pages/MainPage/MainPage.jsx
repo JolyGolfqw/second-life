@@ -5,6 +5,7 @@ import MapCard from "../../components/MapCard/MapCard";
 import Header from "../../components/Header/Header";
 import FaceCard from "../../components/FaceCard/FaceCard";
 import Footer from "../../components/Footer/Footer";
+import CardPetModel from "../../components/CardPetModel/CardPetModel";
 
 export default function MainPage() {
   return (
@@ -14,6 +15,7 @@ export default function MainPage() {
       <CardPointer />
       <MapCard />
       <Donation />
+      <CardPetModel/>
       <Footer />
     </>
   )

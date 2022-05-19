@@ -1,0 +1,17 @@
+.changeSheltersAndPets {
+  text-align: center;
+  margin: 20px 0;
+}
+.changeSheltersAndPets label {
+  color: rgb(0, 0, 0) !important;
+  font-size: 28px;
+  background-color: #fff !important;
+  font-family: cursive;
+  outline: none !important;
+  border: none !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+  margin: 0 10px !important;
+  font-family: "Neucha", cursive;
+  text-align: center;
+}

@@ -1,0 +1,101 @@
+.cardPetsRender {
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 4% auto;
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.imgPetsCard {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  margin-right: 10px;
+}
+
+.imgPetsCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.sectorСlear {
+  text-align: center;
+  font-family: cursive;
+  padding-bottom: 180px;
+  color: rgb(61, 61, 61);
+}
+.sectorСlear img {
+  object-fit: cover;
+  height: 300px;
+}
+.iconPets {
+  font-size: 28px;
+  display: flex;
+}
+
+
+.iconThree {
+  font-size: 35px;
+  color: red;
+  float: right;
+  margin-top: 10px;
+}
+
+.cardModelnName span {
+  text-align: left;
+  letter-spacing: 0.05rem;
+  font-size: 28px;
+  font-family: cursive;
+}
+
+.cardPetModelFlex hr {
+  padding: 0;
+  margin: 0;
+}
+.cardModelnName {
+  display: flex;
+  justify-content: space-between;
+}
+.iconPets {
+  display: flex;
+  justify-content: space-between;
+}
+.cardModelKey {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  text-align: justify;
+  color: #6f6d78;
+  font-weight: 400;
+  font-style: italic;
+}
+.informContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bodyPetsCard {
+  display: flex;
+  justify-content: space-between;
+}
+.cardPetModelFlex {
+  padding: 10px 15px;
+}

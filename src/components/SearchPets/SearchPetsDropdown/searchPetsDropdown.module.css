@@ -1,5 +1,5 @@
 .dropdown {
-    background-color: transparent !important;
+    background-color: #fff !important;
     border: none;
     list-style: none;
     text-decoration: none;
@@ -9,9 +9,13 @@
     font-size: 18px;
     padding: 5px;
   }
-  
+  .btn-primary {
+    background-color: #fff !important;
+    border-color: #fff !important;
+}
   .dropdown-toggle::after {
     vertical-align: 0.1em;
+
   }
   
   .btn-primary.dropdown-toggle {

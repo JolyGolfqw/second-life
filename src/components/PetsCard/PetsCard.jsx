@@ -4,16 +4,15 @@ import { useParams } from "react-router-dom";
 
 const PetsCard = ({ searchFiltered }) => {
   const { id } = useParams();
-  
+
   //ФИЛЬТР ПО ТИПУ ЖИВОТНЫХ
   const filtereByType = searchFiltered.filter((item) => {
     if (!id) return true;
     return item.type === id;
   });
-
   return (
     <div>
-      {!searchFiltered.length ? (
+      {!searchFiltered.length || !filtereByType.length ? (
         <div className={style.sectorСlear}>
           <img
             src="https://acegif.com/wp-content/gif/hamster-wheel-46.gif"
@@ -49,10 +48,7 @@ const PetsCard = ({ searchFiltered }) => {
                   </div>
                 </div>
                 <div className={style.footerPetsCard}>
-                  <div className={style.namePetsCard}>{item.gender}</div>
-                  <div className={style.iconThree}>
-                    <ion-icon name="paw-outline"></ion-icon>
-                  </div>
+                  
                 </div>
               </div>
             );

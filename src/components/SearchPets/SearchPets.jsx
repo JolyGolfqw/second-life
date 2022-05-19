@@ -15,7 +15,6 @@ const SearchPets = () => {
   }, [dispatch]);
 
   //ПОИСКОВИК
-  console.log(pets)
   const searchFiltered = pets && pets.filter((item) => {
     return item.name.toLowerCase().includes(value.toLowerCase());
   });
@@ -30,9 +29,9 @@ const SearchPets = () => {
             onChange={(e) => setValue(e.target.value)}
           />
         </div>
-        <div className={style.searchPetsChange}>
+        {/* <div className={style.searchPetsChange}>
           <SearchPetsDropdown />
-        </div>
+        </div> */}
       </div>
       <div className={style.searchPetsBody}>
         <PetsCard searchFiltered={searchFiltered} />
