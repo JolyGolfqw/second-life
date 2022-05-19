@@ -25,7 +25,7 @@ const CatalogPets = () => {
           <br /> вы приедете в наши приюты
         </div>
         <div className={style.catalogPetsIcons}>
-          <Link to={"/pets/type"}>
+          <Link to={"/pets"}>
             <div className={style.wrapper}>
               <div className={style.photoWrapper}>
                 <img src={imageIcon1} alt="icon" />

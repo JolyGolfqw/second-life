@@ -6,7 +6,7 @@ const PetsCard = ({ searchFiltered }) => {
   const { id } = useParams();
   
   //ФИЛЬТР ПО ТИПУ ЖИВОТНЫХ
-  const filteredByType = searchFiltered.filter((item) => {
+  const filtereByType = searchFiltered.filter((item) => {
     if (!id) return true;
     return item.type === id;
   });
@@ -23,15 +23,12 @@ const PetsCard = ({ searchFiltered }) => {
         </div>
       ) : (
         <div className={style.cardPetsRender}>
-          {searchFiltered.map((item, index) => {
-            const age = item.age.split(' ')
+          {filtereByType.map((item) => {
             return (
               <div className={style.card} key={item._id}>
                 <div className={style.headPetsCard}>
                   <div className={style.agePets}>
-                   
-                      <span>{age[0]}</span>{age[1]}
-                    
+                    <span>{item.age}</span>года
                   </div>
                   <div className={style.iconPets}>
                     <div className={style.iconOne}>
@@ -44,7 +41,7 @@ const PetsCard = ({ searchFiltered }) => {
                 </div>
                 <div className={style.bodyPetsCard}>
                   <div className={style.imgPetsCard}>
-                    <img src={`http://localhost:4000/${item.image}`} alt={item.name}></img>
+                    <img src={item.img} alt="pet"></img>
                   </div>
                   <div className={style.titlePetsCard}>{item.name}</div>
                   <div className={style.descriptionPetsCard}>

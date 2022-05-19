@@ -20,6 +20,9 @@ function App() {
         <Route path="/animal-shelters" element={<AnimalShelters />} />
         <Route path="/shelter-page" element={<ShelterPage />} />
 				<Route path="/fundraising-page" element={<Fundraising />} />
+				<Route path="/pets/type/:id" element={<Pets/>} />
+
+
       </Routes>
     </BrowserRouter>
   );
