@@ -3,10 +3,15 @@ import style from "./header.module.css";
 import { Link } from "react-router-dom";
 import ServicesDropdown from "../DropdownButton/ServicesDropdown";
 import logoImg from "../../assets/logo.png";
-import Authorization from "./Authorization";
+import { useState } from "react";
+import ShelterRegistration from "../ShelterRegistration/ShelterRegistration";
+import UserRegistration from "../UserRegistration/UserRegistration";
+
 const Header = () => {
+
+	const [lgShow, setLgShow] = useState(false);
+
   return (
-      
     <header>
       <div className={style.contentHead}>
         <div className={style.logo}>
@@ -32,7 +37,14 @@ const Header = () => {
           <Link to={"/shelter-page"} className={style.listHead}>
             Приют
           </Link>
-          <Authorization />
+          <button
+            className={style.listHeadSingIn}
+            onClick={() => setLgShow(true)}
+          >
+            Вход и Регистрация
+          </button>
+					<ShelterRegistration lgShow={lgShow} setLgShow={setLgShow} />
+					<UserRegistration lgShow={lgShow} setLgShow={setLgShow} />
         </div>
       </div>
     </header>

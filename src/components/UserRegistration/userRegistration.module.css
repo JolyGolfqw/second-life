@@ -1,0 +1,90 @@
+.card {
+  width: 90%;
+  margin: auto;
+  border: 1px solid white;
+}
+
+.card_header {
+  display: flex;
+  align-items: center;
+}
+
+.card svg {
+  color: #7878bd;
+  margin-bottom: 20px;
+  margin-right: 5px;
+}
+
+.form_heading {
+  padding-bottom: 13.5px;
+  font-size: 21px;
+  color: #7878bd;
+  font-family: cursive;
+}
+
+.field {
+  padding-bottom: 10px;
+}
+
+.warning {
+	padding-bottom: 10px;
+}
+
+.warning label {
+  font-size: 14px;
+  display: block;
+  padding-bottom: 4px;
+  color: red;
+}
+
+.input {
+  border-radius: 5px;
+  background-color: #e9e9f7;
+  padding: 5px;
+  width: 100%;
+  color: #7a7ab3;
+  border: 1px solid #dadaf7;
+}
+
+.input:focus-visible {
+  outline: 1px solid #aeaed6;
+}
+
+.input::placeholder {
+  color: #bcbcdf;
+}
+
+label {
+  color: #b2bac8;
+  font-size: 14px;
+  display: block;
+  padding-bottom: 4px;
+}
+
+.field button {
+  background-color: #7878bd;
+  margin-top: 15px;
+  outline: none;
+  text-align: center;
+  border-style: none;
+  font-size: 15px;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  transform: translateX(98px);
+}
+
+.field button:hover {
+  background-color: #5f5f9c;
+}
+
+.buttonPosition {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
