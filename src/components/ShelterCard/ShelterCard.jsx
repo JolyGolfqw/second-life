@@ -1,16 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "../ShelterCard/shelterCard.module.css";
 import { Link } from "react-router-dom";
 
+
 const ShelterCard = () => {
-  const shelter = [
-    {
-      image: "https://say-hi.me/wp-content/uploads/2018/04/battersea-2.gif",
-      name: "Название приюта",
-      discription:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nobis libero eos culpa? Iusto, neque ab nobis minima exercitationem deserunt enim, repellat laborum fugit earum deleniti temporibus! Cumque, enim eveniet.",
-    },
-  ];
 
   return (
     <div className={style.bigShelterCards}>

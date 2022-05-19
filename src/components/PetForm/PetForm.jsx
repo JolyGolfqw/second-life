@@ -36,7 +36,10 @@ export default function PetForm() {
     }
   }, [photo]);
 
-  const handlePetName = (e) => setPetName(e.target.value);
+  const handlePetName = (e) => {
+      console.log(e.target.value)
+      setPetName(e.target.value)
+  }
   const handlePetAge = (e) => setPetAge(e.target.value);
   const handlePetDesc = (e) => setPetDesc(e.target.value);
   const handlePetCategory = (e) => setPetCategory(e.target.value);
