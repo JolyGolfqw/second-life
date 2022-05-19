@@ -3,8 +3,10 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import pets from "./features/pets";
 import category from "./features/categories";
+import application from "./features/application";
+import shelters from "./features/shelters";
 
 export const store = createStore(
-  combineReducers({ pets, category }),
+  combineReducers({ pets, category, application, shelters }),
   composeWithDevTools(applyMiddleware(thunk))
 );
