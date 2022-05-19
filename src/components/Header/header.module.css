@@ -163,7 +163,7 @@ header {
   background-color: #042dff;
   color: white;
   width: 238px;
-  text-align:  center;
+  text-align: center;
   height: 50px;
   font-size: 20px;
 
@@ -176,74 +176,138 @@ header {
   width: 90%;
   margin: auto;
   border: 1px solid white;
- }
- 
- 
- 
- .card_header {
+}
+
+.card_header {
   display: flex;
   align-items: center;
- }
- 
- .card svg {
+}
+
+.card svg {
   color: #7878bd;
   margin-bottom: 20px;
   margin-right: 5px;
- }
- 
- .form_heading {
+}
+
+.form_heading {
   padding-bottom: 13.5px;
   font-size: 21px;
   color: #7878bd;
   font-family: cursive;
- }
- 
- .field {
+}
+
+.field {
   padding-bottom: 10px;
- }
- 
- .input {
+}
+
+.warning {
+	padding-bottom: 10px;
+}
+
+.warning label {
+  font-size: 14px;
+  display: block;
+  padding-bottom: 4px;
+  color: red;
+}
+
+.input {
   border-radius: 5px;
   background-color: #e9e9f7;
   padding: 5px;
   width: 100%;
   color: #7a7ab3;
-  border: 1px solid #dadaf7
- }
- 
- .input:focus-visible {
+  border: 1px solid #dadaf7;
+}
+
+.input:focus-visible {
   outline: 1px solid #aeaed6;
- }
- 
- .input::placeholder {
+}
+
+.input::placeholder {
   color: #bcbcdf;
- }
- 
- label {
-  color: #B2BAC8;
+}
+
+label {
+  color: #b2bac8;
   font-size: 14px;
   display: block;
   padding-bottom: 4px;
- }
- 
- .field button {
+}
+
+.field button {
   background-color: #7878bd;
   margin-top: 15px;
   outline: none;
   text-align: center;
-  
   border-style: none;
   font-size: 15px;
   padding: 10px 30px;
   border-radius: 8px;
   font-weight: 600;
   color: white;
- }
- 
- .field button:hover {
+  transform: translateX(98px);
+}
+
+.field button:hover {
   background-color: #5f5f9c;
- }
+}
 
 .buttonPosition {
   text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.avatar {
+  width: 20%;
+  height: 272px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.534);
+  border-radius: 10px;
+}
+
+.avatar .previewImg {
+ width: 20%;
+}
+
+.avatar img {
+	object-fit: contain;
+	width: 260px;
+  height: 400px;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  transform: translateX(112px);
+}
+
+.description textarea {
+  width: 71.8%;
+  height: 150px;
+  resize: none;
+  background-color: #e9e9f7;
+  border: 0.1px solid #aeaed6;
+  border-radius: 3px;
+  padding: 10px;
+  color: #7a7ab3;
+}
+
+.description textarea::placeholder {
+  color: #bfbfe1;
+}
+
+.description textarea:focus {
+  outline: 0.5px solid #aeaed6;
+}
+
+.form_inputs {
+  min-width: 34%;
 }
