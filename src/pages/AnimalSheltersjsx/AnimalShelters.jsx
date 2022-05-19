@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import HelpSheltersCard from "../../components/HelpSheltersCard/HelpSheltersCard";
 import OurShelters from "../../components/OurShelters/OurShelters";
 import Footer from "../../components/Footer/Footer";
-import News from "../../components/News/News";
+import PersonalPage from "../../components/PersonalPage/PersonalPage";
 
 export default function AnimalShelters() {
   return (
@@ -11,8 +11,9 @@ export default function AnimalShelters() {
       <Header />
       <HelpSheltersCard />
       <OurShelters />
-      <News/>
+      <PersonalPage/>
       <Footer />
+
     </>
   );
 }

@@ -26,11 +26,11 @@ const initialState = {
     }
   }
 
-  export const loadPets = () => {
+  export const loadFundraisings = () => {
     return async (dispatch) => {
       dispatch({ type: "pets/get/pending" });
       try {
-        const res = await fetch("http://localhost:4000/pets");
+        const res = await fetch("http://localhost:4000/fundraising");
         const json = await res.json();
         dispatch({ type: "pets/get/fulfilled", payload: json });
       } catch (err) {
@@ -39,20 +39,21 @@ const initialState = {
     };
   };
 
-  export const addPet = (file, petName, petAge, petGender, petDesc, petCategory) => {
+  export const addFundraising = (file, title, organizer, amount, cardNumber, phoneNumber, description) => {
     return async (dispatch) => {
       dispatch({type: 'pet/add/pending'})
       try {
         const formData = new FormData()
 
         formData.append('img', file)
-        formData.append('name', petName)
-        formData.append('age', petAge)
-        formData.append('gender', petGender)
-        formData.append('description', petDesc)
-        formData.append('type', petCategory)
+        formData.append('title', title)
+        formData.append('organizer', organizer)
+        formData.append('amount', amount)
+        formData.append('cardNumber', cardNumber)
+        formData.append('phoneNumber', phoneNumber)
+        formData.append('description', description)
 
-        const res = await fetch("http://localhost:4000/pets", {
+        const res = await fetch("http://localhost:4000/fundraising", {
           method: 'POST',
           body: formData
         })
