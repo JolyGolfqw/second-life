@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
 import Pets from "./pages/Pets/Pets";
-import AnimalShelters from "./pages/AnimalSheltersjsx/AnimalShelters";
+import AnimalShelters from "./pages/AnimalShelters/AnimalShelters";
 import PetControll from "./pages/PetControll/PetControll";
 import ShelterPage from "./pages/ShelterPage/ShelterPage";
 import Fundraising from './pages/Fundraising/Fundraising'
@@ -23,7 +23,7 @@ function App() {
         <Route path="/animal-shelters" element={<AnimalShelters />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/news-form" element={<NewsForm />} />
-        <Route path="/shelter-page" element={<ShelterPage />} />
+        <Route path="/shelter-page/:id" element={<ShelterPage />} />
 				<Route path="/fundraising-page" element={<Fundraising />} />
 				<Route path="/pets/type/:id" element={<Pets/>} />
         <Route path="/fundraising-page-form" element={<FundraisingForm/>} />
