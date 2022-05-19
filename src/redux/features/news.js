@@ -12,11 +12,17 @@ export default function news(state = initialState, action) {
     case "news/fetch/fulfilled":
       return { ...state, items: action.payload, loading: false };
 
-    case "news/fetch/fulfilled":
+    case "news/fetch/rejected":
       return { ...state, error: action.payload, loading: false };
 
     case 'news/add/pending':
         return {...state, loading: true}
+
+        case "news/add/fulfilled":
+      return { ...state, items: [...state.items, action.payload], loading: false };
+
+    case "news/add/rejected":
+      return { ...state, error: action.payload, loading: false };
 
     default:
       return state;
@@ -29,6 +35,7 @@ export const loadNews = () => {
     try {
       const res = await fetch("http://localhost:4000/news");
       const json = await res.json();
+      console.log(json)
       dispatch({ type: "news/fetch/fulfilled", payload: json });
     } catch (err) {
       dispatch({ type: "news/fetch/rejected", payload: err.message });

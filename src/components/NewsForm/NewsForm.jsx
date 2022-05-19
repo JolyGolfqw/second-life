@@ -36,7 +36,6 @@ const NewsForm = () => {
           photo,
           title,
           description, 
-          organizer,
         )
       );
     };

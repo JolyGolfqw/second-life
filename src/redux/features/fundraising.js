@@ -33,6 +33,7 @@ const initialState = {
         const res = await fetch("http://localhost:4000/fundraising");
         const json = await res.json();
         dispatch({ type: "pets/get/fulfilled", payload: json });
+        // console.log(json)
       } catch (err) {
         dispatch({ type: "pets/get/rejected", payload: err.message });
       }
