@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./header.module.css";
 import { Link } from "react-router-dom";
-import ServicesDropdown from "../../DropdownButton/ServicesDropdown";
+import ServicesDropdown from "../DropdownButton/ServicesDropdown";
 import logoImg from "../../assets/logo.png";
 import Authorization from "./Authorization";
 const Header = () => {
@@ -22,6 +22,9 @@ const Header = () => {
           <ServicesDropdown />
           <Link to={"/fundraising-page"} className={style.listHead}>
             Сборы
+          </Link>
+          <Link to={"/news"} className={style.listHead}>
+            Новости
           </Link>
           <Link to={"/animal-shelters"} className={style.listHead}>
             Помощь приютам
