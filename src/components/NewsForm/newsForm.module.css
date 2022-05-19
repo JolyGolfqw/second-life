@@ -33,18 +33,27 @@
       rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   }
   
-  .createSheltersImage img {
-    width: 100%;
-  }
-  
-  .createSheltersImage .imageIcon {
-    width: 50px;
-    height: 50px;
-  }
+ 
+.createSheltersImage {
+  width: 100%;
+  height: 100%;
+}
+.createSheltersImage label {
+  color: black;
+}
+.createSheltersImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.createSheltersImage .imageIcon {
+  width: 50px;
+  height: 50px;
+  margin: 140px 110px;
+}
   
   .createSheltersDetails {
     width: 100%;
-    box-shadow: 1;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
       rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius: 7px;

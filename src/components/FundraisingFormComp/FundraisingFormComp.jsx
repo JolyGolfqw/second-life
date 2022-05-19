@@ -76,7 +76,7 @@ export default function FundraisingFormComp() {
                   <>
                     <img src={preview} alt="" />
                     <label htmlFor="upload">
-                      <ion-icon name="create-outline"></ion-icon>
+                      <ion-icon name="create-outline"></ion-icon>Изменить
                     </label>{" "}
                   </>
                 ) : (
@@ -153,9 +153,15 @@ export default function FundraisingFormComp() {
               </div>
 
             </div>
-            <Button onClick={saveForm} variant="primary">
-              Сохранить
-            </Button>
+            <div className={style.buttonPositionCreateShelters}>
+              <Button
+                onClick={saveForm}
+                variant="primary"
+              >
+                Сохранить
+              </Button>
+            </div>
+           
           </div>
         </div>
       </div>
