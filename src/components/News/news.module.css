@@ -1,31 +1,31 @@
 .newsPosition {
-  width: 85%;
-  padding: 150px 0;
+  width: 100%;
+  padding: 80px 0;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  /* background-color: #9dd1e2; */
 }
 .newsRenderCard {
-  width: 80%;
-  margin: auto;
-  padding: 0.4em;
+  width: 70%;
+  margin: 0 auto 40px auto;
+  padding: 0.8em;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border-radius: 12px;
+  border-radius: 25px;
   display: flex;
   justify-content: space-between;
+  background-color: rgb(255, 255, 255);
 }
 .newsRenderCardImage {
-  background-color: rgb(236, 236, 236);
   width: 70%;
-  border-radius: 12px;
 }
 .newsRenderCardImage img {
   width: 100%;
   height: 300px;
-  border-radius: 12px;
+  border-radius: 25px 0 0 25px;
   object-fit: cover;
 }
 .newsRenderCardTitleAndDescription {
@@ -36,10 +36,17 @@
   font-weight: 600;
   color: rgb(105, 105, 105);
   text-align: justify;
-  width: 90%;
+  width: 91%;
   margin: auto;
+  height: 180px;
 }
-
+.newsRenderCardDateAndButton {
+  display: flex;
+  justify-content: space-between;
+  width: 91%;
+  margin: 0 auto 0 auto;
+  font-family: cursive;
+}
 .newsRenderCardDescription:hover {
   cursor: pointer;
 }
@@ -52,6 +59,7 @@
   margin: auto;
   font-size: 20px;
   font-family: cursive;
+  height: 90px;
 }
 
 .newsRenderCardTitle:hover {
@@ -65,8 +73,6 @@
   padding: 5px 15px;
   border: 1px solid rgb(196, 196, 196);
   border-radius: 8px;
-  margin-top: 35px;
-  margin-right: 28px;
   font-size: 15px;
   font-weight: 600;
   transition: 0.3s;

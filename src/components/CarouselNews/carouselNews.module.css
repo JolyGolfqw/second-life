@@ -1,0 +1,11 @@
+.carouselNewsTitle {
+    text-align: center;
+    font-size: 45px;
+    font-family: "Neucha", cursive;
+    padding-bottom: 20px;
+}
+.carouselNewsPosition {
+    width: 100%;
+    margin: auto;
+
+}
