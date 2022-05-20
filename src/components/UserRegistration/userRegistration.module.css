@@ -79,6 +79,24 @@ label {
   background-color: #5f5f9c;
 }
 
+.field .btn {
+	background-color: #7878bd;
+  margin-top: 15px;
+  outline: none;
+  text-align: center;
+  border-style: none;
+  font-size: 15px;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+	transform: translateX(0px);
+}
+
+.field .btn:hover {
+	background-color: #5f5f9c;
+}
+
 .buttonPosition {
   text-align: center;
 }
@@ -87,4 +105,13 @@ label {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.login {
+	text-align: center;
+}
+
+.login span {
+	cursor: pointer;
+	color: blue;
 }
