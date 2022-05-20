@@ -18,8 +18,6 @@ const FundraisingCard = () => {
   console.log(fundraisings);
   return (
     <>
-    {fundraisings.map(item => {
-      return(
       <div className={style.wrapperPosition}>
         <div className={style.wrapperMainTitle}>Сборы для нужд приютов</div>
         <div className={style.wrapperFlex}>
@@ -40,9 +38,6 @@ const FundraisingCard = () => {
           </div>
         </div>
       </div>
-      {/* <Link to="/fundraising-page-form">
-        <Button>Добавить сбор</Button>
-      </Link> */}
     </>
   );
 };
