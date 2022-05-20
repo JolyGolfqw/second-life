@@ -6,9 +6,6 @@ import News from "../../components/News/News";
 export default function NewsPage() {
   return (
     <>
-      <Link to='/news-form'>
-        <Button>Добавить новость</Button>
-      </Link>
       <News />
     </>
   );

@@ -17,8 +17,6 @@ const FundraisingCard = () => {
   console.log(fundraisings)
   return (
     <>
-    <Link to="/fundraising-page-form"><Button>Добавить сбор</Button></Link>
-
     {fundraisings.map(item => {
       return(
 

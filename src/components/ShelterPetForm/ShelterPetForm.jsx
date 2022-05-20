@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import style from "./petForm.module.css";
-import PetsGenderCheckbox from "./PetsGenderCheckbox/PetsGenderCheckbox";
+import style from "./shelterPetForm.module.css";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addPet } from "../../redux/features/pets";
 import { useSelector } from "react-redux";
-export default function PetForm() {
+import PetsGenderCheckbox from "../PetForm/PetsGenderCheckbox/PetsGenderCheckbox";
+
+export default function ShelterPetForm() {
   const [photo, setPhoto] = useState("");
   const [preview, setPreview] = useState("");
   const [petName, setPetName] = useState("");
@@ -46,7 +47,7 @@ export default function PetForm() {
   const handleContact = (e) => setContact(e.target.value);
   const handleAddress = (e) => setAddress(e.target.value);
 
-  const isShelter = false
+  const isShelter = true
 
   const saveForm = () => {
     dispatch(
@@ -109,7 +110,7 @@ export default function PetForm() {
           {/*//!INPUT FIELDS */}
           <div className={style.createSheltersDetails}>
             <div className={style.createSheltersTitle}>
-              <span>Отдать в добрые руки</span>
+              <span>Добавьте обитателей вашего приюта</span>
             </div>
             <div className={style.createSheltersFuncional}>
               {/* NAME PETS */}
@@ -149,7 +150,7 @@ export default function PetForm() {
                 <textarea
                   value={petDesc}
                   onChange={(e) => handlePetDesc(e)}
-                  placeholder="Расскажите про питомца, какой уход необходим, кто вам нужен и т.д."
+                  placeholder="Коротко опишите питомца..."
                   name="text"
                   id=""
                   cols="30"

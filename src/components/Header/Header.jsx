@@ -6,6 +6,7 @@ import logoImg from "../../assets/logo.png";
 import { useState } from "react";
 import ShelterRegistration from "../ShelterRegistration/ShelterRegistration";
 import UserRegistration from "../UserRegistration/UserRegistration";
+import ShelterProfileDropdown from "../DropdownButton/ShelterProfileDropdown";
 
 const Header = () => {
 
@@ -34,16 +35,14 @@ const Header = () => {
           <Link to={"/animal-shelters"} className={style.listHead}>
             Помощь приютам
           </Link>
-          <Link to={"/shelter-page"} className={style.listHead}>
-            Приют
-          </Link>
-          <button
+          {/* <button
             className={style.listHeadSingIn}
             onClick={() => setLgShow(true)}
           >
             Вход и Регистрация
-          </button>
-					<ShelterRegistration lgShow={lgShow} setLgShow={setLgShow} />
+          </button> */}
+          <ShelterProfileDropdown/>
+					{/* <ShelterRegistration lgShow={lgShow} setLgShow={setLgShow} /> */}
 					<UserRegistration lgShow={lgShow} setLgShow={setLgShow} />
         </div>
       </div>
