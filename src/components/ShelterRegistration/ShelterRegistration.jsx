@@ -5,7 +5,7 @@ import { createShelter } from "../../redux/features/application";
 import { useDispatch } from "react-redux";
 import style from './shelterRegistration.module.css'
 
-const ShelterRegistration = ({lgShow, setLgShow}) => {
+const ShelterRegistration = ({regShow, setRegShow}) => {
 
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
@@ -74,8 +74,8 @@ const ShelterRegistration = ({lgShow, setLgShow}) => {
   return (
     <Modal
       size="xl"
-      show={lgShow}
-      onHide={() => setLgShow(false)}
+      show={regShow}
+      onHide={() => setRegShow(false)}
       aria-labelledby="example-modal-sizes-title-lg"
       centered
     >

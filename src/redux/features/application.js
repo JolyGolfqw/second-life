@@ -4,7 +4,8 @@ const initialState = {
   errorSignUp: null,
   errorSignIn: null,
   loading: false,
-	role: localStorage.getItem('role')
+	token: localStorage.getItem('token'),
+	name: localStorage.getItem('name')
 };
 
 export default function application(state = initialState, action) {
@@ -52,6 +53,26 @@ export default function application(state = initialState, action) {
       };
 
 			// это авторизация юзера
+			case 'user/signin/pending':
+				return {
+					...state,
+					signingIn: true,
+					errorSignIn: null,
+					loading: true
+				};
+			case 'user/signin/fulfilled':
+				return {
+					...state,
+					signingIn: false,
+					token: action.payload,
+					loading: false
+				};
+			case 'user/signin/rejected':
+				return {
+					...state,
+					signingIn: false,
+					errorSignIn: action.error
+				}
 
     default: {
       return state;
@@ -108,7 +129,7 @@ export const createUser = (name, login, password) => {
 				body: JSON.stringify({ name, login, password })
 			})
 			const data = response.json();
-
+			console.log(data)
 			if (data.error) {
 				dispatch({ type: 'user/signup/rejected', error: data.error })
 			} else {
@@ -124,7 +145,7 @@ export const authUser = (login, password) => {
 	return async (dispatch) => {
 		try {
 			dispatch({ type: 'authUser/signin/pending' });
-			const response = await fetch('http://localhost:4000/login', {
+			const response = await fetch('http://localhost:4000/user/login', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -132,6 +153,16 @@ export const authUser = (login, password) => {
 				body: JSON.stringify({ login, password })
 			});
 			const data = await response.json();
+			console.log(data, login, password)
+
+			if (data.error) {
+				dispatch({ type: 'authUser/signin/rejected', error: data.error })
+			} else {
+				dispatch({ type: 'authUser/signin/fulfilled', payload: data });
+
+				localStorage.setItem('token', data.token);
+				localStorage.setItem('name', data.name)
+			}
 		} catch (err) {
 			dispatch({ type: "authUser/signin/rejected", error: err.message });
 		}

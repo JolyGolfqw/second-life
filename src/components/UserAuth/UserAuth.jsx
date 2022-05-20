@@ -1,33 +1,27 @@
 import React, { useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
-import style from "./userRegistration.module.css";
+import style from "../UserRegistration/userRegistration.module.css";
 import { useDispatch } from "react-redux";
-import { createUser } from "../../redux/features/application";
+import { authUser } from "../../redux/features/application";
 
-const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
+const UserAuth = ({ authShow, setAuthShow }) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
 
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  const openAuthModal = () => {
-    setRegShow(false);
-    setAuthShow(true);
+  const handleAuth = (e) => {
+    e.preventDefault();
+    dispatch(authUser(login, password));
   };
-
-	const handleSignup = (e) => {
-		e.preventDefault();
-		dispatch(createUser(login, password, name));
-	}
 
   return (
     <>
       <Modal
         size="sm"
-        show={regShow}
-        onHide={() => setRegShow(false)}
+        show={authShow}
+        onHide={() => setAuthShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
         centered
       >
@@ -46,7 +40,7 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
                   d="M4 15h2v5h12V4H6v5H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6zm6-4V8l5 4-5 4v-3H2v-2h8z"
                 ></path>
               </svg>
-              <h1 className={style.form_heading}>Регистрация</h1>
+              <h1 className={style.form_heading}>Авторизация</h1>
             </div>
             <div className={style.form_inputs}>
               <div className={style.field}>
@@ -55,7 +49,7 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
                   className={style.input}
                   name="login"
                   type="text"
-                  placeholder="Придумайте логин"
+                  placeholder="Введите логин"
                   id="login"
                   value={login}
                   onChange={(e) => setLogin(e.target.value)}
@@ -67,40 +61,25 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
                   className={style.input}
                   name="password"
                   type="text"
-                  placeholder="Придумайте пароль"
+                  placeholder="Введите пароль"
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <div className={style.field}>
-                <label htmlFor="name">Имя</label>
-                <input
-                  className={style.input}
-                  name="name"
-                  type="text"
-                  placeholder="Введите имя"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
+              <div className={style.buttonPosition}>
+                <div className={style.field}>
+                  <button onClick={handleAuth} className={style.btn}>
+                    Войти
+                  </button>
+                </div>
               </div>
             </div>
           </form>
-          <div className={style.buttonPosition}>
-            <div className={style.field}>
-              <button onClick={handleSignup} className={style.btn}>
-                Зарегистрироваться
-              </button>
-            </div>
-          </div>
-          <div className={style.login}>
-            Уже есть аккаунт? <span onClick={openAuthModal}>Войдите</span>
-          </div>
         </Modal.Body>
       </Modal>
     </>
   );
 };
 
-export default UserRegistration;
+export default UserAuth;

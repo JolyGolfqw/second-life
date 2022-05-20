@@ -11,7 +11,7 @@ import FundraisingForm from "./pages/FundraisingForm/FundraisingForm";
 import NewsPage from "./pages/NewsPage/NewsPage";
 import NewsForm from "./components/NewsForm/NewsForm";
 import ShelterPetsAdd from "./pages/ShelterPetFormPage/ShelterPetsAdd";
-//
+
 function App() {
   return (
     <BrowserRouter>

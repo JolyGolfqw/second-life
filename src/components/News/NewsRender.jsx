@@ -3,7 +3,7 @@ import ModalNews from "./ModalNews";
 import style from "./news.module.css";
 import { useState } from "react";
 
-const NewsRender = ({ title, description, image }) => {
+const NewsRender = ({ title, description, image, date }) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -14,10 +14,22 @@ const NewsRender = ({ title, description, image }) => {
       <div className={style.newsRenderCardTitleAndDescription}>
         <div className={style.newsRenderCardTitle}>{title} </div>
         <div className={style.newsRenderCardDescription}>
-          {description.substr(0, 300) + "..."}
+          {description.substr(0, 340) + "..."}
         </div>
-        <button variant="primary" onClick={() => setShow(true)}>Подробнее...</button>
-        <ModalNews show={show} setShow={setShow}/>
+        <div className={style.newsRenderCardDateAndButton}>
+          <div>{date}</div>
+          <button variant="primary" onClick={() => setShow(true)}>
+            Подробнее...
+          </button>
+        </div>
+
+        <ModalNews
+          show={show}
+          setShow={setShow}
+          title={title}
+          description={description}
+          image={image}
+        />
       </div>
     </div>
   );

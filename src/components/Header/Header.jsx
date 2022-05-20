@@ -7,10 +7,11 @@ import { useState } from "react";
 import ShelterRegistration from "../ShelterRegistration/ShelterRegistration";
 import UserRegistration from "../UserRegistration/UserRegistration";
 import ShelterProfileDropdown from "../DropdownButton/ShelterProfileDropdown";
+import UserAuth from "../UserAuth/UserAuth";
 
 const Header = () => {
-
-	const [lgShow, setLgShow] = useState(false);
+  const [regShow, setRegShow] = useState(false);
+  const [authShow, setAuthShow] = useState(false);
 
   return (
     <header>
@@ -37,13 +38,20 @@ const Header = () => {
           </Link>
           {/* <button
             className={style.listHeadSingIn}
-            onClick={() => setLgShow(true)}
+            onClick={() => setRegShow(true)}
           >
             Вход и Регистрация
           </button> */}
           <ShelterProfileDropdown/>
 					{/* <ShelterRegistration lgShow={lgShow} setLgShow={setLgShow} /> */}
-					<UserRegistration lgShow={lgShow} setLgShow={setLgShow} />
+					<UserRegistration
+            regShow={regShow}
+            setRegShow={setRegShow}
+            authShow={authShow}
+            setAuthShow={setAuthShow}
+          />
+          <UserAuth authShow={authShow} setAuthShow={setAuthShow} />
+
         </div>
       </div>
     </header>
