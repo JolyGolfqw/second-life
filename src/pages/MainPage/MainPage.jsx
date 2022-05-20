@@ -6,6 +6,8 @@ import Header from "../../components/Header/Header";
 import FaceCard from "../../components/FaceCard/FaceCard";
 import Footer from "../../components/Footer/Footer";
 import CardPetModel from "../../components/CardPetModel/CardPetModel";
+import CarouselNews from "../../components/CarouselNews/CarouselNews";
+import CarouselFundraisers from "../../components/CarouselFundraisers/CarouselFundraisers";
 
 export default function MainPage() {
   return (
@@ -13,10 +15,12 @@ export default function MainPage() {
       <Header />
       <FaceCard />
       <CardPointer />
+      <CarouselNews />
       <MapCard />
+      <CarouselFundraisers />
       <Donation />
-      <CardPetModel/>
+      {/* <CardPetModel /> */}
       <Footer />
     </>
-  )
+  );
 }

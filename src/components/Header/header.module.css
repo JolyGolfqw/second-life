@@ -1,5 +1,6 @@
 header {
-  width: 100%;
+  width: 1330px;
+  margin: auto;
   position: absolute;
   z-index: 50;
 }

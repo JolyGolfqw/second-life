@@ -9,9 +9,9 @@ const Donation = () => {
   return (
     <div className={style.donatBlock}>
       <div className={style.titleAndSubtitle}>
-        <div className={style.mainTitle}>Как можно помочь приюту?</div>
+        <div className={style.mainTitle}>Как можно помочь приютам?</div>
         <div className={style.mainSubtitle}>
-          В данный момент животные в приюте живут исключительно
+          В данный момент животные в приютах живут исключительно
           <br /> на пожертвования и они очень нуждаются в вашей поддержке
         </div>
       </div>

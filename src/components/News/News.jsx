@@ -18,7 +18,11 @@ const News = () => {
   return (
     <div className={style.newsPosition}>
       {news.map((item, index) => {
-        return <NewsRender title={item.title} description={item.description} image={item.image} key={index} />;
+        const data = item.date.toString();
+        const year = data.slice(0, 10);
+        const time = data.slice(11, 19);
+        const date = `${year} ${time}`;
+        return <NewsRender title={item.title} description={item.description} image={item.image} date={date} key={index} />;
       })}
     </div>
   );
