@@ -18,9 +18,10 @@ const FundraisingCard = () => {
   console.log(fundraisings);
   return (
     <>
+    {fundraisings.map(item => {
+      return(
       <div className={style.wrapperPosition}>
         <div className={style.wrapperMainTitle}>Сборы для нужд приютов</div>
-
         <div className={style.wrapperFlex}>
           <FundraisingSidebar />
           <div className={style.sidebarMirahz}></div>

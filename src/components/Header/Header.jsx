@@ -6,6 +6,7 @@ import logoImg from "../../assets/logo.png";
 import { useState } from "react";
 import ShelterRegistration from "../ShelterRegistration/ShelterRegistration";
 import UserRegistration from "../UserRegistration/UserRegistration";
+import ShelterProfileDropdown from "../DropdownButton/ShelterProfileDropdown";
 import UserAuth from "../UserAuth/UserAuth";
 
 const Header = () => {
@@ -35,23 +36,22 @@ const Header = () => {
           <Link to={"/animal-shelters"} className={style.listHead}>
             Помощь приютам
           </Link>
-          <Link to={"/shelter-page"} className={style.listHead}>
-            Приют
-          </Link>
-          <button
+          {/* <button
             className={style.listHeadSingIn}
             onClick={() => setRegShow(true)}
           >
             Вход и Регистрация
-          </button>
-          {/* <ShelterRegistration regShow={regShow} setRegShow={setRegShow} /> */}
-          <UserRegistration
+          </button> */}
+          <ShelterProfileDropdown/>
+					{/* <ShelterRegistration lgShow={lgShow} setLgShow={setLgShow} /> */}
+					<UserRegistration
             regShow={regShow}
             setRegShow={setRegShow}
             authShow={authShow}
             setAuthShow={setAuthShow}
           />
           <UserAuth authShow={authShow} setAuthShow={setAuthShow} />
+
         </div>
       </div>
     </header>

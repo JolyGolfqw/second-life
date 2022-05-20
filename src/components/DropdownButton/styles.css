@@ -50,3 +50,7 @@
 .dropdown-toggle:hover .dropdown-menu {
   display: block;
 }
+
+.shelterDrop .dropdown-toggle::after {
+  content: none!important;
+}
