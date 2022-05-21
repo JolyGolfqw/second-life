@@ -11,7 +11,7 @@ import imageIcon4 from "../../assets/tortoise.png";
 
 const OurPets = () => {
   const dispatch = useDispatch();
-  const category = useSelector((state) => state.category.items);
+  const category = useSelector((state) => state.categories.items);
 
   useEffect(() => {
     dispatch(loadCategories());

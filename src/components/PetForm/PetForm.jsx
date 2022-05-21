@@ -15,7 +15,9 @@ export default function PetForm() {
   const [petGender, setPetGender] = useState("Мужской");
   const [contact, setContact] = useState("");
   const [address, setAddress] = useState("");
-  const category = useSelector((state) => state.category.items);
+  const category = useSelector((state) => state.categories.items);
+
+  console.log(category)
 
   const dispatch = useDispatch();
 
@@ -165,7 +167,7 @@ export default function PetForm() {
                   aria-label="Default select example"
                 >
                   {category.map((item, index) => {
-                    return <option index={index}>{item.category}</option>;
+                    return <option value={item._id}>{item.category}</option>;
                   })}
                 </Form.Select>
               </div>
