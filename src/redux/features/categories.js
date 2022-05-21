@@ -4,10 +4,10 @@ const initialState = {
   loading: false,
 };
 
-export default function category(state = initialState, action) {
+export default function categories(state = initialState, action) {
   switch (action.type) {
     case "categories/get/fulfilled":
-      return { ...state, items: action.payload };
+      return { ...state, items: action.payload, loading: false };
     case "categories/get/rejected":
       return { ...state, error: action.payload };
     case "categories/get/pending":
@@ -23,6 +23,7 @@ export const loadCategories = () => {
     try {
       const res = await fetch("http://localhost:4000/categories");
       const json = await res.json();
+      console.log(json)
       dispatch({ type: "categories/get/fulfilled", payload: json });
     } catch (err) {
       dispatch({ type: "categories/get/rejected", payload: err.message });

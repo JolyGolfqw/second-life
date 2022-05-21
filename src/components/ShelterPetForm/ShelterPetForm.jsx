@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addPet } from "../../redux/features/pets";
 import { useSelector } from "react-redux";
 import PetsGenderCheckbox from "../PetForm/PetsGenderCheckbox/PetsGenderCheckbox";
+import { loadCategories } from "../../redux/features/categories";
 
 export default function ShelterPetForm() {
   const [photo, setPhoto] = useState("");
@@ -16,7 +17,6 @@ export default function ShelterPetForm() {
   const [petGender, setPetGender] = useState("Мужской");
   const [contact, setContact] = useState("");
   const [address, setAddress] = useState("");
-  const category = useSelector((state) => state.category.items);
 
   const dispatch = useDispatch();
 
@@ -26,6 +26,7 @@ export default function ShelterPetForm() {
   ];
 
   useEffect(() => {
+    dispatch(loadCategories());
     if (photo) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -35,21 +36,25 @@ export default function ShelterPetForm() {
     } else {
       setPreview(null);
     }
-  }, [photo]);
+  }, [photo, dispatch]);
+
+  const category = useSelector((state) => state.categories.items);
+  console.log(category);
 
   const handlePetName = (e) => {
-      console.log(e.target.value)
-      setPetName(e.target.value)
-  }
+    console.log(e.target.value);
+    setPetName(e.target.value);
+  };
   const handlePetAge = (e) => setPetAge(e.target.value);
   const handlePetDesc = (e) => setPetDesc(e.target.value);
   const handlePetCategory = (e) => setPetCategory(e.target.value);
   const handleContact = (e) => setContact(e.target.value);
   const handleAddress = (e) => setAddress(e.target.value);
 
-  const isShelter = true
+  const isShelter = true;
 
   const saveForm = () => {
+    console.log( photo)
     dispatch(
       addPet(
         photo,
@@ -165,8 +170,9 @@ export default function ShelterPetForm() {
                   onChange={(e) => handlePetCategory(e)}
                   aria-label="Default select example"
                 >
+                  {/* <option>Выберите тип животного</option> */}
                   {category.map((item, index) => {
-                    return <option index={index}>{item.category}</option>;
+                    return <option value={item._id}>{item.category}</option>;
                   })}
                 </Form.Select>
               </div>
