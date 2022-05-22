@@ -128,7 +128,7 @@ export const createUser = (name, login, password) => {
 				},
 				body: JSON.stringify({ name, login, password })
 			})
-			const data = response.json();
+			const data = await response.json();
 			console.log(data)
 			if (data.error) {
 				dispatch({ type: 'user/signup/rejected', error: data.error })

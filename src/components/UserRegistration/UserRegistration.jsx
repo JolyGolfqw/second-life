@@ -19,7 +19,7 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
 
 	const handleSignup = (e) => {
 		e.preventDefault();
-		dispatch(createUser(login, password, name));
+		dispatch(createUser(name, login, password));
 	}
 
   return (

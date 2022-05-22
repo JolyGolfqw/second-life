@@ -52,7 +52,8 @@ export const addPet = (
   petCategory,
   contact,
   address,
-  isShelter
+  isShelter,
+  author,
 ) => {
   return async (dispatch) => {
     dispatch({ type: "pet/add/pending" });
@@ -68,6 +69,50 @@ export const addPet = (
       formData.append('contact', contact)
       formData.append("address", address);
       formData.append("isShelter", isShelter);
+      formData.append('author', author)
+      // formData.append("shelter", shelter)
+
+      const res = await fetch("http://localhost:4000/pets", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+      console.log(data);
+      dispatch({ type: "pet/add/fulfilled", payload: data });
+    } catch (err) {
+      dispatch({ type: "pet/add/rejected", error: err.message });
+    }
+  };
+};
+
+export const addShelterPet = (
+  file,
+  petName,
+  petAge,
+  petGender,
+  petDesc,
+  petCategory,
+  contact,
+  address,
+  isShelter,
+  shelter,
+) => {
+  return async (dispatch) => {
+    dispatch({ type: "pet/add/pending" });
+    try {
+      const formData = new FormData();
+
+      formData.append("img", file);
+      formData.append("name", petName);
+      formData.append("age", petAge);
+      formData.append("gender", petGender);
+      formData.append("description", petDesc);
+      formData.append("type", petCategory);
+      formData.append('contact', contact)
+      formData.append("address", address);
+      formData.append("isShelter", isShelter);
+      formData.append("shelter", shelter)
 
       const res = await fetch("http://localhost:4000/pets", {
         method: "POST",
