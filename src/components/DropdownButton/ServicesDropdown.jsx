@@ -21,6 +21,11 @@ export default function ServicesDropdown() {
             Отдать в добрые руки
           </Link>
         </Dropdown.Item>
+				<Dropdown.Item componentclass='span'>
+          <Link className="dropItem" to="/take-care-pet">
+            Взять питомца на время
+          </Link>
+        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

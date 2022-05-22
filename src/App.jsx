@@ -14,6 +14,7 @@ import PersonalPage from "./components/PersonalPage/PersonalPage";
 import ShelterPetsAdd from "./pages/ShelterPetFormPage/ShelterPetsAdd";
 import PetsIsShelter from "./pages/Pets/PetsIsShelter";
 import AddNews from "./pages/AddNews/AddNews";
+import TakeCarePet from './pages/TakeCarePet/TakeCarePet'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/animal-shelters" element={<AnimalShelters />} />
         <Route path="/pet-control-form" element={<PetControll />} />
         <Route path="/pet-give-away-form" element={<PetGiveAway />} />
+				<Route path="/take-care-pet" element={<TakeCarePet />} />
         <Route path="/animal-shelters" element={<AnimalShelters />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/news-form" element={<AddNews />} />
