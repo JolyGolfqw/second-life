@@ -4,8 +4,9 @@ const initialState = {
   errorSignUp: null,
   errorSignIn: null,
   loading: false,
+	userId: localStorage.getItem('userId'),
 	token: localStorage.getItem('token'),
-	name: localStorage.getItem('name')
+	name: localStorage.getItem('name'),
 };
 
 export default function application(state = initialState, action) {
@@ -64,7 +65,6 @@ export default function application(state = initialState, action) {
 				return {
 					...state,
 					signingIn: false,
-					token: action.payload,
 					loading: false
 				};
 			case 'user/signin/rejected':
@@ -128,7 +128,7 @@ export const createUser = (name, login, password) => {
 				},
 				body: JSON.stringify({ name, login, password })
 			})
-			const data = response.json();
+			const data = await response.json();
 			console.log(data)
 			if (data.error) {
 				dispatch({ type: 'user/signup/rejected', error: data.error })
@@ -153,14 +153,13 @@ export const authUser = (login, password) => {
 				body: JSON.stringify({ login, password })
 			});
 			const data = await response.json();
-			console.log(data, login, password)
 
 			if (data.error) {
 				dispatch({ type: 'authUser/signin/rejected', error: data.error })
 			} else {
-				dispatch({ type: 'authUser/signin/fulfilled', payload: data });
-
+				dispatch({ type: 'authUser/signin/fulfilled', payload: data});
 				localStorage.setItem('token', data.token);
+				localStorage.setItem('userId', data.id);
 				localStorage.setItem('name', data.name)
 			}
 		} catch (err) {

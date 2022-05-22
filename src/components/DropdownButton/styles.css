@@ -51,6 +51,38 @@
   display: block;
 }
 
+
+.dropdown-user::after {
+  content: none !important;
+}
+
+.account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ffd97e;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+
+.avatar-wrapper img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.btn-primary {
+	background-color: rgba(250, 235, 215, 0);
+	border-color: #ffd87e00;
+}
+
+.btn-primary:hover {
+	background-color: rgba(250, 235, 215, 0);
+	border-color: #ffd87e00;
+}
+
 .shelterDrop .dropdown-toggle::after {
   content: none!important;
 }
