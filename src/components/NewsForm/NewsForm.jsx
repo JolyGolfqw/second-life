@@ -113,9 +113,15 @@ const NewsForm = () => {
                 </div>
   
               </div>
-              <Button onClick={saveForm} variant="primary">
+              <div className={style.buttonPositionCreateShelters}>
+              <Button
+                onClick={saveForm}
+                variant="primary"
+                className={style.btn}
+              >
                 Сохранить
               </Button>
+            </div>
             </div>
           </div>
         </div>

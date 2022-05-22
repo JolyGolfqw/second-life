@@ -1,6 +1,7 @@
 .searchPetsPosition {
   width: 100%;
 }
+
 .searchPetsTitle {
   font-family: "Neucha", cursive;
   font-size: 60px;
@@ -8,11 +9,13 @@
   margin-top: 20px;
   margin-bottom: 5px;
 }
+
 .searchPetsHeader {
   width: 84%;
   margin: auto;
   padding-bottom: 30px;
 }
+
 .searchPetsInput {
   font-size: 20px;
   border-radius: 18px;
@@ -21,6 +24,7 @@
   font-family: cursive;
   margin: auto;
 }
+
 .searchPetsInput input {
   border-style: none;
   border: none;
@@ -43,7 +47,6 @@
 }
 
 .card {
- 
   width: 30%;
   background-color: #fff;
   border-radius: 10px;
@@ -134,6 +137,7 @@
   padding-bottom: 180px;
   color: rgb(61, 61, 61);
 }
+
 .sectorСlear img {
   object-fit: cover;
   height: 300px;

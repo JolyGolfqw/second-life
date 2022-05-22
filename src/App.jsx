@@ -5,13 +5,13 @@ import Pets from "./pages/Pets/Pets";
 import AnimalShelters from "./pages/AnimalShelters/AnimalShelters";
 import PetControll from "./pages/PetControll/PetControll";
 import ShelterPage from "./pages/ShelterPage/ShelterPage";
-import Fundraising from './pages/Fundraising/Fundraising'
+import Fundraising from "./pages/Fundraising/Fundraising";
 import PetGiveAway from "./pages/PetGiveAway/PetGiveAway";
 import FundraisingForm from "./pages/FundraisingForm/FundraisingForm";
 import NewsPage from "./pages/NewsPage/NewsPage";
-import NewsForm from "./components/NewsForm/NewsForm";
 import ShelterPetsAdd from "./pages/ShelterPetFormPage/ShelterPetsAdd";
 import PetsIsShelter from "./pages/Pets/PetsIsShelter";
+import AddNews from "./pages/AddNews/AddNews";
 
 function App() {
   return (
@@ -21,19 +21,17 @@ function App() {
         <Route path="/pets" element={<Pets />} />
         <Route path="/pets-is-shelter" element={<PetsIsShelter />} />
         <Route path="/pets-is-shelter/:id" element={<PetsIsShelter />} />
-
         <Route path="/animal-shelters" element={<AnimalShelters />} />
         <Route path="/pet-control-form" element={<PetControll />} />
         <Route path="/pet-give-away-form" element={<PetGiveAway />} />
         <Route path="/animal-shelters" element={<AnimalShelters />} />
         <Route path="/news" element={<NewsPage />} />
-        <Route path="/news-form" element={<NewsForm />} />
+        <Route path="/news-form" element={<AddNews />} />
         <Route path="/shelter-page-profile/:id" element={<ShelterPage />} />
-				<Route path="/fundraising-page" element={<Fundraising />} />
-				<Route path="/pets/type/:id" element={<Pets/>} />
-        <Route path="/shelter-pets-form" element={<ShelterPetsAdd/>} />
-        <Route path="/fundraising-page-form" element={<FundraisingForm/>} />
-
+        <Route path="/fundraising-page" element={<Fundraising />} />
+        <Route path="/pets/type/:id" element={<Pets />} />
+        <Route path="/shelter-pets-form" element={<ShelterPetsAdd />} />
+        <Route path="/fundraising-page-form" element={<FundraisingForm />} />
       </Routes>
     </BrowserRouter>
   );

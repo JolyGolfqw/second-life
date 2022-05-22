@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadPets } from "../../redux/features/pets";
 import style from "../PetsCard/petsCard.module.css";
 
-// ЖИВОТНЫЕ В ДОБРЫЕ РУКИ
+//!! ЖИВОТНЫЕ В ДОБРЫЕ РУКИ
 const PetsCardIsShelter = () => {
   const pets = useSelector((state) => state.pets.items);
   const [value, setValue] = useState("");
@@ -14,26 +14,27 @@ const PetsCardIsShelter = () => {
   useEffect(() => {
     dispatch(loadPets());
   }, [dispatch]);
-console.log(pets )
-  //ПОИСКОВИК
+
+  //!! ФИЛЬТР ПО ИМЕНИ ПИТОМЦА
   const searchFiltered =
     pets &&
     pets.filter((item) => {
       return item.name?.toLowerCase().includes(value.toLowerCase());
     });
 
-  //ФИЛЬТР ПО ТИПУ ЖИВОТНЫХ
+  //!! ФИЛЬТР ПО ТИПУ ЖИВОТНЫХ
   const filtereByType = searchFiltered.filter((item) => {
     if (!id) return true;
     return item.type === id;
   });
 
-  //ФИЛЬТР ИЗ ПРИЮТА ИЛИ В ДОБРЫЕ РУКИ
+  //!! ФИЛЬТР ИЗ ПРИЮТА ИЛИ В ДОБРЫЕ РУКИ
   const isShelteredPets = filtereByType.filter((item) => {
     if (!item.isShelter) {
       return true;
     }
   });
+
   return (
     <div className={style.searchPetsPosition}>
       <div className={style.searchPetsHeader}>
@@ -45,6 +46,7 @@ console.log(pets )
           />
         </div>
       </div>
+      {/* //!! ПРОВЕРКА И ЛОАДЕР */}
       <div className={style.searchPetsBody}>
         <div>
           {!searchFiltered.length ||
@@ -58,6 +60,7 @@ console.log(pets )
               <h2>Ничего не найдено...</h2>
             </div>
           ) : (
+            //!! КАРТОЧКА ПИТОМЦА
             <div className={style.cardPetsRender}>
               {isShelteredPets.map((item) => {
                 return item.isShelter === false ? (

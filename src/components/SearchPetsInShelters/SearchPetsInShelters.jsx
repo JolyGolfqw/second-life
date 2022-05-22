@@ -3,6 +3,7 @@ import style from "../SearchPetsInShelters/searchPetsInShelters.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPets } from "../../redux/features/pets";
 
+//!! ЛИЧНЫЙ КАБИНЕТ ВЫВОД И ПОИСК ПИТОМЦЕВ
 const SearchPetsInShelters = () => {
   const pets = useSelector((state) => state.pets.items);
   const dispatch = useDispatch();
@@ -11,14 +12,13 @@ const SearchPetsInShelters = () => {
     dispatch(loadPets());
   }, [dispatch]);
 
-  // FILTERED PETS BY NAME
+  //!! ФИЛЬТР ПО ИМЕНИ ПИТОМЦА
   const [value, setValue] = useState("");
   const searchFiltered = pets.filter((item) => {
     return item.name?.toLowerCase().includes(value.toLowerCase());
   });
 
   return (
-    // SEARCH INPUT
     <div className={style.searchPetsPosition}>
       <div className={style.searchPetsTitle}>Наши питомцы:</div>
       <div className={style.searchPetsHeader}>
@@ -30,8 +30,8 @@ const SearchPetsInShelters = () => {
           />
         </div>
       </div>
+      {/* //!! ПРОВЕРКА И ЛОАДЕР */}
       <div className={style.searchPetsBody}>
-        {/* CARD RENDER */}
         <div>
           {!searchFiltered.length ? (
             <div className={style.sectorСlear}>
@@ -42,38 +42,10 @@ const SearchPetsInShelters = () => {
               <h2>Ничего не найдено...</h2>
             </div>
           ) : (
+            //!! КАРТОЧКА ПИТОМЦА
             <div className={style.cardPetsRender}>
               {searchFiltered.map((item) => {
-                return item.isShelter === true ? (
-                  <div className={style.card} key={item._id}>
-                    <div className={style.headPetsCard}>
-                      <div className={style.agePets}>
-                        <span>{item.age}</span>
-                      </div>
-                      <div className={style.iconPets}>
-                        <div className={style.iconOne}>
-                          <ion-icon name="checkmark-outline"></ion-icon>
-                        </div>
-                        <div className={style.iconTwo}>
-                          <ion-icon name="file-tray-outline"></ion-icon>
-                        </div>
-                      </div>
-                    </div>
-                    <div className={style.bodyPetsCard}>
-                      <div className={style.imgPetsCard}>
-                        <img
-                          src={`http://localhost:4000/${item.img}`}
-                          alt="pet"
-                        ></img>
-                      </div>
-                      <div className={style.titlePetsCard}>{item.name}</div>
-                      <div className={style.descriptionPetsCard}>
-                        {item.description}
-                      </div>
-                    </div>
-                    <div className={style.footerPetsCard}></div>
-                  </div>
-                ) : (
+                return (
                   <div className={style.card} key={item._id}>
                     <div className={style.headPetsCard}>
                       <div className={style.agePets}>

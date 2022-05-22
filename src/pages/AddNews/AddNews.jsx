@@ -1,15 +1,13 @@
 import React from "react";
-import CatalogPets from "../../components/CatalogPets/CatalogPets";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import PetsCard from "../../components/PetsCard/PetsCard";
+import NewsForm from "../../components/NewsForm/NewsForm";
 
-export default function Pets() {
+export default function AddNews() {
   return (
     <>
       <Header />
-      <CatalogPets />
-      <PetsCard />
+      <NewsForm/>
       <Footer />
     </>
   );
