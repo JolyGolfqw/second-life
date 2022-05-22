@@ -49,7 +49,6 @@ const PetsCard = () => {
       {/* //!! ПРОВЕРКА И ЛОАДЕР */}
       <div className={style.searchPetsBody}>
         <div>
-          {console.log(isShelteredPets)}{" "}
           {!searchFiltered.length ||
           !filtereByType.length ||
           !isShelteredPets.length ? (

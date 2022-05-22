@@ -31,11 +31,11 @@ function App() {
         <Route path="/news" element={<NewsPage />} />
         <Route path="/news-form" element={<AddNews />} />
         <Route path="/shelter-page-profile/:id" element={<ShelterPage />} />
-				<Route path="/fundraising-page" element={<Fundraising />} />
-				<Route path="/pets/type/:id" element={<Pets/>} />
+        <Route path="/fundraising-page" element={<Fundraising />} />
+        <Route path="/pets/type/:id" element={<Pets/>} />
         <Route path="/shelter-pets-form" element={<ShelterPetsAdd/>} />
         <Route path="/fundraising-page-form" element={<FundraisingForm/>} />
-				<Route path='/profile/:id' element={< PersonalPage />}/>
+        <Route path='/profile/:id' element={< PersonalPage />}/>
       </Routes>
     </BrowserRouter>
   );
