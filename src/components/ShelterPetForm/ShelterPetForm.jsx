@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import style from "./petForm.module.css";
-import PetsGenderCheckbox from "./PetsGenderCheckbox/PetsGenderCheckbox";
+import style from "./shelterPetForm.module.css";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addPet } from "../../redux/features/pets";
 import { useSelector } from "react-redux";
-export default function PetForm() {
+import PetsGenderCheckbox from "../PetForm/PetsGenderCheckbox/PetsGenderCheckbox";
+import { loadCategories } from "../../redux/features/categories";
+
+export default function ShelterPetForm() {
   const [photo, setPhoto] = useState("");
   const [preview, setPreview] = useState("");
   const [petName, setPetName] = useState("");
@@ -15,9 +17,6 @@ export default function PetForm() {
   const [petGender, setPetGender] = useState("Мужской");
   const [contact, setContact] = useState("");
   const [address, setAddress] = useState("");
-  const category = useSelector((state) => state.categories.items);
-
-  console.log(category)
 
   const dispatch = useDispatch();
 
@@ -27,6 +26,7 @@ export default function PetForm() {
   ];
 
   useEffect(() => {
+    dispatch(loadCategories());
     if (photo) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -36,21 +36,25 @@ export default function PetForm() {
     } else {
       setPreview(null);
     }
-  }, [photo]);
+  }, [photo, dispatch]);
+
+  const category = useSelector((state) => state.categories.items);
+  console.log(category);
 
   const handlePetName = (e) => {
-      console.log(e.target.value)
-      setPetName(e.target.value)
-  }
+    console.log(e.target.value);
+    setPetName(e.target.value);
+  };
   const handlePetAge = (e) => setPetAge(e.target.value);
   const handlePetDesc = (e) => setPetDesc(e.target.value);
   const handlePetCategory = (e) => setPetCategory(e.target.value);
   const handleContact = (e) => setContact(e.target.value);
   const handleAddress = (e) => setAddress(e.target.value);
 
-  const isShelter = false
+  const isShelter = true;
 
   const saveForm = () => {
+    console.log( photo)
     dispatch(
       addPet(
         photo,
@@ -111,7 +115,7 @@ export default function PetForm() {
           {/*//!INPUT FIELDS */}
           <div className={style.createSheltersDetails}>
             <div className={style.createSheltersTitle}>
-              <span>Отдать в добрые руки</span>
+              <span>Добавьте обитателей вашего приюта</span>
             </div>
             <div className={style.createSheltersFuncional}>
               {/* NAME PETS */}
@@ -151,7 +155,7 @@ export default function PetForm() {
                 <textarea
                   value={petDesc}
                   onChange={(e) => handlePetDesc(e)}
-                  placeholder="Расскажите про питомца, какой уход необходим, кто вам нужен и т.д."
+                  placeholder="Коротко опишите питомца..."
                   name="text"
                   id=""
                   cols="30"
@@ -166,6 +170,7 @@ export default function PetForm() {
                   onChange={(e) => handlePetCategory(e)}
                   aria-label="Default select example"
                 >
+                  {/* <option>Выберите тип животного</option> */}
                   {category.map((item, index) => {
                     return <option value={item._id}>{item.category}</option>;
                   })}

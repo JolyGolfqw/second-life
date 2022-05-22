@@ -51,6 +51,7 @@
   display: block;
 }
 
+
 .dropdown-user::after {
   content: none !important;
 }
@@ -80,4 +81,8 @@
 .btn-primary:hover {
 	background-color: rgba(250, 235, 215, 0);
 	border-color: #ffd87e00;
+}
+
+.shelterDrop .dropdown-toggle::after {
+  content: none!important;
 }

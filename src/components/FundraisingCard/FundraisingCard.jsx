@@ -20,7 +20,6 @@ const FundraisingCard = () => {
     <>
       <div className={style.wrapperPosition}>
         <div className={style.wrapperMainTitle}>Сборы для нужд приютов</div>
-
         <div className={style.wrapperFlex}>
           <FundraisingSidebar />
           <div className={style.sidebarMirahz}></div>
@@ -39,9 +38,6 @@ const FundraisingCard = () => {
           </div>
         </div>
       </div>
-      {/* <Link to="/fundraising-page-form">
-        <Button>Добавить сбор</Button>
-      </Link> */}
     </>
   );
 };

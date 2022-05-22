@@ -6,6 +6,7 @@ import logoImg from "../../assets/logo.png";
 import { useState } from "react";
 import ShelterRegistration from "../ShelterRegistration/ShelterRegistration";
 import UserRegistration from "../UserRegistration/UserRegistration";
+import ShelterProfileDropdown from "../DropdownButton/ShelterProfileDropdown";
 import UserAuth from "../UserAuth/UserAuth";
 import { useSelector } from "react-redux";
 import AvatarDropDown from "../DropdownButton/AvatarDropDown";
@@ -40,6 +41,7 @@ const Header = () => {
           <Link to={"/animal-shelters"} className={style.listHead}>
             Помощь приютам
           </Link>
+
           <Link to={"/shelter-page"} className={style.listHead}>
             Приют
           </Link>
@@ -62,6 +64,7 @@ const Header = () => {
           )}
           {/* <ShelterRegistration regShow={regShow} setRegShow={setRegShow} /> */}
           {token && <AvatarDropDown id={user}/>}
+
         </div>
       </div>
     </header>

@@ -12,7 +12,7 @@ import ChangeSheltersAndPets from "../ChangeSheltersAndPets/ChangeSheltersAndPet
 
 const CatalogPets = () => {
   const dispatch = useDispatch();
-  const category = useSelector((state) => state.category.items);
+  const category = useSelector((state) => state.categories.items);
 
   useEffect(() => {
     dispatch(loadCategories());
