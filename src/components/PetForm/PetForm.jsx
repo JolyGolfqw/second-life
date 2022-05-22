@@ -17,6 +17,9 @@ export default function PetForm() {
   const [address, setAddress] = useState("");
   const category = useSelector((state) => state.categories.items);
 
+  const author = useSelector((state) => state.application.userId);
+
+
   console.log(category)
 
   const dispatch = useDispatch();
@@ -51,6 +54,7 @@ export default function PetForm() {
   const isShelter = false
 
   const saveForm = () => {
+      console.log(author)
     dispatch(
       addPet(
         photo,
@@ -61,7 +65,8 @@ export default function PetForm() {
         petCategory,
         contact,
         address,
-        isShelter
+        isShelter,
+        author
       )
     );
   };

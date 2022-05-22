@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./shelterPetForm.module.css";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { addPet } from "../../redux/features/pets";
+import { addPet, addShelterPet } from "../../redux/features/pets";
 import { useSelector } from "react-redux";
 import PetsGenderCheckbox from "../PetForm/PetsGenderCheckbox/PetsGenderCheckbox";
 import { loadCategories } from "../../redux/features/categories";
@@ -39,6 +39,8 @@ export default function ShelterPetForm() {
   }, [photo, dispatch]);
 
   const category = useSelector((state) => state.categories.items);
+  const shelter = useSelector((state) => state.application.userId);
+
   console.log(category);
 
   const handlePetName = (e) => {
@@ -56,7 +58,7 @@ export default function ShelterPetForm() {
   const saveForm = () => {
     console.log( photo)
     dispatch(
-      addPet(
+      addShelterPet(
         photo,
         petName,
         petAge,
@@ -65,7 +67,8 @@ export default function ShelterPetForm() {
         petCategory,
         contact,
         address,
-        isShelter
+        isShelter,
+        shelter
       )
     );
   };

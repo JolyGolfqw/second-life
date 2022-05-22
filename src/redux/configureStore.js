@@ -9,11 +9,11 @@ import petsKeeping from "./features/petsKeeping"
 import news from "./features/news"
 import fundraising from "./features/fundraising"
 import gallery from "./features/gallery"
-
+import comments from './features/comments'
 import users from './features/users'
 
 export const store = createStore(
-  combineReducers({ pets, categories, fundraising, application, shelters, petsKeeping, news, users, gallery }),
+  combineReducers({ pets, categories, fundraising, application, shelters, petsKeeping, news, users, gallery, comments }),
   
   composeWithDevTools(applyMiddleware(thunk))
 );
