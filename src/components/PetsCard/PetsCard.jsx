@@ -63,7 +63,7 @@ const PetsCard = () => {
             //!! КАРТОЧКА ПИТОМЦА
             <div className={style.cardPetsRender}>
               {isShelteredPets.map((item) => {
-                return item.isShelter === true ? (
+                return  (
                   <div className={style.card} key={item._id}>
                     <div className={style.headPetsCard}>
                       <div className={style.agePets}>
@@ -92,7 +92,7 @@ const PetsCard = () => {
                     </div>
                     <div className={style.footerPetsCard}></div>
                   </div>
-                ) : null;
+                )
               })}
             </div>
           )}
