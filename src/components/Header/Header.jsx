@@ -7,10 +7,15 @@ import { useState } from "react";
 import ShelterRegistration from "../ShelterRegistration/ShelterRegistration";
 import UserRegistration from "../UserRegistration/UserRegistration";
 import UserAuth from "../UserAuth/UserAuth";
+import { useSelector } from "react-redux";
+import AvatarDropDown from "../DropdownButton/AvatarDropDown";
 
 const Header = () => {
   const [regShow, setRegShow] = useState(false);
   const [authShow, setAuthShow] = useState(false);
+
+  const token = useSelector((state) => state.application.token);
+	const user = useSelector(state => state.application.userId);
 
   return (
     <header>
@@ -38,20 +43,25 @@ const Header = () => {
           <Link to={"/shelter-page"} className={style.listHead}>
             Приют
           </Link>
-          <button
-            className={style.listHeadSingIn}
-            onClick={() => setRegShow(true)}
-          >
-            Вход и Регистрация
-          </button>
+          {!token && (
+            <>
+              <button
+                className={style.listHeadSingIn}
+                onClick={() => setRegShow(true)}
+              >
+                Вход и Регистрация
+              </button>
+              <UserRegistration
+                regShow={regShow}
+                setRegShow={setRegShow}
+                authShow={authShow}
+                setAuthShow={setAuthShow}
+              />
+              <UserAuth authShow={authShow} setAuthShow={setAuthShow} />
+            </>
+          )}
           {/* <ShelterRegistration regShow={regShow} setRegShow={setRegShow} /> */}
-          <UserRegistration
-            regShow={regShow}
-            setRegShow={setRegShow}
-            authShow={authShow}
-            setAuthShow={setAuthShow}
-          />
-          <UserAuth authShow={authShow} setAuthShow={setAuthShow} />
+          {token && <AvatarDropDown id={user}/>}
         </div>
       </div>
     </header>

@@ -10,6 +10,7 @@ import PetGiveAway from "./pages/PetGiveAway/PetGiveAway";
 import FundraisingForm from "./pages/FundraisingForm/FundraisingForm";
 import NewsPage from "./pages/NewsPage/NewsPage";
 import NewsForm from "./components/NewsForm/NewsForm";
+import PersonalPage from "./components/PersonalPage/PersonalPage";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
 				<Route path="/fundraising-page" element={<Fundraising />} />
 				<Route path="/pets/type/:id" element={<Pets/>} />
         <Route path="/fundraising-page-form" element={<FundraisingForm/>} />
-
+				<Route path='/profile/:id' element={< PersonalPage />}/>
       </Routes>
     </BrowserRouter>
   );
