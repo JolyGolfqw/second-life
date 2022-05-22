@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
+import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
 import { useState } from "react";
 import style from "./userRegistration.module.css";
 import { useDispatch } from "react-redux";
@@ -10,24 +11,126 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
-	const dispatch = useDispatch();
+  // видимость пароля
+  const [passwordVisible, setPasswordVisible] = useState(true);
+
+  // эти состояния используются для валидации форм
+  const [loginNotification, setLoginNotification] = useState(false);
+  const [loginPlaceholder, setLoginPlaceholder] = useState("Придумайте логин");
+
+  const [passwordNotification, setPasswordNotification] = useState(false);
+  const [passwordPlaceHolder, setPasswordPlaceholder] = useState("Пароль");
+
+  const [nameNotification, setNameNotification] = useState(false);
+  const [namePlaceholder, setNamePlaceholder] = useState("Имя");
+
+  // если тут будет тру, то кнопка зарегаться будет неактивна
+  const [buttonState, setButtonState] = useState(true);
+
+  const dispatch = useDispatch();
 
   const openAuthModal = () => {
     setRegShow(false);
     setAuthShow(true);
   };
 
-	const handleSignup = (e) => {
-		e.preventDefault();
-		dispatch(createUser(name, login, password));
-	}
+  // состояние кнопки зарегаться
+  const handleButtonState = () => {
+    if (passwordNotification && nameNotification && loginNotification) {
+      setButtonState(true);
+    }
+    if (!passwordNotification && !nameNotification && !loginNotification) {
+      setButtonState(false);
+    }
+  };
+
+  // проверка логина
+  const handleLogin = () => {
+    // проверка на заполнение формы
+    if (!login) {
+      setLoginPlaceholder("Логин не может быть пустым");
+      setLoginNotification(true);
+    }
+    if (login) {
+      setLoginPlaceholder("Придумайте логин");
+      setLoginNotification(false);
+    }
+    // проверка на длину логина
+    if (login.length < 6 && login) {
+      setLoginPlaceholder("Должно быть мининум 6 символов");
+      setLoginNotification(true);
+    }
+  };
+
+  // проверка пароля
+  const handlePassword = () => {
+    // проверка на заполнение формы
+    if (!password) {
+      setPasswordPlaceholder("Пароль не может быть пустым");
+      setPasswordNotification(true);
+    }
+    if (password) {
+      setPasswordPlaceholder("Пароль");
+      setPasswordNotification(false);
+    }
+    // проверка на длину логина
+    if (password.length < 6 && password) {
+      setPasswordPlaceholder("Должно быть мининум 6 символов");
+      setPasswordNotification(true);
+    }
+  };
+
+  // проверка имени
+  const handleName = () => {
+    // проверка на заполнение формы
+    if (!name) {
+      setNamePlaceholder("Имя не может быть пустым");
+      setNameNotification(true);
+    }
+    if (name) {
+      setNamePlaceholder("Имя");
+      setNameNotification(false);
+    }
+    // проверка на длину логина
+    if (name.length < 3 && name) {
+      setNamePlaceholder("Должно быть мининум 3 символа");
+      setNameNotification(true);
+    }
+  };
+
+  // сброс валидации при закрытии модального окна
+  const handleValidation = () => {
+    setLoginPlaceholder("Придумайте логин");
+    setLoginNotification(false);
+    setLogin("");
+
+    setPasswordPlaceholder("Пароль");
+    setPasswordNotification(false);
+    setPassword("");
+
+    setNamePlaceholder("Имя");
+    setNameNotification(false);
+    setName("");
+
+    // это для закрытии модального окна
+    setRegShow(false);
+  };
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    if (!login || !name || !password) {
+      return;
+    }
+    dispatch(createUser(name, login, password));
+    openAuthModal();
+  };
 
   return (
     <>
       <Modal
         size="sm"
         show={regShow}
-        onHide={() => setRegShow(false)}
+        onHide={handleValidation}
         aria-labelledby="example-modal-sizes-title-lg"
         centered
       >
@@ -49,8 +152,8 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
               <h1 className={style.form_heading}>Регистрация</h1>
             </div>
             <div className={style.form_inputs}>
-              <div className={style.field}>
-                <label htmlFor="login">Логин</label>
+              <div className={loginNotification ? style.warning : style.field}>
+                <label htmlFor="login">{loginPlaceholder}</label>
                 <input
                   className={style.input}
                   name="login"
@@ -59,22 +162,36 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
                   id="login"
                   value={login}
                   onChange={(e) => setLogin(e.target.value)}
+                  onBlur={handleLogin}
                 />
               </div>
-              <div className={style.field}>
-                <label htmlFor="password">Пароль</label>
+              <div
+                className={passwordNotification ? style.warning : style.field}
+              >
+                <label htmlFor="password">{passwordPlaceHolder}</label>
                 <input
                   className={style.input}
                   name="password"
-                  type="text"
+                  type={passwordVisible ? "text" : "password"}
                   placeholder="Придумайте пароль"
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  onBlur={handlePassword}
                 />
+                <span
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                  className={style.eye}
+                >
+                  {passwordVisible ? (
+                    <ion-icon name="eye-outline"></ion-icon>
+                  ) : (
+                    <ion-icon name="eye-off-outline"></ion-icon>
+                  )}
+                </span>
               </div>
-              <div className={style.field}>
-                <label htmlFor="name">Имя</label>
+              <div className={nameNotification ? style.warning : style.field}>
+                <label htmlFor="name">{namePlaceholder}</label>
                 <input
                   className={style.input}
                   name="name"
@@ -83,6 +200,7 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  onBlur={handleName}
                 />
               </div>
             </div>

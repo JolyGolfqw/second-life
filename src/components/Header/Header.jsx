@@ -63,7 +63,7 @@ const Header = () => {
           )}
           {/* <ShelterRegistration regShow={regShow} setRegShow={setRegShow} /> */}
           {/* {token && <AvatarDropDown id={user}/>} */}
-          <ShelterProfileDropdown/>
+          {/* <ShelterProfileDropdown/> */}
           
 
         </div>
