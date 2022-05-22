@@ -1,26 +1,41 @@
+import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import style from "../SearchPetsInShelters/searchPetsInShelters.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPets } from "../../redux/features/pets";
+import style from "../PetsCard/petsCard.module.css";
 
-const SearchPetsInShelters = () => {
+// ЖИВОТНЫЕ В ДОБРЫЕ РУКИ
+const PetsCardIsShelter = () => {
   const pets = useSelector((state) => state.pets.items);
+  const [value, setValue] = useState("");
   const dispatch = useDispatch();
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch(loadPets());
   }, [dispatch]);
+console.log(pets )
+  //ПОИСКОВИК
+  const searchFiltered =
+    pets &&
+    pets.filter((item) => {
+      return item.name?.toLowerCase().includes(value.toLowerCase());
+    });
 
-  // FILTERED PETS BY NAME
-  const [value, setValue] = useState("");
-  const searchFiltered = pets.filter((item) => {
-    return item.name?.toLowerCase().includes(value.toLowerCase());
+  //ФИЛЬТР ПО ТИПУ ЖИВОТНЫХ
+  const filtereByType = searchFiltered.filter((item) => {
+    if (!id) return true;
+    return item.type === id;
   });
 
+  //ФИЛЬТР ИЗ ПРИЮТА ИЛИ В ДОБРЫЕ РУКИ
+  const isShelteredPets = filtereByType.filter((item) => {
+    if (!item.isShelter) {
+      return true;
+    }
+  });
   return (
-    // SEARCH INPUT
     <div className={style.searchPetsPosition}>
-      <div className={style.searchPetsTitle}>Наши питомцы:</div>
       <div className={style.searchPetsHeader}>
         <div className={style.searchPetsInput}>
           <input
@@ -31,9 +46,10 @@ const SearchPetsInShelters = () => {
         </div>
       </div>
       <div className={style.searchPetsBody}>
-        {/* CARD RENDER */}
         <div>
-          {!searchFiltered.length ? (
+          {!searchFiltered.length ||
+          !filtereByType.length ||
+          !isShelteredPets.length ? (
             <div className={style.sectorСlear}>
               <img
                 src="https://acegif.com/wp-content/gif/hamster-wheel-46.gif"
@@ -43,8 +59,8 @@ const SearchPetsInShelters = () => {
             </div>
           ) : (
             <div className={style.cardPetsRender}>
-              {searchFiltered.map((item) => {
-                return item.isShelter === true ? (
+              {isShelteredPets.map((item) => {
+                return item.isShelter === false ? (
                   <div className={style.card} key={item._id}>
                     <div className={style.headPetsCard}>
                       <div className={style.agePets}>
@@ -73,36 +89,7 @@ const SearchPetsInShelters = () => {
                     </div>
                     <div className={style.footerPetsCard}></div>
                   </div>
-                ) : (
-                  <div className={style.card} key={item._id}>
-                    <div className={style.headPetsCard}>
-                      <div className={style.agePets}>
-                        <span>{item.age}</span>
-                      </div>
-                      <div className={style.iconPets}>
-                        <div className={style.iconOne}>
-                          <ion-icon name="checkmark-outline"></ion-icon>
-                        </div>
-                        <div className={style.iconTwo}>
-                          <ion-icon name="file-tray-outline"></ion-icon>
-                        </div>
-                      </div>
-                    </div>
-                    <div className={style.bodyPetsCard}>
-                      <div className={style.imgPetsCard}>
-                        <img
-                          src={`http://localhost:4000/${item.img}`}
-                          alt="pet"
-                        ></img>
-                      </div>
-                      <div className={style.titlePetsCard}>{item.name}</div>
-                      <div className={style.descriptionPetsCard}>
-                        {item.description}
-                      </div>
-                    </div>
-                    <div className={style.footerPetsCard}></div>
-                  </div>
-                );
+                ) : null;
               })}
             </div>
           )}
@@ -112,4 +99,4 @@ const SearchPetsInShelters = () => {
   );
 };
 
-export default SearchPetsInShelters;
+export default PetsCardIsShelter;

@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { loadNews } from "../../redux/features/news";
-import NewsRender from "../../components/News/NewsRender"; 
-import style from "./carouselNews.module.css"
+import NewsRender from "../../components/News/NewsRender";
+import style from "./carouselNews.module.css";
 const CarouselNews = () => {
   const news = useSelector((state) => state.news.items);
   const dispatch = useDispatch();

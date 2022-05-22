@@ -7,18 +7,18 @@ const Gallery = () => {
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
-  const [photo, setPhoto] = useState('')
+  const [photo, setPhoto] = useState("");
 
   const openModal = (img) => {
-    setPhoto(img)
-    setShow(true)
-    console.log(photo)
-  }
+    setPhoto(img);
+    setShow(true);
+    console.log(photo);
+  };
 
   useEffect(() => {
     dispatch(loadImages());
   }, [dispatch]);
-  
+
   const images = useSelector((state) => state.gallery.items);
   return (
     <div className={style.galleryPosition}>
@@ -27,42 +27,31 @@ const Gallery = () => {
         <div className={style.galleryBoxImages}>
           {images.map((item, index) => {
             return index % 2 === 0 ? (
-              <>
-                <div
-                  
-                  className={style.evenImages}
-                  key={index}
-                >
-                  <img
+              <div className={style.evenImages} key={index}>
+                <img
                   onClick={(e) => openModal(item.image)}
-                    src={`http://localhost:4000/${item.image}`}
-                    alt="img"
-                  ></img>
-                </div>
+                  src={`http://localhost:4000/${item.image}`}
+                  alt="img"
+                ></img>
                 <FullPhotoModal
                   show={show}
                   setShow={setShow}
                   image={`http://localhost:4000/${photo}`}
                 />
-              </>
+              </div>
             ) : (
-              <>
-                <div
-                  className={style.oddImages}
-                  key={index}
-                >
-                  <img
+              <div className={style.oddImages} key={index}>
+                <img
                   onClick={(e) => openModal(item.image)}
-                    src={`http://localhost:4000/${item.image}`}
-                    alt="img"
-                  ></img>
-                </div>
+                  src={`http://localhost:4000/${item.image}`}
+                  alt="img"
+                ></img>
                 <FullPhotoModal
                   show={show}
                   setShow={setShow}
                   image={`http://localhost:4000/${photo}`}
                 />
-              </>
+              </div>
             );
           })}
         </div>

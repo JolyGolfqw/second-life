@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import ServicesDropdown from "../DropdownButton/ServicesDropdown";
 import logoImg from "../../assets/logo.png";
 import { useState } from "react";
-import ShelterRegistration from "../ShelterRegistration/ShelterRegistration";
 import UserRegistration from "../UserRegistration/UserRegistration";
 import ShelterProfileDropdown from "../DropdownButton/ShelterProfileDropdown";
 import UserAuth from "../UserAuth/UserAuth";

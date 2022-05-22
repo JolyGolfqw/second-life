@@ -13,7 +13,7 @@ export default function ShelterPage() {
       <Header />
       <ShelterFaceCard />
       <Gallery/>
-      <OurPets />
+      {/* <OurPets /> */}
       <SearchPetsInShelters />
       <QuestionsAndAnswers />
       <Footer />

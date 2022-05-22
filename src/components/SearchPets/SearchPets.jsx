@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import SearchPetsDropdown from "./SearchPetsDropdown/SearchPetsDropdown";
 import style from "../SearchPets/searchPets.module.css";
 import PetsCard from "../PetsCard/PetsCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,7 +15,7 @@ const SearchPets = () => {
 
   //ПОИСКОВИК
   const searchFiltered = pets && pets.filter((item) => {
-    return item.name.toLowerCase().includes(value.toLowerCase());
+    return item.name?.toLowerCase().includes(value.toLowerCase());
   });
 
   return (
@@ -29,9 +28,6 @@ const SearchPets = () => {
             onChange={(e) => setValue(e.target.value)}
           />
         </div>
-        {/* <div className={style.searchPetsChange}>
-          <SearchPetsDropdown />
-        </div> */}
       </div>
       <div className={style.searchPetsBody}>
         <PetsCard searchFiltered={searchFiltered} />

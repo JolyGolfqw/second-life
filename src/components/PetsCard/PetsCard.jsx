@@ -10,9 +10,19 @@ const PetsCard = ({ searchFiltered }) => {
     if (!id) return true;
     return item.type === id;
   });
+
+  //ФИЛЬТР ИЗ ПРИЮТА ИЛИ В ДОБРЫЕ РУКИ
+  const isShelteredPets = filtereByType.filter((item) => {
+    if (item.isShelter) {
+      return true;
+    }
+  });
   return (
     <div>
-      {!searchFiltered.length || !filtereByType.length ? (
+      {console.log(isShelteredPets)}{" "}
+      {!searchFiltered.length ||
+      !filtereByType.length ||
+      !isShelteredPets.length ? (
         <div className={style.sectorСlear}>
           <img
             src="https://acegif.com/wp-content/gif/hamster-wheel-46.gif"
@@ -22,12 +32,12 @@ const PetsCard = ({ searchFiltered }) => {
         </div>
       ) : (
         <div className={style.cardPetsRender}>
-          {filtereByType.map((item) => {
-            return (
+          {isShelteredPets.map((item) => {
+            return item.isShelter === true ? (
               <div className={style.card} key={item._id}>
                 <div className={style.headPetsCard}>
                   <div className={style.agePets}>
-                    <span>{item.age}</span>года
+                    <span>{item.age}</span>
                   </div>
                   <div className={style.iconPets}>
                     <div className={style.iconOne}>
@@ -40,23 +50,22 @@ const PetsCard = ({ searchFiltered }) => {
                 </div>
                 <div className={style.bodyPetsCard}>
                   <div className={style.imgPetsCard}>
-                    <img src={item.img} alt="pet"></img>
+                    <img
+                      src={`http://localhost:4000/${item.img}`}
+                      alt="pet"
+                    ></img>
                   </div>
                   <div className={style.titlePetsCard}>{item.name}</div>
                   <div className={style.descriptionPetsCard}>
                     {item.description}
                   </div>
                 </div>
-                <div className={style.footerPetsCard}>
-                  
-                </div>
+                <div className={style.footerPetsCard}></div>
               </div>
-            );
+            ) : null;
           })}
         </div>
       )}
-
-      {/* <button className={style.dowloadMoreBtn}>Загрузить еще</button> */}
     </div>
   );
 };

@@ -8,9 +8,7 @@
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+ 
   width: 30%;
   background-color: #fff;
   border-radius: 10px;
@@ -28,22 +26,16 @@
 .headPetsCard {
   display: flex;
   width: 90%;
+  height: 35px;
   margin: auto;
-  padding: 15px 10px;
+  padding: 10px 10px;
   justify-content: space-between;
 }
 
 .agePets span {
-  border: 1px solid rgb(201, 201, 201);
-  border-radius: 50%;
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: 0px 10px;
+  font-size: 15px;
   margin-right: 5px;
-}
-
-.agePets {
-  width: 10%;
-  height: 10%;
 }
 
 .iconPets {
@@ -57,13 +49,15 @@
 
 .imgPetsCard {
   width: 100%;
-  margin: auto;
+  height: 250px;
+
+  margin: 15px auto 5px auto; 
 }
 
 .imgPetsCard img {
   width: 100%;
-  height: 250px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 .titlePetsCard {
@@ -120,4 +114,55 @@
 .sectorСlear img {
   object-fit: cover;
   height: 300px;
+}
+
+/* SEARCH PETS */
+.searchPetsPosition {
+  width: 100%;
+  padding-bottom: 85px;
+}
+.searchPetsHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+.searchPetsInput {
+  font-size: 22px;
+  border-radius: 10px;
+  border: 1px solid #383838;
+  display: flex;
+  width: 35%;
+  height: 8%;
+  margin: auto;
+}
+.searchPetsInput input {
+  border-style: none;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  text-align: left;
+  color: #383838;
+  padding: 10px 20px;
+  width: 100%;
+  font-family: "Neucha", cursive;
+}
+.searchPetsIcon {
+  font-size: 30px;
+  margin-top: 10px;
+  width: 25px;
+  height: 25px;
+}
+.searchPetsChange {
+  border-radius: 10px;
+  text-align: left;
+  color: #383838;
+  padding: 10px;
+  font-size: 22px;
+  border-radius: 10px;
+  width: 30%;
+  border: 1px solid #383838;
+}
+.searchPetsBody {
+  padding: 25px;
 }

@@ -10,13 +10,12 @@ const Gallerymodal = ({ show, setShow }) => {
   const dispatch = useDispatch();
 
   const addPhoto = () => {
-    console.log(photo);
     dispatch(addImages(photo));
   };
 
   const deletePhoto = (id) => {
-      dispatch(deleteImage(id))
-  }
+    dispatch(deleteImage(id));
+  };
 
   return (
     <>
@@ -32,28 +31,36 @@ const Gallerymodal = ({ show, setShow }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ImageList sx={{ width: "100%", height: "100%" }} cols={3} rowHeight={'100%'}>
-            {images.map((item) => (
-              <ImageListItem key={item.img}>
+          <ImageList
+            sx={{ width: "100%", height: "100%" }}
+            cols={3}
+            ForwardRef={"100%"}
+            // rowHeight={"100%"} тут я заменил на ForwardRef={"100%"} из-за ошибки в консоли
+
+          >
+            {images.map((item, index) => (
+              <ImageListItem key={index}>
                 <img
                   src={`http://localhost:4000/${item.image}?w=164&h=164&fit=crop&auto=format`}
                   srcSet={`http://localhost:4000/${item.image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                   alt={item.title}
                   loading="lazy"
                 />
-                  <Button onClick={() => deletePhoto(item._id)} variant="danger">X</Button>
+                <Button onClick={() => deletePhoto(item._id)} variant="danger">
+                  X
+                </Button>
               </ImageListItem>
             ))}
           </ImageList>
           <input
-          onChange={(e) => setPhoto(e.target.files[0])}
-          className="form-control"
-          type="file"
-          id="formFile"
-          style={{
-            margin: "auto",
-          }}
-        />
+            onChange={(e) => setPhoto(e.target.files[0])}
+            className="form-control"
+            type="file"
+            id="formFile"
+            style={{
+              margin: "auto",
+            }}
+          />
           <Button onClick={addPhoto}>Сохранить</Button>
         </Modal.Body>
       </Modal>

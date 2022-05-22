@@ -1,6 +1,13 @@
 .searchPetsPosition {
   width: 100%;
 }
+.searchPetsTitle {
+  font-family: "Neucha", cursive;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
 .searchPetsHeader {
   width: 84%;
   margin: auto;
@@ -23,4 +30,111 @@
   color: #383838;
   padding: 10px 20px;
   width: 100%;
+}
+
+/* CARD RENDER */
+.cardPetsRender {
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.card {
+ 
+  width: 30%;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: all 300ms;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.card:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.headPetsCard {
+  display: flex;
+  width: 90%;
+  height: 35px;
+  margin: auto;
+  padding: 10px 10px;
+  justify-content: space-between;
+}
+
+.agePets span {
+  padding: 0px 10px;
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.iconPets {
+  font-size: 23px;
+  display: flex;
+}
+
+.iconOne {
+  color: rgb(18, 232, 18);
+}
+
+.imgPetsCard {
+  width: 100%;
+  height: 250px;
+
+  margin: 15px auto 5px auto; 
+}
+
+.imgPetsCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.titlePetsCard {
+  font-size: 16px;
+  width: 80%;
+  margin: auto;
+  font-weight: 700;
+}
+
+.descriptionPetsCard {
+  font-size: 14px;
+  padding-top: 5px;
+  width: 80%;
+  margin: auto;
+}
+
+.footerPetsCard {
+  display: flex;
+  width: 80%;
+  padding: 10px 0;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.namePetsCard {
+  font-size: 20px;
+  color: green;
+  font-weight: bolder;
+}
+
+.iconThree {
+  font-size: 30px;
+  color: red;
+}
+
+.sectorСlear {
+  text-align: center;
+  font-family: cursive;
+  padding-bottom: 180px;
+  color: rgb(61, 61, 61);
+}
+.sectorСlear img {
+  object-fit: cover;
+  height: 300px;
 }

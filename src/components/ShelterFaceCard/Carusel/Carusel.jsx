@@ -9,7 +9,13 @@ const WhileReadingCarousel = () => {
   console.log();
   return (
     <div className={style.carouselSize}>
-      <Carousel variant="dark" interval="4000" controls={true} indicators={false} wrap={true} >
+      <Carousel
+        variant="dark"
+        interval="4000"
+        controls={true}
+        indicators={false}
+        wrap={true}
+      >
         <Carousel.Item>
           <div className={style.reversCard}>
             {pets.map((item, index) => {
@@ -17,10 +23,9 @@ const WhileReadingCarousel = () => {
                 <div className={style.card} key={index}>
                   <div className={style.cardImg}>
                     <img
-                      alt="img"
+                      alt="avatar"
                       src={`http://localhost:4000/${item.img}`}
                     ></img>
-                    {console.log(item.image)}
                   </div>
                   <div className={style.cardInfo}>
                     <p className={style.subtitle}>{item.name}</p>
@@ -37,10 +42,9 @@ const WhileReadingCarousel = () => {
                 <div className={style.card} key={index}>
                   <div className={style.cardImg}>
                     <img
-                      alt="img"
+                      alt="avatar"
                       src={`http://localhost:4000/${item.img}`}
                     ></img>
-                    {console.log(item.image)}
                   </div>
                   <div className={style.cardInfo}>
                     <p className={style.subtitle}>{item.name}</p>

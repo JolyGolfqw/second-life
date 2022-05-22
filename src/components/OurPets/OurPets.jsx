@@ -11,12 +11,13 @@ import imageIcon4 from "../../assets/tortoise.png";
 
 const OurPets = () => {
   const dispatch = useDispatch();
-  const category = useSelector((state) => state.categories.items);
-
+  
   useEffect(() => {
     dispatch(loadCategories());
   }, [dispatch]);
-
+  
+  const category = useSelector((state) => state.categories.items);
+  
   return (
     <div className={style.catalogPetsPosition}>
       <div className={style.catalogPetsContent}>
@@ -25,7 +26,7 @@ const OurPets = () => {
           <br /> вы приедете в наши приюты
         </div>
         <div className={style.catalogPetsIcons}>
-          <Link to={"/pets/type"}>
+          <Link to={`/shelter-page-profile/62811dd044d7a95c8a80fd58/shelter-page-profile`}>
             <div className={style.wrapper}>
               <div className={style.photoWrapper}>
                 <img src={imageIcon1} alt="icon" />
@@ -43,7 +44,7 @@ const OurPets = () => {
           </Link>
           {category.map((item, index) => {
             return (
-              <Link key={index} to={`/pets/type/${item._id}`}>
+              <Link key={index} to={`/shelter-page-profile/${item._id}`}>
                 <img src={item.img} alt="icon" />
               </Link>
             );

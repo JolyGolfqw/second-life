@@ -6,7 +6,7 @@ import style from "../ShelterFaceCard/shelterFaceCard.module.css";
 import Carusel from "./Carusel/Carusel";
 
 const ShelterFaceCard = () => {
-  const {id} = useParams()
+  const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,39 +14,33 @@ const ShelterFaceCard = () => {
   }, [dispatch]);
 
   const shelters = useSelector((state) => state.shelters.items);
-  console.log(shelters);
 
-  return shelters.map((item) => {
+  return shelters.map((item, index) => {
     if (item._id === id) {
-    return (
-      <div className={style.shelterPosition}>
-        <div className={style.shelterContent}>
-          <div className={style.shelterLeftContent}>
-            <div className={style.shelterTitle}>{item.name}</div>
-            <div className={style.shelterDiscription}>
-              <p>
-                {item.description}
-              </p>
-            </div>
+      return (
+        <div className={style.shelterPosition} key={index}>
+          <div className={style.shelterContent}>
+            <div className={style.shelterLeftContent}>
+              <div className={style.shelterTitle}>{item.name}</div>
+              <div className={style.shelterDiscription}>
+                <p>{item.description}</p>
+              </div>
 
-            <div className={style.shelterCarousel}>
-              <Carusel />
+              <div className={style.shelterCarousel}>
+                <Carusel />
+              </div>
+            </div>
+            <div className={style.shelterRightContent}>
+              <div className={style.shelterRightImage}>
+                <img src={`http://localhost:4000/${item.avatar}`} alt="img" />
+              </div>
             </div>
           </div>
-          <div className={style.shelterRightContent}>
-            <div className={style.shelterRightImage}>
-              <img
-                src={`http://localhost:4000/${item.avatar}`}
-                alt="img"
-              />
-            </div>
+          <div className={style.helpSheltersBtn}>
+            <button className={style.buttonShelter}>Помочь приюту</button>
           </div>
         </div>
-        <div className={style.helpSheltersBtn}>
-          <button className={style.buttonShelter}>Помочь приюту</button>
-        </div>
-      </div>
-    );
+      );
     }
   });
 };
