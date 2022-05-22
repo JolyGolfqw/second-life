@@ -1,16 +1,20 @@
 header {
-  width: 1330px;
-  margin: auto;
+	width: 1350px;
   position: absolute;
   z-index: 50;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .contentHead {
-  width: 90%;
-  margin: auto;
   display: flex;
   padding: 15px;
   justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+	margin-bottom: 6px;
 }
 
 .logo span {
@@ -33,9 +37,9 @@ header {
 }
 
 .navigate {
+	width: 80%;
   display: flex;
   justify-content: space-between;
-  width: 85%;
   align-items: center;
 }
 
@@ -202,7 +206,7 @@ header {
 }
 
 .warning {
-	padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .warning label {
@@ -275,12 +279,12 @@ label {
 }
 
 .avatar .previewImg {
- width: 20%;
+  width: 20%;
 }
 
 .avatar img {
-	object-fit: contain;
-	width: 260px;
+  object-fit: contain;
+  width: 260px;
   height: 400px;
 }
 

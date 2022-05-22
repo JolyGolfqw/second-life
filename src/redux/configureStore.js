@@ -10,7 +10,10 @@ import news from "./features/news"
 import fundraising from "./features/fundraising"
 import gallery from "./features/gallery"
 
+import users from './features/users'
+
 export const store = createStore(
-  combineReducers({ pets, categories, fundraising, application, shelters, petsKeeping, news, gallery }),
+  combineReducers({ pets, categories, fundraising, application, shelters, petsKeeping, news, users, gallery }),
+  
   composeWithDevTools(applyMiddleware(thunk))
 );
