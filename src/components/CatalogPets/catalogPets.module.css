@@ -27,7 +27,7 @@
   background-color: #fff;
 }
 .catalogPetsIcons img {
-  width: 70%;
+  width: 80%;
 }
 .wrapper {
   width: 100px;
@@ -43,4 +43,30 @@
 .photoWrapper img {
   margin: 0;
   width: 100%;
+}
+
+.changeSheltersAndPetsPosition {
+  width: 60%;
+  margin: 10px auto;
+}
+.changeSheltersAndPets {
+  display: flex;
+  width: 100%;
+  margin: auto;
+
+}
+.changeSheltersAndPets button {
+  background-color: #fff;
+  color: #515151;
+  font-family: cursive;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  border-style: none;
+  margin: 0 20px;
+}
+.changeSheltersAndPets button:hover { 
+  color: black;
+  text-decoration: underline;
+
 }

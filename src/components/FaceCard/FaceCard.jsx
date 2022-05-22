@@ -30,7 +30,7 @@ const FaceCard = () => {
           <br /> подарит тебе друга в несколько
           <br /> кликов. Действуй!
         </div>
-        <Link to={"/"}>
+        <Link to={"/pets"}>
           <button className={style.btn}>Посмотреть друзей</button>
         </Link>
       </div>

@@ -9,7 +9,7 @@ import imageIcon2 from "../../assets/rabbit.png";
 import imageIcon3 from "../../assets/parrot.png";
 import imageIcon4 from "../../assets/tortoise.png";
 
-const CatalogPets = () => {
+const CatalogPetsIsShelter = () => {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.categories.items);
 
@@ -35,7 +35,7 @@ const CatalogPets = () => {
           </div>
         </div>
         <div className={style.catalogPetsIcons}>
-          <Link to={"/pets"}>
+          <Link to={"/pets-is-shelter"}>
             <div className={style.wrapper}>
               <div className={style.photoWrapper}>
                 <img src={imageIcon1} alt="icon" />
@@ -53,7 +53,7 @@ const CatalogPets = () => {
           </Link>
           {category.map((item, index) => {
             return (
-              <Link key={index} to={`/pets/type/${item._id}`}>
+              <Link key={index} to={`/pets-is-shelter/${item._id}`}>
                 <img src={item.img} alt="icon" />
               </Link>
             );
@@ -64,4 +64,4 @@ const CatalogPets = () => {
   );
 };
 
-export default CatalogPets;
+export default CatalogPetsIsShelter;

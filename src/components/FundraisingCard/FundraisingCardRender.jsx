@@ -14,7 +14,7 @@ const FundraisingCardRender = ({ image, title, amount, description }) => {
         <div className={style.title}>
           <h4>{title}</h4>
           <h6>
-            Сумма сбора: <span>{amount}</span>3
+            Сумма сбора: <span>{amount}</span>
           </h6>
         </div>
         <p>{description}</p>

@@ -18,7 +18,7 @@ const CreateShelters = () => {
   const [period, setPeriod] = useState("");
   const [contact, setContact] = useState("");
   const [address, setAddress] = useState("");
-  const category = useSelector((state) => state.category.items);
+  const category = useSelector((state) => state.categories.items);
 
   const dispatch = useDispatch();
 
@@ -127,7 +127,7 @@ const CreateShelters = () => {
               {radios.map((radio, index) => (
                 <PetsGenderCheckbox
                   radio={radio}
-                  index={index}
+                  key={index}
                   petGender={petGender}
                   setPetGender={setPetGender}
                 />

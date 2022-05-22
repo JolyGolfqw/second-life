@@ -134,7 +134,7 @@ export default function PetForm() {
               {radios.map((radio, idx) => (
                 <PetsGenderCheckbox
                   radio={radio}
-                  idx={idx}
+                  key={idx}
                   petGender={petGender}
                   setPetGender={setPetGender}
                 />

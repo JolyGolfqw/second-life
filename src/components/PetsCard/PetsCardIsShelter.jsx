@@ -1,11 +1,11 @@
-import style from "../PetsCard/petsCard.module.css";
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPets } from "../../redux/features/pets";
+import style from "../PetsCard/petsCard.module.css";
 
-//!! ЖИВОТНЫЕ ИЗ ПРИЮТА
-const PetsCard = () => {
+//!! ЖИВОТНЫЕ В ДОБРЫЕ РУКИ
+const PetsCardIsShelter = () => {
   const pets = useSelector((state) => state.pets.items);
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const PetsCard = () => {
 
   //!! ФИЛЬТР ИЗ ПРИЮТА ИЛИ В ДОБРЫЕ РУКИ
   const isShelteredPets = filtereByType.filter((item) => {
-    if (item.isShelter) {
+    if (!item.isShelter) {
       return true;
     }
   });
@@ -49,7 +49,6 @@ const PetsCard = () => {
       {/* //!! ПРОВЕРКА И ЛОАДЕР */}
       <div className={style.searchPetsBody}>
         <div>
-          {console.log(isShelteredPets)}{" "}
           {!searchFiltered.length ||
           !filtereByType.length ||
           !isShelteredPets.length ? (
@@ -64,7 +63,7 @@ const PetsCard = () => {
             //!! КАРТОЧКА ПИТОМЦА
             <div className={style.cardPetsRender}>
               {isShelteredPets.map((item) => {
-                return item.isShelter === true ? (
+                return item.isShelter === false ? (
                   <div className={style.card} key={item._id}>
                     <div className={style.headPetsCard}>
                       <div className={style.agePets}>
@@ -103,4 +102,4 @@ const PetsCard = () => {
   );
 };
 
-export default PetsCard;
+export default PetsCardIsShelter;

@@ -11,12 +11,12 @@ export default function ServicesDropdown() {
         Услуги
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item>
+        <Dropdown.Item >
           <Link className="dropItem" to="/pet-control-form">
             Отдать на присмотр
           </Link>
         </Dropdown.Item>
-        <Dropdown.Item>
+        <Dropdown.Item componentclass='span'>
           <Link className="dropItem" to="/pet-give-away-form">
             Отдать в добрые руки
           </Link>
