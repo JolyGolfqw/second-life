@@ -28,9 +28,10 @@
 
 .card .eye {
   position: absolute;
-  top: 105px;
+  top: 104px;
   right: 9px;
 	cursor: pointer;
+	color: #7a7ab3ba;
 }
 
 .field {
@@ -48,6 +49,11 @@
   color: red;
 }
 
+.authWarning {
+	color: red;
+	text-align: center;
+}
+
 .input {
   border-radius: 5px;
   background-color: #e9e9f7;
@@ -62,6 +68,24 @@
 }
 
 .input::placeholder {
+  color: #bcbcdf;
+}
+
+.passwordInput {
+	border-radius: 5px;
+  background-color: #e9e9f7;
+  padding: 5px;
+  width: 100%;
+  color: #7a7ab3;
+  border: 1px solid #dadaf7;
+	padding-right: 33px;
+}
+
+.passwordInput:focus-visible {
+  outline: 1px solid #aeaed6;
+}
+
+.passwordInput::placeholder {
   color: #bcbcdf;
 }
 

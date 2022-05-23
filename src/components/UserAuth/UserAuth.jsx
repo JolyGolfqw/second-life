@@ -2,19 +2,50 @@ import React, { useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import style from "../UserRegistration/userRegistration.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authUser } from "../../redux/features/application";
 
-const UserAuth = ({ authShow, setAuthShow }) => {
+const UserAuth = ({ authShow, setAuthShow, setRegShow }) => {
+  const error = useSelector((state) => state.application.errorSignIn);
+
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
+	// ошибка пароля или логина
+	const [uncorrect, setUncorrect] = useState('Неверный логин или пароль');
+
+  // видимость пароля
+  const [passwordVisible, setPasswordVisible] = useState(true);
+
+  // состояние кнопки зарегаться
+  const [disabledButton, setDisabledButton] = useState(true);
+
   const dispatch = useDispatch();
+
+  const openRegistrationModal = () => {
+		setUncorrect('')
+
+    setRegShow(true);
+    setAuthShow(false);
+
+    setLogin("");
+    setPassword("");
+  };
 
   const handleAuth = (e) => {
     e.preventDefault();
     dispatch(authUser(login, password));
   };
+
+  // проверка на заполнение и правильность форм
+  useEffect(() => {
+    if (!login || !password) {
+      setDisabledButton(true);
+    }
+    if ( !(!login || !password) ) {
+      setDisabledButton(false);
+    }
+  });
 
   return (
     <>
@@ -60,19 +91,42 @@ const UserAuth = ({ authShow, setAuthShow }) => {
                 <input
                   className={style.input}
                   name="password"
-                  type="text"
+                  type={passwordVisible ? "text" : "password"}
                   placeholder="Введите пароль"
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <span
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                  className={style.eye}
+                >
+                  {passwordVisible ? (
+                    <ion-icon name="eye-outline"></ion-icon>
+                  ) : (
+                    <ion-icon name="eye-off-outline"></ion-icon>
+                  )}
+                </span>
               </div>
+              {error && (
+                <div className={style.authWarning}>
+                  {uncorrect}
+                </div>
+              )}
               <div className={style.buttonPosition}>
                 <div className={style.field}>
-                  <button onClick={handleAuth} className={style.btn}>
+                  <button
+                    onClick={handleAuth}
+                    disabled={disabledButton}
+                    className={disabledButton ? style.disabledBtn : style.btn}
+                  >
                     Войти
                   </button>
                 </div>
+              </div>
+              <div className={style.login}>
+                Нет аккаунта?{" "}
+                <span onClick={openRegistrationModal}>Зарегистрируйтесь</span>
               </div>
             </div>
           </form>

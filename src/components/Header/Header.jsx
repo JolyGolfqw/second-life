@@ -9,13 +9,15 @@ import ShelterProfileDropdown from "../DropdownButton/ShelterProfileDropdown";
 import UserAuth from "../UserAuth/UserAuth";
 import { useSelector } from "react-redux";
 import AvatarDropDown from "../DropdownButton/AvatarDropDown";
+import ShelterRegistration from '../ShelterRegistration/ShelterRegistration'
 
 const Header = () => {
   const [regShow, setRegShow] = useState(false);
   const [authShow, setAuthShow] = useState(false);
 
   const token = useSelector((state) => state.application.token);
-	const user = useSelector(state => state.application.userId);
+  const user = useSelector((state) => state.application.userId);
+	const role = useSelector(state => state.application.role);
 
   return (
     <header>
@@ -58,14 +60,16 @@ const Header = () => {
                 authShow={authShow}
                 setAuthShow={setAuthShow}
               />
-              <UserAuth authShow={authShow} setAuthShow={setAuthShow} />
+              <UserAuth
+                regShow={regShow}
+                setRegShow={setRegShow}
+                authShow={authShow}
+                setAuthShow={setAuthShow}
+              />
             </>
           )}
-          {/* <ShelterRegistration regShow={regShow} setRegShow={setRegShow} /> */}
-          {/* {token && <AvatarDropDown id={user}/>} */}
+          {token && <AvatarDropDown id={user}/>}
           {/* <ShelterProfileDropdown/> */}
-          
-
         </div>
       </div>
     </header>
