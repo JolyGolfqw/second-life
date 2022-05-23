@@ -59,7 +59,7 @@ const PersonalPage = () => {
            
                 <div className={style.card} key={index}>
                   <div className={style.cardImg}>
-                    <img src={`http://localhost:4000/${item.avatar}`} alt="avatar"></img>
+                    <img src={item.avatar ? `http://localhost:4000/${item.avatar}` : 'http://localhost:4000/images/fa174b369e114c428c0601cb64369c85.jpg'} alt="avatar"></img>
                   </div>
                   <div className={style.cardInfo}>
                     <div className={style.personalName}>{item.name}</div>
@@ -75,14 +75,13 @@ const PersonalPage = () => {
                     className={style.textInfo}
                     >{`${item.status}, ${item.age} года`}</div>
                   <div className={style.textBody}>
-                    {`Обо мне: ${item.description}`}
+                    {`Обо мне: Админ вукх`}
                   </div>
                   <hr />
                 </div>
   
             <div className={style.commentPostAndRead}>
             <StarRating numTotalStars="5"  rating={rating} setRating={setRating} currentRating={currentRating}/>
-            <div>{rating}</div>
               <div className={style.commentPostBox}>
                 <textarea value={text} onChange={(e) => handleChangeText(e)} placeholder="Добавить отзыв..." rows="4"></textarea>
                 <button onClick={() => addStars(currentRating)}>Добавить</button>

@@ -74,13 +74,13 @@
 }
 
 .btn-primary {
-	background-color: rgba(250, 235, 215, 0);
-	border-color: #ffd87e00;
+	background-color: rgba(250, 235, 215, 0) !important;
+	border-color: #ffd87e00 !important;
 }
 
 .btn-primary:hover {
-	background-color: rgba(250, 235, 215, 0);
-	border-color: #ffd87e00;
+	background-color: rgba(250, 235, 215, 0) !important;
+	border-color: #ffd87e00 !important;
 }
 
 .shelterDrop .dropdown-toggle::after {

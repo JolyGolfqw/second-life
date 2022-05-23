@@ -121,3 +121,12 @@
   color: #6f6f6f;
   font-size: 15px;
 }
+
+.buttonPositionCreateShelters .buttonForm {
+  border: none;
+  border-radius: 8px;
+  background-color: #0d6efd;
+  color: white;
+  padding: 7px 10px;
+  font-weight: 600;
+  }

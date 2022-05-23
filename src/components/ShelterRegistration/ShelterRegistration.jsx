@@ -118,7 +118,7 @@ const ShelterRegistration = ({regShow, setRegShow}) => {
                 <>
                   <img src={preview} alt="" />
                   <label htmlFor="upload">
-                    <ion-icon name="create-outline"></ion-icon>
+                    <ion-icon name="create-outline"></ion-icon>Изменить
                   </label>{" "}
                 </>
               ) : (

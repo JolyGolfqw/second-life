@@ -30,6 +30,8 @@ const PetsCardIsShelter = () => {
     return item.type === id;
   });
 
+  console.log(pets)
+
   //!! ФИЛЬТР ИЗ ПРИЮТА ИЛИ В ДОБРЫЕ РУКИ
   const isShelteredPets = filtereByType.filter((item) => {
     if (!item.isShelter) {

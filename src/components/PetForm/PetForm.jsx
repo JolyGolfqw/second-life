@@ -19,8 +19,7 @@ export default function PetForm() {
 
   const author = useSelector((state) => state.application.userId);
 
-
-  console.log(category)
+  console.log(category);
 
   const dispatch = useDispatch();
 
@@ -42,19 +41,19 @@ export default function PetForm() {
   }, [photo]);
 
   const handlePetName = (e) => {
-      console.log(e.target.value)
-      setPetName(e.target.value)
-  }
+    console.log(e.target.value);
+    setPetName(e.target.value);
+  };
   const handlePetAge = (e) => setPetAge(e.target.value);
   const handlePetDesc = (e) => setPetDesc(e.target.value);
   const handlePetCategory = (e) => setPetCategory(e.target.value);
   const handleContact = (e) => setContact(e.target.value);
   const handleAddress = (e) => setAddress(e.target.value);
 
-  const isShelter = false
+  const isShelter = false;
 
   const saveForm = () => {
-      console.log(author)
+    console.log(author);
     dispatch(
       addPet(
         photo,
@@ -201,13 +200,13 @@ export default function PetForm() {
             </div>
             {/* BUTTON */}
             <div className={style.buttonPositionCreateShelters}>
-              <Button
+              <button
                 onClick={saveForm}
                 variant="primary"
-                className={style.btn}
+                className={style.buttonForm}
               >
                 Сохранить
-              </Button>
+              </button>
             </div>
           </div>
         </div>

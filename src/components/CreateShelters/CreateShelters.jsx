@@ -227,13 +227,14 @@ const CreateShelters = () => {
 
             {/* //!! КНОПКА СОХРАНИТЬ */}
             <div className={style.buttonPositionCreateShelters}>
-              <Button
+            <button
                 onClick={saveForm}
                 variant="primary"
-                className={style.btn}
+                className={style.buttonForm}
               >
                 Сохранить
-              </Button>
+              </button>
+              
             </div>
           </div>
         </div>
