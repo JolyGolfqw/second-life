@@ -4,7 +4,7 @@ import { Button, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { addImages, deleteImage } from "../../redux/features/gallery";
 
-const Gallerymodal = ({ show, setShow }) => {
+const Gallerymodal = ({ showGallery, setShowGallery }) => {
   const [photo, setPhoto] = useState("");
   const images = useSelector((state) => state.gallery.items);
   const dispatch = useDispatch();
@@ -20,8 +20,8 @@ const Gallerymodal = ({ show, setShow }) => {
   return (
     <>
       <Modal
-        show={show}
-        onHide={() => setShow(false)}
+        showGallery={showGallery}
+        onHide={() => setShowGallery(false)}
         dialogClassName="modal-w100"
         aria-labelledby="example-custom-modal-styling-title"
       >

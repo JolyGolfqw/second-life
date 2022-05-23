@@ -7,6 +7,7 @@ import Carusel from "./Carusel/Carusel";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import bankCardImg from "../../assets/card.jpg";
+
 const ShelterFaceCard = () => {
   const shelters = useSelector((state) => state.shelters.items);
   const [smShow, setSmShow] = useState(false);
