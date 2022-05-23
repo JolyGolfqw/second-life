@@ -4,9 +4,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import Gallerymodal from "../Modal/GalleryModal";
+import EditShelter from "../ShelterRegistration/EditShelter";
+import { useSelector } from "react-redux";
 
 export default function ShelterProfileDropdown() {
   const [show, setShow] = useState(false);  
+  const [showGallery, setShowGallery] = useState(false);  
+
+  const shelters = useSelector((state => state.shelters.items) )
+  const shelter = shelters && shelters.find(item => item._id === "628393995fb7cdb7a412ee94")
+  console.log(shelter);
 
   return (
     <>
@@ -21,7 +28,7 @@ export default function ShelterProfileDropdown() {
           </Link>
         </Dropdown.Item>
         <Dropdown.Item>
-          <span onClick={() => setShow(true)} className="dropItem">
+          <span onClick={() => setShowGallery(true)} className="dropItem">
            Галерея
           </span>
         </Dropdown.Item>
@@ -41,11 +48,18 @@ export default function ShelterProfileDropdown() {
           </Link>
         </Dropdown.Item>
         <Dropdown.Item>
+          <span onClick={() => setShow(true)} className="dropItem">
+          Редактировать профиль
+          </span>
+        </Dropdown.Item>
+        <Dropdown.Item>
             Выйти
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-    <Gallerymodal show={show} setShow={setShow}/>
+    <Gallerymodal showGallery={showGallery} setShowGallery={setShowGallery}/>
+    
+    {/* <EditShelter shelter={shelter} show={show} setShow={setShow}/> */}
     </>
   );
 }
