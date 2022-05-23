@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import style from "../Carusel/carusel.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { loadPets } from "../../../redux/features/pets";
 
 //!! КАРУСЕЛЬ ПИТОМЦЕВ
 const WhileReadingCarousel = () => {
   const pets = useSelector((state) => state.pets.items);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadPets());
+  }, [dispatch]);
 
   //!! ФИЛЬТР НА КАРАСУЛЬ
   const filteredPetsforCaruosel = pets.slice(0, 6);

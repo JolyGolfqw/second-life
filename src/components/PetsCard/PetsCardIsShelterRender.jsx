@@ -1,8 +1,8 @@
-import style from "../PetsCard/petsCard.module.css";
 import React, { useState } from "react";
-import PetsCardModal from "./PetsCardModal";
+import style from "../PetsCard/petsCard.module.css";
+import PetsCardIsShelterModal from "./PetsCardIsShelterModal";
 
-const PetsCardRender = ({ age, name, description, gender, img }) => {
+const PetsCardIsShelterRender = ({ age, name, description, gender, img }) => {
   const [smShow, setSmShow] = useState(false);
 
   return (
@@ -23,15 +23,14 @@ const PetsCardRender = ({ age, name, description, gender, img }) => {
         </div>
         <div className={style.bodyPetsCard}>
           <div className={style.imgPetsCard}>
-            <img src={`http://localhost:4000/${img}`}></img>{" "}
+            <img src={`http://localhost:4000/${img}`} alt="pet"></img>
           </div>
           <div className={style.titlePetsCard}>{name}</div>
           <div className={style.descriptionPetsCard}>{description}</div>
         </div>
         <div className={style.footerPetsCard}></div>
       </button>
-
-      <PetsCardModal
+      <PetsCardIsShelterModal
         smShow={smShow}
         setSmShow={setSmShow}
         name={name}
@@ -43,4 +42,4 @@ const PetsCardRender = ({ age, name, description, gender, img }) => {
   );
 };
 
-export default PetsCardRender;
+export default PetsCardIsShelterRender;

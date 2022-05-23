@@ -41,6 +41,10 @@ const PetsCardModal = ({ smShow, setSmShow, name, description, age, gender }) =>
              <Form.Control type="text" placeholder={description} disabled/>
              <Form.Text className="text-muted">Описание питомца</Form.Text>
            </div>
+           {/* <div className={style.modalDescription}>
+             <Form.Control type="text" placeholder={description} disabled/>
+             <Form.Text className="text-muted">Контакты</Form.Text>
+           </div> */}
           </Form.Group>
         </Form>
       </Modal.Body>

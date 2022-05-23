@@ -21,8 +21,8 @@ const CarouselFundraisers = () => {
       <Carousel
         variant="dark"
         interval="3000"
-        controls={true}
-        indicators={false}
+        controls={false}
+        indicators={true}
         wrap={true}
       >
         {fundraisings.map((item, index) => {

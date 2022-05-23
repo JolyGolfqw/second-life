@@ -65,7 +65,16 @@ const PetsCard = () => {
             //!! КАРТОЧКА ПИТОМЦА
             <div className={style.cardPetsRender}>
               {isShelteredPets.map((item, index) => {
-                return <PetsCardRender name={item.name} description={item.description} gender={item.gender} img={item.img} age={item.age} key={index}/>;
+                return (
+                  <PetsCardRender
+                    name={item.name}
+                    description={item.description}
+                    gender={item.gender}
+                    img={item.img}
+                    age={item.age}
+                    key={index}
+                  />
+                );
               })}
             </div>
           )}

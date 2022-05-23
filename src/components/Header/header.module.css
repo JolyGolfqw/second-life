@@ -1,5 +1,5 @@
 header {
-  width: 95%;
+  width: 100%;
   margin: auto;
   position: absolute;
   z-index: 50;
@@ -8,7 +8,7 @@ header {
 }
 
 .contentHead {
-  width: 100%;
+  width: 90%;
   margin: auto;
   display: flex;
   padding: 15px;
