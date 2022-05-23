@@ -18,7 +18,7 @@ export default function AvatarDropDown({ id }) {
 	const logOut = () => {
 		localStorage.clear();
 		window.location.reload();
-		navigate('/');
+		return navigate('/');
 	}
 
   return (

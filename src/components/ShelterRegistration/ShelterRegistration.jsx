@@ -243,7 +243,7 @@ const ShelterRegistration = ({regShow, setRegShow}) => {
           <div className={style.description}>
             <textarea
               name="description"
-              maxLength="1000"
+              maxLength="500"
               placeholder="Описание приюта"
               value={description}
               onChange={(e) => setDescription(e.target.value)}

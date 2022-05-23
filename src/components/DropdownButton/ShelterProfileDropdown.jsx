@@ -2,35 +2,41 @@ import React, { useEffect, useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Gallerymodal from "../Modal/GalleryModal";
 import EditShelter from "../ShelterRegistration/EditShelter";
 import { useDispatch, useSelector } from "react-redux";
 import { loadShelters } from "../../redux/features/shelters";
 
-export default function ShelterProfileDropdown() {
-  const [show, setShow] = useState(false);  
-  const [showGallery, setShowGallery] = useState(false);
+export default function ShelterProfileDropdown({id}) {
 
-  const dispatch = useDispatch()
-  
-  useEffect(() => {
-    loadShelters()
-  }, [dispatch])
+  const [show, setShow] = useState(false);  
+  const [showGallery, setShowGallery] = useState(false); 
+	
+	const name = useSelector(state => state.application.shelterName)
+
+	const navigate = useNavigate();
+
+	const logOut = () => {
+		localStorage.clear();
+		window.location.reload();
+		return navigate('/');
+	}
+
 
   const shelters = useSelector((state => state.shelters.items) )
-  const shelter = shelters && shelters.find(item => item._id === "628393995fb7cdb7a412ee94")
+  const shelter = shelters && shelters.find(item => item._id === id)
   console.log(shelter);
 
   return (
     <>
     <Dropdown className="headerDrop shelterDrop">
       <Dropdown.Toggle className={"dropdown"} id="dropdown-basic">
-        НАДЕЖДА НА ЖИЗНЬ
+        {name}
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Item>
-          <Link className="dropItem" to="/shelter-page-profile/628393995fb7cdb7a412ee94">
+          <Link className="dropItem" to={`/shelter-page-profile/${id}`}>
             Личный кабинет
           </Link>
         </Dropdown.Item>
@@ -58,8 +64,9 @@ export default function ShelterProfileDropdown() {
           <span onClick={() => setShow(true)} className="dropItem">
           Редактировать профиль
           </span>
-        </Dropdown.Item> */}
-        <Dropdown.Item>
+          </Dropdown.Item> */}
+        </Dropdown.Item>
+        <Dropdown.Item onClick={logOut}>
             Выйти
         </Dropdown.Item>
       </Dropdown.Menu>
