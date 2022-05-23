@@ -39,7 +39,7 @@ export default function ShelterPetForm() {
   }, [photo, dispatch]);
 
   const category = useSelector((state) => state.categories.items);
-  const shelter = useSelector((state) => state.application.userId);
+  const shelter = useSelector((state) => state.application.shelterId);
 
   console.log(category);
 
