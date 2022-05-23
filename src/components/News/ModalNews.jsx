@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import style from "../../components/News/news.module.css";
-import imageNews from "../../assets/news.jpg";
 
 const ModalNews = ({ show, setShow, title, description, image }) => {
   return (
