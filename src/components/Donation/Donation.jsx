@@ -5,6 +5,7 @@ import RightSidebarDonation from "./RightSidebarDonation";
 import LeftSidebarDonation from "./LeftSidebarDonation";
 import CenterContentDonation from "./CenterContentDonation";
 
+//!! КАК МОЖНО ПОМОЧЬ ПРИЮТУ?
 const Donation = () => {
   return (
     <div className={style.donatBlock}>

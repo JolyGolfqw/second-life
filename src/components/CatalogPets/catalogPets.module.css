@@ -1,12 +1,13 @@
 .catalogPetsPosition {
   width: 100%;
   padding: 70px 70px 30px 70px;
-
 }
+
 .catalogPetsContent {
   width: 90%;
   margin: auto;
 }
+
 .catalogPetsTitle {
   font-size: 40px;
   font-family: "Neucha", cursive;
@@ -14,6 +15,7 @@
   color: #515151;
   line-height: 1.2;
 }
+
 .catalogPetsIcons {
   width: 60%;
   margin: auto;
@@ -22,13 +24,16 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .catalogPetsIcons button {
   border-style: none;
   background-color: #fff;
 }
+
 .catalogPetsIcons img {
   width: 80%;
 }
+
 .wrapper {
   width: 100px;
   height: 100px;
@@ -36,10 +41,12 @@
   flex-wrap: wrap;
   transform: scale(.5);
 }
+
 .photoWrapper {
   width: 50px;
   height: 50px;
 }
+
 .photoWrapper img {
   margin: 0;
   width: 100%;
@@ -49,12 +56,14 @@
   width: 60%;
   margin: 10px auto;
 }
+
 .changeSheltersAndPets {
   display: flex;
   width: 100%;
   margin: auto;
 
 }
+
 .changeSheltersAndPets button {
   background-color: #fff;
   color: #515151;
@@ -65,8 +74,8 @@
   border-style: none;
   margin: 0 20px;
 }
+
 .changeSheltersAndPets button:hover { 
   color: black;
   text-decoration: underline;
-
 }

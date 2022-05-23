@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./cardPetModel.module.css";
 
+//!! НИГДЕ НЕ ИСПОЛЬЗУЕТСЯ
 const CardPetModel = () => {
   const card = [
     {

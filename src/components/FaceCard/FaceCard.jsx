@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import imageOne from "../../assets/cat.png";
 import imageTwo from "../../assets/headDog.png";
 
-
+//!! НАЙДИ СВОЕГО ИДЕАЛЬНОГО ПИТОМЦА
 const FaceCard = () => {
   return (
     <div className={style.faceCardPosition}>
