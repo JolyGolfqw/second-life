@@ -19,7 +19,11 @@ const CreateShelters = () => {
   const [period, setPeriod] = useState("");
   const [contact, setContact] = useState("");
   const [address, setAddress] = useState("");
+
   const category = useSelector((state) => state.categories.items);
+  const author = useSelector((state) => state.application.userId);
+  console.log(author)
+
 
   const dispatch = useDispatch();
 
@@ -61,7 +65,8 @@ const CreateShelters = () => {
         petPrice,
         period,
         contact,
-        address
+        address,
+        author
       )
     );
   };
