@@ -4,9 +4,10 @@ const initialState = {
   errorSignUp: null,
   errorSignIn: null,
   loading: false,
-	userId: localStorage.getItem('userId'),
-	token: localStorage.getItem('token'),
-	name: localStorage.getItem('name'),
+  userId: localStorage.getItem("userId"),
+  token: localStorage.getItem("token"),
+  name: localStorage.getItem("name"),
+  role: localStorage.getItem("role"),
 };
 
 export default function application(state = initialState, action) {
@@ -53,26 +54,26 @@ export default function application(state = initialState, action) {
         errorSignUp: action.error,
       };
 
-			// это авторизация юзера
-			case 'user/signin/pending':
-				return {
-					...state,
-					signingIn: true,
-					errorSignIn: null,
-					loading: true
-				};
-			case 'user/signin/fulfilled':
-				return {
-					...state,
-					signingIn: false,
-					loading: false
-				};
-			case 'user/signin/rejected':
-				return {
-					...state,
-					signingIn: false,
-					errorSignIn: action.error
-				}
+    // это авторизация юзера
+    case "authUser/signin/pending":
+      return {
+        ...state,
+        signingIn: true,
+        errorSignIn: null,
+        loading: true,
+      };
+    case "authUser/signin/fulfilled":
+      return {
+        ...state,
+        signingIn: false,
+        loading: false,
+      };
+    case "authUser/signin/rejected":
+      return {
+        ...state,
+        signingIn: false,
+        errorSignIn: action.error,
+      };
 
     default: {
       return state;
@@ -118,52 +119,54 @@ export const createShelter = (
 };
 
 export const createUser = (name, login, password) => {
-	return async (dispatch) => {
-		dispatch({ type: 'user/signup/pending' });
-		try {
-			const response = await fetch('http://localhost:4000/users', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({ name, login, password })
-			})
-			const data = await response.json();
-			console.log(data)
-			if (data.error) {
-				dispatch({ type: 'user/signup/rejected', error: data.error })
-			} else {
-				dispatch({ type: 'user/signup/fulfilled', payload: data })
-			}
-		} catch (err) {
-			dispatch({ type: "user/signup/rejected", error: err.message });
-		}
-	}
-}
+  return async (dispatch) => {
+    dispatch({ type: "user/signup/pending" });
+    try {
+      const response = await fetch("http://localhost:4000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, login, password }),
+      });
+      const data = await response.json();
+
+      if (data.error) {
+        dispatch({ type: "user/signup/rejected", error: data.error });
+      } else {
+        dispatch({ type: "user/signup/fulfilled", payload: data });
+      }
+    } catch (err) {
+      dispatch({ type: "user/signup/rejected", error: err.message });
+    }
+  };
+};
 
 export const authUser = (login, password) => {
-	return async (dispatch) => {
-		try {
-			dispatch({ type: 'authUser/signin/pending' });
-			const response = await fetch('http://localhost:4000/user/login', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({ login, password })
-			});
-			const data = await response.json();
+  return async (dispatch) => {
+    try {
+      dispatch({ type: "authUser/signin/pending" });
+      const response = await fetch("http://localhost:4000/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ login, password }),
+      });
+      const data = await response.json();
 
-			if (data.error) {
-				dispatch({ type: 'authUser/signin/rejected', error: data.error })
-			} else {
-				dispatch({ type: 'authUser/signin/fulfilled', payload: data});
-				localStorage.setItem('token', data.token);
-				localStorage.setItem('userId', data.id);
-				localStorage.setItem('name', data.name)
-			}
-		} catch (err) {
-			dispatch({ type: "authUser/signin/rejected", error: err.message });
-		}
-	}
-}
+      if (data.error) {
+        dispatch({ type: "authUser/signin/rejected", error: data.error });
+      } else {
+        dispatch({ type: "authUser/signin/fulfilled", payload: data });
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("userId", data.id);
+        localStorage.setItem("name", data.name);
+        localStorage.setItem("role", data.role);
+				window.location.reload()
+      }
+    } catch (err) {
+      dispatch({ type: "authUser/signin/rejected", error: err.message });
+    }
+  };
+};

@@ -43,7 +43,7 @@ const ShelterRegistration = ({regShow, setRegShow}) => {
 
   const dispatch = useDispatch();
 
-  const shelterRegistration = (e) => {
+  const shelterRegistration = async (e) => {
     e.preventDefault();
     console.log(
       photo,
@@ -56,7 +56,7 @@ const ShelterRegistration = ({regShow, setRegShow}) => {
       requisities,
       description
     );
-    dispatch(
+    await dispatch(
       createShelter(
         photo,
         login,
@@ -69,6 +69,8 @@ const ShelterRegistration = ({regShow, setRegShow}) => {
         description
       )
     );
+		setRegShow(false);
+		alert('Приют зарегистрирован')
   };
 
   return (
@@ -249,7 +251,7 @@ const ShelterRegistration = ({regShow, setRegShow}) => {
           </div>
           <div className={style.buttonPosition}>
             <div className={style.field}>
-              <button onClick={shelterRegistration}>Оставить заявку</button>
+              <button onClick={shelterRegistration}>Зарегистрировать</button>
             </div>
           </div>
         </form>

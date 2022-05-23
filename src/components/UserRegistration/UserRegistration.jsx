@@ -24,24 +24,25 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
   const [nameNotification, setNameNotification] = useState(false);
   const [namePlaceholder, setNamePlaceholder] = useState("Имя");
 
-  // если тут будет тру, то кнопка зарегаться будет неактивна
-  const [buttonState, setButtonState] = useState(true);
+	// состояние кнопки зарегаться
+	const [disabledButton, setDisabledButton] = useState(true)
 
   const dispatch = useDispatch();
 
   const openAuthModal = () => {
     setRegShow(false);
     setAuthShow(true);
-  };
 
-  // состояние кнопки зарегаться
-  const handleButtonState = () => {
-    if (passwordNotification && nameNotification && loginNotification) {
-      setButtonState(true);
-    }
-    if (!passwordNotification && !nameNotification && !loginNotification) {
-      setButtonState(false);
-    }
+    setLoginPlaceholder("Придумайте логин");
+    setLoginNotification(false);
+    setPasswordPlaceholder("Пароль");
+    setPasswordNotification(false);
+    setNamePlaceholder("Имя");
+    setNameNotification(false);
+
+    setLogin("");
+    setName("");
+    setPassword("");
   };
 
   // проверка логина
@@ -118,12 +119,19 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
 
   const handleSignup = (e) => {
     e.preventDefault();
-    if (!login || !name || !password) {
-      return;
-    }
     dispatch(createUser(name, login, password));
     openAuthModal();
   };
+
+	// проверка на заполнение и правильность форм
+	useEffect(() => {
+		if ( (loginNotification || login.length < 6) || (nameNotification || name.length < 3) || (passwordNotification || password.length < 6) ) {
+			setDisabledButton(true)
+		}
+		if ( !((loginNotification || login.length < 6) || (nameNotification || name.length < 3) || (passwordNotification || password.length < 6)) ) {
+			setDisabledButton(false)
+		}
+	})
 
   return (
     <>
@@ -170,7 +178,7 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
               >
                 <label htmlFor="password">{passwordPlaceHolder}</label>
                 <input
-                  className={style.input}
+                  className={style.passwordInput}
                   name="password"
                   type={passwordVisible ? "text" : "password"}
                   placeholder="Придумайте пароль"
@@ -207,7 +215,11 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
           </form>
           <div className={style.buttonPosition}>
             <div className={style.field}>
-              <button onClick={handleSignup} className={style.btn}>
+              <button
+                onClick={handleSignup}
+								disabled={disabledButton}
+                className={disabledButton ? style.disabledBtn : style.btn}
+              >
                 Зарегистрироваться
               </button>
             </div>
