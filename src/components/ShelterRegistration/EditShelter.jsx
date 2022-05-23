@@ -3,32 +3,22 @@ import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 import { createShelter } from "../../redux/features/application";
 import { useDispatch } from "react-redux";
-import style from './shelterRegistration.module.css'
+import style from "./shelterRegistration.module.css";
+import { editShelter } from "../../redux/features/shelters";
 
-const EditShelter = ({show, setShow, shelter}) => {
+const EditShelter = ({ show, setShow, shelter }) => {
 
-
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
-  const [correctPassword, setCorrectPassword] = useState("");
-  const [warning, setWarning] = useState("Повторите пароль");
-  const [name, setName] = useState(shelter.name);
-  const [contacts, setContacts] = useState("");
-  const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
-  const [requisities, setRequisities] = useState("");
-  const [description, setDescription] = useState("");
+  const [name, setName] = useState(shelter.name && shelter.name);
+  const [contacts, setContacts] = useState(shelter.contacts && shelter.contacts);
+  const [address, setAddress] = useState(shelter.address);
+  const [email, setEmail] = useState(shelter.email);
+  const [requisities, setRequisities] = useState(shelter.requisites);
+  const [description, setDescription] = useState(shelter.description);
 
   const [photo, setPhoto] = useState("");
   const [preview, setPreview] = useState("");
 
-  function showWarning() {
-    if (password !== correctPassword) {
-      setWarning("Пароли не совпадают");
-    } else if (password === correctPassword) {
-      setWarning("Повторите пароль");
-    }
-  }
+  console.log(shelter.avatar);
 
   useEffect(() => {
     if (photo) {
@@ -46,28 +36,26 @@ const EditShelter = ({show, setShow, shelter}) => {
 
   const shelterRegistration = (e) => {
     e.preventDefault();
-    console.log(
-      photo,
-      login,
-      password,
+    // console.log(
+    //   shelter._id,
+    //   photo,
+    //   name,
+    //   contacts,
+    //   address,
+    //   email,
+    //   requisities,
+    //   description
+    // );
+    dispatch(
+      editShelter(
+        shelter._id,
+        photo,
       name,
       contacts,
       address,
       email,
       requisities,
       description
-    );
-    dispatch(
-      createShelter(
-        photo,
-        login,
-        password,
-        name,
-        contacts,
-        address,
-        email,
-        requisities,
-        description
       )
     );
   };
@@ -113,27 +101,18 @@ const EditShelter = ({show, setShow, shelter}) => {
                   }
                 }}
               />
-              {preview ? (
-                <>
-                  <img src={preview ? preview : `http://localhost:4000/${shelter.avatar}`} alt="" />
-                  <label htmlFor="upload">
-                    <ion-icon name="create-outline"></ion-icon>
-                  </label>{" "}
-                </>
-              ) : (
-                <label htmlFor="upload">
-                  <img
-                    className={style.previewImg}
-                    src="https://www.babypillowth.com/images/templates/upload.png"
-                    alt=""
-                  />
-                </label>
-              )}
+              <img
+                src={
+                  preview ? preview : `http://localhost:4000/${shelter.avatar}`
+                }
+                alt=""
+              />
+              <label htmlFor="upload">
+                <ion-icon name="create-outline"></ion-icon>
+              </label>{" "}
             </div>
 
             <div className={style.form_inputs}>
-              
-              
               <div className={style.field}>
                 <label htmlFor="name">Название приюта</label>
                 <input
@@ -156,7 +135,7 @@ const EditShelter = ({show, setShow, shelter}) => {
                   type="contacts"
                   placeholder="+7-(000)-000-00-00"
                   id="contacts"
-                  value={contacts}
+                  value={contacts && contacts}
                   onChange={(e) => setContacts(e.target.value)}
                 />
               </div>
@@ -209,7 +188,7 @@ const EditShelter = ({show, setShow, shelter}) => {
           </div>
           <div className={style.buttonPosition}>
             <div className={style.field}>
-              <button onClick={shelterRegistration}>Оставить заявку</button>
+              <button onClick={shelterRegistration}>Сохранить*</button>
             </div>
           </div>
         </form>

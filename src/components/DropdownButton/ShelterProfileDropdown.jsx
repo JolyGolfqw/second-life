@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import { Link, useNavigate } from "react-router-dom";
 import Gallerymodal from "../Modal/GalleryModal";
 import EditShelter from "../ShelterRegistration/EditShelter";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { loadShelters } from "../../redux/features/shelters";
 
 export default function ShelterProfileDropdown({id}) {
 
@@ -21,6 +22,7 @@ export default function ShelterProfileDropdown({id}) {
 		window.location.reload();
 		return navigate('/');
 	}
+
 
   const shelters = useSelector((state => state.shelters.items) )
   const shelter = shelters && shelters.find(item => item._id === id)
@@ -58,10 +60,11 @@ export default function ShelterProfileDropdown({id}) {
             Добавить новость
           </Link>
         </Dropdown.Item>
-        <Dropdown.Item>
+        {/* <Dropdown.Item>
           <span onClick={() => setShow(true)} className="dropItem">
           Редактировать профиль
           </span>
+          </Dropdown.Item> */}
         </Dropdown.Item>
         <Dropdown.Item onClick={logOut}>
             Выйти

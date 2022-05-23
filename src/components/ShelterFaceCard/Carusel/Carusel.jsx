@@ -4,9 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import style from "../Carusel/carusel.module.css";
 import { useSelector } from "react-redux";
 
+//!! КАРУСЕЛЬ ПИТОМЦЕВ
 const WhileReadingCarousel = () => {
   const pets = useSelector((state) => state.pets.items);
-  console.log();
+
+  //!! ФИЛЬТР НА КАРАСУЛЬ
+  const filteredPetsforCaruosel = pets.slice(0, 6);
+  console.log(filteredPetsforCaruosel, "carousel");
+
   return (
     <div className={style.carouselSize}>
       <Carousel
@@ -18,7 +23,7 @@ const WhileReadingCarousel = () => {
       >
         <Carousel.Item>
           <div className={style.reversCard}>
-            {pets.map((item, index) => {
+            {filteredPetsforCaruosel.map((item, index) => {
               return index % 2 === 0 ? (
                 <div className={style.card} key={index}>
                   <div className={style.cardImg}>
@@ -37,7 +42,7 @@ const WhileReadingCarousel = () => {
         </Carousel.Item>
         <Carousel.Item>
           <div className={style.reversCard}>
-            {pets.map((item, index) => {
+            {filteredPetsforCaruosel.map((item, index) => {
               return index % 2 !== 0 ? (
                 <div className={style.card} key={index}>
                   <div className={style.cardImg}>

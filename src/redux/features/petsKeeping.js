@@ -53,7 +53,8 @@ export const addPetKeeping = (
   petPrice,
   period,
   contact,
-  address
+  address,
+  author
 ) => {
   return async (dispatch) => {
     dispatch({ type: "pet/add/pending" });
@@ -70,6 +71,7 @@ export const addPetKeeping = (
       formData.append("period", period);
       formData.append("contact", contact);
       formData.append("address", address);
+      formData.append("author", author)
 
       const res = await fetch("http://localhost:4000/pets-keeping", {
         method: "POST",

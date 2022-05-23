@@ -22,6 +22,31 @@ export default function shelters(state = initialState, action) {
         error: action.payload,
       };
 
+	  case "shelter/patch/pending":
+      return {
+        ...state,
+        loading: true,
+      };
+    case "shelter/patch/fulfilled":
+      return {
+        ...state,
+        items: state.items.map((item) => {
+          if (item._id === action.payload._id) {
+            item = action.payload;
+            return item;
+          }
+          return item;
+        }),
+        loading: false,
+      };
+
+    case "shelter/patch/rejected":
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
+      };
+
     default:
       return state;
   }
@@ -39,3 +64,31 @@ export const loadShelters = () => {
     }
   };
 };
+
+export const editShelter = (id, file, name, contacts, address, email, requisities, description) => {
+	return async (dispatch) => {
+	  dispatch({ type: "shelter/patch/pending" });
+	  const formData = new FormData();
+	  formData.append("img", file);
+	  formData.append("name", name);
+	  formData.append("contacts", contacts);
+	  formData.append("address", address);
+	  formData.append("email", email);
+	  formData.append("requisities", requisities);
+	  formData.append("description", description);
+	  try {
+		// formData.append("description", description);
+  
+		const res = await fetch(`http://localhost:4000/shelter/${id}`, {
+		  method: "PATCH",
+		  body: formData,
+		});
+		const data = await res.json();
+		console.log(data)
+  
+		dispatch({ type: "shelter/patch/fulfilled", payload: data });
+	  } catch (error) {
+		dispatch({ type: "shelter/patch/rejected", payload: error.message });
+	  }
+	};
+  };

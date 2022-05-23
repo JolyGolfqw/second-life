@@ -2,10 +2,12 @@
   padding: 0 100px;
   background: url("../../assets/234.png") 0 0/100% auto no-repeat;
 }
+
 .shelterContent {
   display: flex;
   justify-content: space-between;
 }
+
 .shelterLeftContent {
   width: 70%;
   text-align: left;
@@ -20,6 +22,7 @@
   margin-top: 2%;
   font-family: cursive;
 }
+
 .shelterDiscription {
   font-size: 18px;
   width: 75%;
@@ -34,6 +37,7 @@
 .shelterRightContent {
   position: relative;
 }
+
 .shelterRightImage img {
   border-radius: 50%;
   width: 425px;
@@ -53,6 +57,7 @@
   border-style: none;
   border-radius: 10px;
 }
+
 .helpSheltersBtn {
   text-align: center;
   padding: 10px 0;
@@ -62,6 +67,7 @@
   width: 100%;
   height: 100%;
 }
+
 .bankCardImage img {
   width: 100%;
   height: 100%;
