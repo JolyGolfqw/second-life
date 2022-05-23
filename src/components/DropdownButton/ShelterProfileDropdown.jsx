@@ -65,7 +65,6 @@ export default function ShelterProfileDropdown({id}) {
           Редактировать профиль
           </span>
           </Dropdown.Item> */}
-        </Dropdown.Item>
         <Dropdown.Item onClick={logOut}>
             Выйти
         </Dropdown.Item>
