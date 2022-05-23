@@ -9,6 +9,7 @@ import imageIcon2 from "../../assets/rabbit.png";
 import imageIcon3 from "../../assets/parrot.png";
 import imageIcon4 from "../../assets/tortoise.png";
 
+//!! КАТАЛОГ ДЛЯ ЖИВОТНЫХ ОТ ПОЛЬЗОВАТЕЛЕЙ
 const CatalogPets = () => {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.categories.items);
@@ -24,6 +25,7 @@ const CatalogPets = () => {
           Эти питомцы ждут, когда
           <br /> вы приедете в наши приюты
         </div>
+        {/* //!! КНОПКИ ВЫБОРА */}
         <div className={style.changeSheltersAndPetsPosition}>
           <div className={style.changeSheltersAndPets}>
             <Link to={`/pets`}>
@@ -34,6 +36,7 @@ const CatalogPets = () => {
             </Link>
           </div>
         </div>
+        {/* //!! КАТЕГОРИИ-ТИП ЖИВОТНЫХ */}
         <div className={style.catalogPetsIcons}>
           <Link to={"/pets"}>
             <div className={style.wrapper}>

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadFundraisings } from "../../redux/features/fundraising";
 import FundraisingCardRender from "../FundraisingCard/FundraisingCardRender";
 
+//!! СБОРЫ - КАРУСЕЛЬ
 const CarouselFundraisers = () => {
   const fundraisings = useSelector((state) => state.fundraising.items);
   const dispatch = useDispatch();

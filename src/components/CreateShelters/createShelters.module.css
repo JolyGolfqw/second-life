@@ -4,6 +4,7 @@
   background-color: #9dd1e2;
   margin: auto;
 }
+
 .createSheltersPosition {
   margin: auto;
   padding: 85px;
@@ -30,21 +31,25 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+
 .createSheltersImage {
   width: 100%;
   height: 100%;
   margin: auto;
 }
+
 .createSheltersImage label {
   width: 100%;
   height: 100%;
   color: black;
 }
+
 .createSheltersImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .createSheltersImage .previewImg {
   object-fit: contain;
   display: block;
@@ -62,6 +67,7 @@
   float: right;
   margin-bottom: 20px;
 }
+
 .createSheltersDetails {
   width: 100%;
   box-shadow: 1;

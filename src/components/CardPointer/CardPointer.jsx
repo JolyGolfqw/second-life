@@ -1,6 +1,7 @@
 import React from "react";
 import style from "../CardPointer/cardPointer.module.css";
 
+//!! КАК ЗАБРАТЬ ПИТОМЦА ДОМОЙ?
 const CardPointer = () => {
   const cardPointer = [
     {

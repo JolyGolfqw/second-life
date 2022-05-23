@@ -6,6 +6,7 @@ import style from "../CreateShelters/createShelters.module.css";
 import PetsGenderCheckbox from "../PetForm/PetsGenderCheckbox/PetsGenderCheckbox";
 import { useSelector } from "react-redux";
 
+//!! ОТДАТЬ НА ПРИСМОТР
 const CreateShelters = () => {
   const [photo, setPhoto] = useState("");
   const [preview, setPreview] = useState("");
@@ -69,7 +70,7 @@ const CreateShelters = () => {
     <>
       <div className={style.createSheltersMainBox}>
         <div className={style.createSheltersPosition}>
-          {/* //! IMAGE UPLOAD */}
+          {/* //!! ЗАГРУЗЧИК ФОТОГРАФИЙ */}
           <div className={style.createSheltersFlex}>
             <div className={style.createSheltersFileUpload}>
               <div className={style.createSheltersImage}>
@@ -107,13 +108,14 @@ const CreateShelters = () => {
             </div>
           </div>
 
-          {/* //! INPUT FIELDS */}
+          {/* //!! ПОЛЕ ВВОДА ПАРАМЕТРОВ */}
           <div className={style.createSheltersDetails}>
             <div className={style.createSheltersTitle}>
               <span>Отдать на присмотр</span>
             </div>
             <div className={style.createSheltersFuncional}>
-              {/* NAME PETS */}
+
+              {/* //!! ИМЯ ПИТОМЦА */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Имя питомца </h6>
                 <input
@@ -123,7 +125,8 @@ const CreateShelters = () => {
                   placeholder="Морти"
                 />
               </div>
-              {/* GENDER PETS */}
+
+              {/* //!! ПОЛ ПИТОМЦА */}
               {radios.map((radio, index) => (
                 <PetsGenderCheckbox
                   radio={radio}
@@ -132,7 +135,8 @@ const CreateShelters = () => {
                   setPetGender={setPetGender}
                 />
               ))}
-              {/* AGE PETS */}
+
+              {/* //!! ВОЗРАСТ ПИТОМЦА */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Возраст питомца </h6>
                 <input
@@ -143,7 +147,7 @@ const CreateShelters = () => {
                 />
               </div>
 
-              {/* DISCRIOTION */}
+              {/* //!! ОПИСАНИЕ ПИТОМЦА */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Описание</h6>
                 <textarea
@@ -156,7 +160,8 @@ const CreateShelters = () => {
                   rows="5"
                 ></textarea>
               </div>
-              {/* TYPE PETS */}
+
+              {/* //!! ТИП ПИТОМЦА */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Тип животного</h6>
                 <Form.Select
@@ -169,7 +174,8 @@ const CreateShelters = () => {
                   })}
                 </Form.Select>
               </div>
-              {/* VIEWING PERIOD */}
+
+              {/* //!! ВРЕМЯ ПРИСМОТРА */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Период присмотра</h6>
                 <input
@@ -179,7 +185,8 @@ const CreateShelters = () => {
                   placeholder="2 недели..."
                 />
               </div>
-              {/* PAYMENT */}
+
+              {/* //!! ОПЛАТА */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Оплата</h6>
                 <input
@@ -190,7 +197,7 @@ const CreateShelters = () => {
                 />
               </div>
 
-              {/* PHONE NUMBER */}
+              {/* //!! ТЕЛЕФОН НОМЕР */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Номер для связи </h6>
                 <input
@@ -201,7 +208,7 @@ const CreateShelters = () => {
                 />
               </div>
 
-              {/* ADRESS */}
+              {/* //!! АДРЕС */}
               <div className={style.createSheltersFuncionalInfo}>
                 <h6>Адрес </h6>
                 <input
@@ -212,7 +219,8 @@ const CreateShelters = () => {
                 />
               </div>
             </div>
-            {/* BUTTON */}
+
+            {/* //!! КНОПКА СОХРАНИТЬ */}
             <div className={style.buttonPositionCreateShelters}>
               <Button
                 onClick={saveForm}
