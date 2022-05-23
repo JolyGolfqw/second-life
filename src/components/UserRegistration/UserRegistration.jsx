@@ -131,7 +131,7 @@ const UserRegistration = ({ regShow, setRegShow, setAuthShow }) => {
 		if ( !((loginNotification || login.length < 6) || (nameNotification || name.length < 3) || (passwordNotification || password.length < 6)) ) {
 			setDisabledButton(false)
 		}
-	})
+	}, [login.length, name, loginNotification, nameNotification, passwordNotification, password.length])
 
   return (
     <>

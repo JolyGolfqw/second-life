@@ -27,7 +27,7 @@
   line-height: 1.5;
   margin-top: 2%;
   margin-bottom: 3%;
-
+	word-break: break-all;
   font-family: cursive;
 }
 

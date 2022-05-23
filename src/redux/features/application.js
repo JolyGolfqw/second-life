@@ -4,10 +4,23 @@ const initialState = {
   errorSignUp: null,
   errorSignIn: null,
   loading: false,
+
+	//это юзер
   userId: localStorage.getItem("userId"),
   token: localStorage.getItem("token"),
   name: localStorage.getItem("name"),
   role: localStorage.getItem("role"),
+
+	//это приют
+	shelterToken: localStorage.getItem("token"),
+	shelterId: localStorage.getItem("shelterId"),
+	shelterName: localStorage.getItem("name"),
+	avatar: localStorage.getItem("avatar"),
+	description: localStorage.getItem('description'),
+	contacts: localStorage.getItem('contacts'),
+	address: localStorage.getItem('address'),
+	email: localStorage.getItem('email'),
+	requisities: localStorage.getItem('requisities')
 };
 
 export default function application(state = initialState, action) {
@@ -74,6 +87,27 @@ export default function application(state = initialState, action) {
         signingIn: false,
         errorSignIn: action.error,
       };
+
+			// это авторизация приюта
+			case "authShelter/signin/pending":
+				return {
+					...state,
+					signingIn: true,
+					errorSignIn: null,
+					loading: true,
+				};
+			case "authShelter/signin/fulfilled":
+				return {
+					...state,
+					signingIn: false,
+					loading: false,
+				};
+			case "authShelter/signin/rejected":
+				return {
+					...state,
+					signingIn: false,
+					errorSignIn: action.error,
+				};
 
     default: {
       return state;
@@ -170,3 +204,37 @@ export const authUser = (login, password) => {
     }
   };
 };
+
+export const authShelter = (login, password) => {
+	return async (dispatch) => {
+    try {
+      dispatch({ type: "authShelter/signin/pending" });
+      const response = await fetch("http://localhost:4000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ login, password }),
+      });
+      const data = await response.json();
+
+      if (data.error) {
+        dispatch({ type: "authShelter/signin/rejected", error: data.error });
+      } else {
+        dispatch({ type: "authShelter/signin/fulfilled", payload: data });
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("shelterId", data.id);
+        localStorage.setItem("name", data.name);
+        localStorage.setItem("avatar", data.avatar);
+				localStorage.setItem('description', data.description);
+				localStorage.setItem('contacts', data.contacts);
+				localStorage.setItem('address', data.address);
+				localStorage.setItem('email', data.email);
+				localStorage.setItem('requisities', data.requisites)
+				window.location.reload()
+      }
+    } catch (err) {
+      dispatch({ type: "authShelter/signin/rejected", error: err.message });
+    }
+  };
+}

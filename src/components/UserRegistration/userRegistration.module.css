@@ -6,7 +6,7 @@
 
 .card_header {
   display: flex;
-  align-items: center;
+	justify-content: space-between;
 }
 
 .card svg {
@@ -20,6 +20,7 @@
   font-size: 21px;
   color: #7878bd;
   font-family: cursive;
+	flex: 1;
 }
 
 .card .form_inputs {
@@ -162,10 +163,40 @@ label {
 }
 
 .login {
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .login span {
   cursor: pointer;
   color: blue;
+}
+
+.question {
+	color: black !important;
+}
+
+.shelterAuth {
+	color: blue;
+	text-align: center;
+}
+
+.or {
+	color: black !important;
+}
+
+.paw {
+	color: #7878bd;
+	font-size: 20px;
+}
+
+.mail {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mail span {
+	color: blue !important;
 }

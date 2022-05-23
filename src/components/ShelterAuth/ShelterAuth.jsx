@@ -3,15 +3,13 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import style from "../UserRegistration/userRegistration.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { authUser } from "../../redux/features/application";
-import styled from "@emotion/styled";
+import { authShelter } from "../../redux/features/application";
+import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'
 
-const UserAuth = ({
-  authShow,
-  setAuthShow,
-  setRegShow,
+const ShelterAuth = ({
   shelterAuthShow,
   setShelterAuthShow,
+	setMailModalShow
 }) => {
   const error = useSelector((state) => state.application.errorSignIn);
 
@@ -29,22 +27,11 @@ const UserAuth = ({
 
   const dispatch = useDispatch();
 
-  const openRegistrationModal = () => {
+  const openMailModal = () => {
     setUncorrect("");
 
-    setRegShow(true);
-    setAuthShow(false);
-		setShelterAuthShow(false);
-
-    setLogin("");
-    setPassword("");
-  };
-
-  const openShelterRegistrModal = () => {
-    setUncorrect("");
-
-    setShelterAuthShow(true);
-    setAuthShow(false);
+    setMailModalShow(true);
+    setShelterAuthShow(false);
 
     setLogin("");
     setPassword("");
@@ -52,7 +39,7 @@ const UserAuth = ({
 
   const handleAuth = (e) => {
     e.preventDefault();
-    dispatch(authUser(login, password));
+    dispatch(authShelter(login, password));
   };
 
   // проверка на заполнение и правильность форм
@@ -69,8 +56,8 @@ const UserAuth = ({
     <>
       <Modal
         size="sm"
-        show={authShow}
-        onHide={() => setAuthShow(false)}
+        show={shelterAuthShow}
+        onHide={() => setShelterAuthShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
         centered
       >
@@ -89,7 +76,12 @@ const UserAuth = ({
                   d="M4 15h2v5h12V4H6v5H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6zm6-4V8l5 4-5 4v-3H2v-2h8z"
                 ></path>
               </svg>
-              <h1 className={style.form_heading}>Авторизация</h1>
+              <h1 className={style.form_heading}>
+                Авторизация{" "}
+              </h1>
+							<span className={style.paw}>
+                  <ion-icon name="paw-outline"></ion-icon>
+                </span>
             </div>
             <div className={style.form_inputs}>
               <div className={style.field}>
@@ -139,12 +131,8 @@ const UserAuth = ({
                 </div>
               </div>
               <div className={style.login}>
-                <span className={style.question}>Нет аккаунта?</span>
-                <span onClick={openRegistrationModal}>Зарегистрируйтесь</span>
-                <span className={style.or}>или</span>
-                <span onClick={openShelterRegistrModal} className={style.shelterAuth}>
-                  Войдите как приют
-                </span>
+                Нет аккаунта?{" "}
+                <span onClick={openMailModal}>Оставьте заявку</span>
               </div>
             </div>
           </form>
@@ -154,4 +142,4 @@ const UserAuth = ({
   );
 };
 
-export default UserAuth;
+export default ShelterAuth;
