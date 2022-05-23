@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addFundraising, loadFundraisings } from "../../redux/features/fundraising";
 import { addPetKeeping } from "../../redux/features/petsKeeping";
 import style from "./fundraisingFormComp.module.css";
@@ -14,7 +14,7 @@ export default function FundraisingFormComp() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [description, setDescription] = useState("");
 
-  const organizer = 'Nadejda na jizn'
+  const author = useSelector((state) => state.application.shelterId)
 
   const dispatch = useDispatch();
 
@@ -42,11 +42,11 @@ export default function FundraisingFormComp() {
       addFundraising(
         photo,
         title,
-        organizer,
         amount,
         cardNumber,
         phoneNumber,
         description, 
+        author
       )
     );
   };

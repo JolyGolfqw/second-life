@@ -40,7 +40,7 @@ const initialState = {
     };
   };
 
-  export const addFundraising = (file, title, organizer, amount, cardNumber, phoneNumber, description) => {
+  export const addFundraising = (file, title, amount, cardNumber, phoneNumber, description, author) => {
     return async (dispatch) => {
       dispatch({type: 'pet/add/pending'})
       try {
@@ -48,11 +48,11 @@ const initialState = {
 
         formData.append('img', file)
         formData.append('title', title)
-        formData.append('organizer', organizer)
         formData.append('amount', amount)
         formData.append('cardNumber', cardNumber)
         formData.append('phoneNumber', phoneNumber)
         formData.append('description', description)
+        formData.append('author', author)
 
         const res = await fetch("http://localhost:4000/fundraising", {
           method: 'POST',
