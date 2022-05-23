@@ -68,8 +68,8 @@ const Header = () => {
               />
             </>
           )}
-          {token && <AvatarDropDown id={user}/>}
-          {/* <ShelterProfileDropdown/> */}
+          {/* {token && <AvatarDropDown id={user}/>} */}
+          <ShelterProfileDropdown/>
         </div>
       </div>
     </header>

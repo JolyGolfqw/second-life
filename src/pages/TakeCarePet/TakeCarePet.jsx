@@ -18,6 +18,8 @@ const TakeCarePet = () => {
 		dispatch(loadpetsKeeping())
 	}, [dispatch])
 
+  console.log(pets)
+
   return (
     <>
       <Header />
