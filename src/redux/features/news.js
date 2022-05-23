@@ -43,7 +43,7 @@ export const loadNews = () => {
   };
 };
 
-export const addNews = (file, title, description) => {
+export const addNews = (file, title, description, author) => {
   return async (dispatch) => {
     dispatch({ type: "news/add/pending" });
     const formData = new FormData();
@@ -51,6 +51,7 @@ export const addNews = (file, title, description) => {
     formData.append("img", file);
     formData.append("title", title);
     formData.append("description", description);
+    formData.append('author', author)
     try {
       const res = await fetch("http://localhost:4000/news", {
         method: 'POST',
