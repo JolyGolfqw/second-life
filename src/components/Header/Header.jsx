@@ -6,7 +6,7 @@ import logoImg from "../../assets/logo.png";
 import { useState } from "react";
 import UserRegistration from "../UserRegistration/UserRegistration";
 import ShelterProfileDropdown from "../DropdownButton/ShelterProfileDropdown";
-import MailModal from '../MailModal/MailModal'
+import MailModal from "../MailModal/MailModal";
 import UserAuth from "../UserAuth/UserAuth";
 import ShelterAuth from "../ShelterAuth/ShelterAuth";
 import { useSelector } from "react-redux";
@@ -17,11 +17,11 @@ const Header = () => {
   const [regShow, setRegShow] = useState(false);
   const [authShow, setAuthShow] = useState(false);
   const [shelterAuthShow, setShelterAuthShow] = useState(false);
-	const [mailModalShow, setMailModalShow] = useState(false);
+  const [mailModalShow, setMailModalShow] = useState(false);
 
   const token = useSelector((state) => state.application.token);
   const user = useSelector((state) => state.application.userId);
-	const shelter = useSelector(state => state.application.shelterId)
+  const shelter = useSelector((state) => state.application.shelterId);
   const role = useSelector((state) => state.application.role);
 
   return (
@@ -48,9 +48,6 @@ const Header = () => {
             Помощь приютам
           </Link>
 
-          <Link to={"/shelter-page"} className={style.listHead}>
-            Приют
-          </Link>
           {!token && (
             <>
               <button
@@ -80,17 +77,17 @@ const Header = () => {
                 setAuthShow={setAuthShow}
                 shelterAuthShow={shelterAuthShow}
                 setShelterAuthShow={setShelterAuthShow}
-								mailModalShow={mailModalShow}
-								setMailModalShow={setMailModalShow}
+                mailModalShow={mailModalShow}
+                setMailModalShow={setMailModalShow}
               />
               <MailModal
-								mailModalShow={mailModalShow}
-								setMailModalShow={setMailModalShow}
+                mailModalShow={mailModalShow}
+                setMailModalShow={setMailModalShow}
               />
             </>
           )}
           {user && <AvatarDropDown id={user} />}
-          {shelter && <ShelterProfileDropdown id={shelter}/>}
+          {shelter && <ShelterProfileDropdown id={shelter} />}
         </div>
       </div>
     </header>

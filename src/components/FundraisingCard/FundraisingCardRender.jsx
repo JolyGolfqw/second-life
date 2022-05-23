@@ -65,10 +65,9 @@ const FundraisingCardRender = ({ image, title, amount, description }) => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {/* //!! РЕКВЕЗИТЫ ДЛЯ СБОРА */}
+            {/* //!! РЕКВЕЗИТЫ ДЛЯ СБОРА
             {fundraising.map((item) => {
-              return (
-                <>
+              return ( */}
                   <Form>
                     <Form.Group
                       className="mb-3"
@@ -77,11 +76,11 @@ const FundraisingCardRender = ({ image, title, amount, description }) => {
                       <Form.Label>Карта банка</Form.Label>
                       <Form.Control
                         type="text"
-                        placeholder={item.cardNumber}
+                        placeholder="0000-0000-0000-0000"
                         disabled
                       />
                       <Form.Text className="text-muted">
-                        Реквезиты приюта (Сбербанк)
+                        Реквезиты приюта
                       </Form.Text>
                     </Form.Group>
                     <Form.Group
@@ -91,17 +90,17 @@ const FundraisingCardRender = ({ image, title, amount, description }) => {
                       <Form.Label>Номер</Form.Label>
                       <Form.Control
                         type="text"
-                        placeholder={item.phoneNumber}
+                        placeholder="8929-000-00-00"
                         disabled
                       />
                       <Form.Text className="text-muted">
-                        Телефон номер (Мегафон)
+                        Телефон номер
                       </Form.Text>
                     </Form.Group>
                   </Form>
-                </>
-              );
-            })}
+            
+              {/* );
+            })} */}
           </Modal.Body>
         </Modal>
       </div>
