@@ -11,7 +11,7 @@ import { loadShelters } from "../../redux/features/shelters";
 export default function ShelterProfileDropdown({id}) {
 
   const [show, setShow] = useState(false);  
-  const [showGallery, setShowGallery] = useState(false); 
+  // const [showGallery, setShowGallery] = useState(false); 
 	
 	const name = useSelector(state => state.application.shelterName)
 
@@ -41,7 +41,7 @@ export default function ShelterProfileDropdown({id}) {
           </Link>
         </Dropdown.Item>
         <Dropdown.Item>
-          <span onClick={() => setShowGallery(true)} className="dropItem">
+          <span onClick={() => setShow(true)} className="dropItem">
            Галерея
           </span>
         </Dropdown.Item>
@@ -70,7 +70,7 @@ export default function ShelterProfileDropdown({id}) {
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-    <Gallerymodal showGallery={showGallery} setShowGallery={setShowGallery}/>
+    <Gallerymodal show={show} setShow={setShow}/>
     
     {/* <EditShelter shelter={shelter} show={show} setShow={setShow}/> */}
     </>
