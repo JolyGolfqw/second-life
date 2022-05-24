@@ -23,10 +23,10 @@
 - multer
 
 # Команда
-https://github.com/sarda10v
-https://github.com/siddikdaudov
-https://github.com/Ridvan333
-https://github.com/Ozab
+- https://github.com/sarda10v
+- https://github.com/siddikdaudov
+- https://github.com/Ridvan333
+- https://github.com/Ozab
 
 ![Image alt](https://github.com/JolyGolfqw/second-life/blob/main/Снимок.PNG)
 ![Image alt](https://github.com/JolyGolfqw/second-life/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA2.PNG)
