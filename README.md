@@ -28,6 +28,10 @@
 - https://github.com/Ridvan333
 - https://github.com/Ozab
 
+# Запуск
+- https://github.com/JolyGolfqw/second-life-back скачать и прописать (npx nodemon)
+- скачать текущий репозиторий и прописать (npm start)
+
 ![Image alt](https://github.com/JolyGolfqw/second-life/blob/main/Снимок.PNG)
 ![Image alt](https://github.com/JolyGolfqw/second-life/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA2.PNG)
 ![Image alt](https://github.com/JolyGolfqw/second-life/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA3.PNG)
